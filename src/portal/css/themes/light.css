@@ -1,0 +1,173 @@
+/* theme: light
+   name: Light
+   name-vi: Sáng
+   note: Warm paper and a dark statement panel, in six tones.
+   note-vi: Giấy ấm và khung duyệt tối, sáu tông màu.
+   default: yes
+   palette-default: Light | Sáng
+   palette: porcelain | Porcelain | Sứ trắng
+   palette: sand | Sand | Cát
+   palette: mist | Mist | Sương
+   palette: plum | Plum | Mận
+   palette: midnight | Midnight | Đêm
+   The portal's colours. --tone is the studio's own colour (from its profile photo): the page sets it, and every green below
+   is mixed from it, so a theme should derive its accents from --tone too. */
+:root{
+  color-scheme:light;
+  --tone:#3f5f5a;
+  --seed:var(--tone);   /* every accent is mixed from it: the studio's colour, or a palette's own */
+  --page:#fcfbf9; --top:#ffffff; --hero:#faf8f6; --card:#fbf9f7; --card2:#fdfdfc;
+  --line:#ebe8e2; --line-soft:#efede8;
+  --ink:#141b17; --ink2:#2b342e; --lead:#646d68; --muted:#5f6560; --muted2:#686d69; --kicker:#686d69;
+  --green:color-mix(in srgb,var(--seed) 68%,#0c140f);
+  --green-mid:color-mix(in srgb,var(--seed) 80%,#fff);
+  --rule-grey:#d0d1cd;
+  --check-bg:color-mix(in srgb,var(--seed) 14%,#fff);
+  --check-ink:var(--green);
+  --peach:#f5e6d9; --peach-ink:#6f5a4b; --dr:#7a6755; --alert:#d4472f;
+  --avatar-soft:color-mix(in srgb,var(--seed) 12%,#fff); --avatar-soft-ink:var(--green);
+  --dot:color-mix(in srgb,var(--seed) 85%,#fff);
+  --panel-a:color-mix(in srgb,var(--seed) 84%,#0b120e);
+  --panel-b:color-mix(in srgb,var(--seed) 72%,#0b120e);
+  --cream:#f5f2ec; --cream-ink:#1b2a21; --focus:var(--green);
+  --hv:rgba(20,27,23,.05);
+  --cream-rgb:245 242 236;   /* text on the dark decision panel, as "r g b" (used with its own opacity) */
+  --panel-title:#f4efe5;     /* headings on that panel */
+  --panel-err:#f4b8aa;       /* a wrong code, on that panel */
+  --shade:10 20 14;          /* shadows, as "r g b" */
+  --spin-track:rgba(27,42,33,.18);
+  --shade-soft:16 26 20; --shade-card:16 36 26;   /* menus and the segmented control; a project card when hovered */
+  --backdrop:rgba(14,22,17,.38);                   /* behind a drawer or a dialog */
+  --glint:255 247 226;                             /* the light that crosses the decision panel */
+  --cream-hover:#fff;                              /* the panel's main button, hovered */
+  --panel-num:#f6f2e9; --panel-code:#f9f4e9;       /* the total, and the code cells */
+  --panel-late-bg:rgba(232,144,125,.16); --panel-late-ink:#f6c9bd;
+  --panel-ok-line:#9fd0b0; --panel-ok-bg:rgba(159,208,176,.13); --panel-ok-ink:#a9d9b8;
+  --panel-err-line:#e8907d; --panel-err-bg:rgba(232,144,125,.1);
+  --panel-bg:linear-gradient(165deg,var(--panel-a),var(--panel-b));   /* the decision panel */
+  --on-ink:var(--cream);                           /* text on the solid buttons and the toast (panel-a) */
+  --panel-edge:none;                               /* the decision panel's own edge (a box-shadow) */
+  --danger:#8a3a2d;
+}
+
+/* ---- palette: porcelain. White sheets on a cool grey, one typeface (Be Vietnam Pro, drawn for Vietnamese), light large
+   headings, and a near-black decision panel tinted with the studio's colour; everything else is neutral, so the studio's colour
+   is the only colour on the page. Its fonts are read only when this palette is used. ---- */
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/be-vietnam-pro-vietnamese-300-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/be-vietnam-pro-latin-ext-300-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/be-vietnam-pro-latin-300-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/be-vietnam-pro-vietnamese-400-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/be-vietnam-pro-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/be-vietnam-pro-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/be-vietnam-pro-vietnamese-500-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/be-vietnam-pro-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/be-vietnam-pro-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/be-vietnam-pro-vietnamese-600-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/be-vietnam-pro-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/be-vietnam-pro-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root[data-theme="light"][data-palette="porcelain"]{
+  color-scheme:light;
+  --sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:var(--sans);
+  --dw:300; --dw-strong:300; --dtrack:-.024em;   /* light, close-set headings */
+  --caps:none; --caps-k:0;                       /* labels in sentence case, untracked */
+
+  --page:#f3f4f6; --top:#ffffff; --hero:#ffffff; --card:#ffffff; --card2:#ffffff;
+  --line:#e1e3e7; --line-soft:#ebecef; --rule-grey:#d3d6db;
+  --ink:#121418; --ink2:#373b42; --lead:#5a5f68; --muted:#5f646d; --muted2:#6f747d; --kicker:#6f747d;
+  --hv:rgba(18,20,24,.045);
+
+  --green:color-mix(in srgb,var(--seed) 74%,#090b0e);          /* the studio's colour, deepened: dots, steps, links */
+  --green-mid:color-mix(in srgb,var(--seed) 62%,#fff);
+  --check-bg:color-mix(in srgb,var(--seed) 8%,#fff); --check-ink:var(--green);
+  --avatar-soft:color-mix(in srgb,var(--seed) 10%,#fff); --avatar-soft-ink:var(--green);
+  --dot:color-mix(in srgb,var(--seed) 70%,#fff); --focus:var(--green);
+
+  --peach:#f7efe6; --peach-ink:#83501f; --dr:#83501f;         /* what needs the client: amber, never the studio's colour */
+  --alert:#c13e27; --danger:#a8321f;
+
+  --panel-a:color-mix(in srgb,var(--seed) 15%,#15171c);        /* the decision panel: near-black, tinted */
+  --panel-b:color-mix(in srgb,var(--seed) 5%,#0b0c0f);
+  --cream:#f3f4f6; --cream-ink:#121418; --cream-rgb:243 244 246; --cream-hover:#ffffff;
+  --panel-title:#ffffff; --panel-num:#ffffff; --panel-code:#ffffff; --panel-err:#f3a896;
+  --panel-late-bg:rgba(243,168,150,.14); --panel-late-ink:#f6c3b6;
+  --panel-ok-line:#9cd3b4; --panel-ok-bg:rgba(156,211,180,.12); --panel-ok-ink:#a9dcc0;
+  --panel-err-line:#ec917c; --panel-err-bg:rgba(236,145,124,.1);
+  --panel-edge:inset 0 1px 0 rgb(255 255 255 / .08),inset 0 0 0 1px rgb(255 255 255 / .035),0 28px 56px -34px rgb(17 20 26 / .55);
+  --glint:255 255 255;
+  --spin-track:rgba(18,20,24,.16);
+
+  --shade:17 20 26; --shade-soft:17 20 26; --shade-card:17 20 26;
+  --backdrop:rgba(12,14,18,.3);
+}
+/* details the variables do not reach */
+:root[data-theme="light"][data-palette="porcelain"] body{font-size:14px}
+:root[data-theme="light"][data-palette="porcelain"] .brand-txt b{font-size:13.5px;line-height:16px;font-weight:500;letter-spacing:-.01em}
+:root[data-theme="light"][data-palette="porcelain"] .kicker{font-weight:500;color:var(--green)}
+:root[data-theme="light"][data-palette="porcelain"] .hero{border-bottom:1px solid var(--line-soft)}
+:root[data-theme="light"][data-palette="porcelain"] .hero-art{opacity:.2}
+:root[data-theme="light"][data-palette="porcelain"] .hero::after{background:linear-gradient(100deg,transparent 45%,color-mix(in srgb,var(--seed) 5%,transparent))}
+:root[data-theme="light"][data-palette="porcelain"] .top{border-bottom-color:var(--line-soft)}
+:root[data-theme="light"][data-palette="porcelain"] .dr-body{background:#f7f8f9}   /* a drawer: white lists on a faint grey, as the page */
+:root[data-theme="light"][data-palette="porcelain"] .decision,
+:root[data-theme="light"][data-palette="porcelain"] .nl,
+:root[data-theme="light"][data-palette="porcelain"] .pcard,
+:root[data-theme="light"][data-palette="porcelain"] .bx,
+:root[data-theme="light"][data-palette="porcelain"] .also{box-shadow:0 1px 2px rgb(17 20 26 / .04)}
+:root[data-theme="light"][data-palette="porcelain"] .pcard:hover{box-shadow:0 1px 2px rgb(17 20 26 / .04),0 22px 40px -28px rgb(17 20 26 / .38)}
+:root[data-theme="light"][data-palette="porcelain"] .total strong,
+:root[data-theme="light"][data-palette="porcelain"] .en-amt b,
+:root[data-theme="light"][data-palette="porcelain"] .mail-c{font-weight:300;font-variant-numeric:lining-nums tabular-nums}
+:root[data-theme="light"][data-palette="porcelain"] .nrow .gob,
+:root[data-theme="light"][data-palette="porcelain"] .pbtn,
+:root[data-theme="light"][data-palette="porcelain"] .solid{background:linear-gradient(180deg,color-mix(in srgb,var(--panel-a) 92%,#fff),var(--panel-a));box-shadow:inset 0 1px 0 rgb(255 255 255 / .1),0 1px 2px rgb(17 20 26 / .2)}
+:root[data-theme="light"][data-palette="porcelain"] .solid.danger{background:var(--danger)}
+:root[data-theme="light"][data-palette="porcelain"] .dec-r{background:radial-gradient(90% 70% at 100% 0%,color-mix(in srgb,var(--seed) 30%,transparent),transparent 70%),linear-gradient(165deg,var(--panel-a),var(--panel-b))}
+:root[data-theme="light"][data-palette="porcelain"] .btn.p{font-weight:500;box-shadow:0 1px 2px rgb(0 0 0 / .25)}
+
+/* ---- palettes: sand, mist, plum, midnight. The same page and its dark statement panel, in a curated paper, ink and accent.
+   Each sets the seed (tints and the hero's lines are mixed from it) and what a seed cannot give. ---- */
+:root[data-theme="light"][data-palette="sand"]{
+  --seed:#8a5a2b;
+  --page:#f6f1e9; --top:#fffdf9; --hero:#f3ede3; --card:#faf6ef; --card2:#fdfaf5;
+  --line:#e7dfd2; --line-soft:#ede6db; --rule-grey:#d6cbbb;
+  --ink:#231a13; --ink2:#3d3127; --lead:#6b5d50; --muted:#6a5c4f; --muted2:#73655a; --kicker:#73655a;
+  --green:#6f4620; --green-mid:#b08b67; --check-bg:#f0e6d8; --check-ink:#6f4620; --dot:#a07a55; --avatar-soft:#f0e6d8; --avatar-soft-ink:#6f4620; --focus:#6f4620;
+  --panel-a:#3b2c21; --panel-b:#261c15; --cream:#f6efe4; --cream-ink:#231a13; --cream-rgb:246 239 228;
+  --panel-title:#fbf6ee; --panel-num:#fbf6ee; --panel-code:#fbf6ee;
+  --peach:#f6e6d3; --peach-ink:#7d4f1d; --dr:#7d4f1d;
+  --hv:rgb(60 40 20 / .05); --shade:40 28 18; --shade-soft:40 28 18; --shade-card:40 28 18;
+}
+:root[data-theme="light"][data-palette="mist"]{
+  --seed:#34587a;
+  --page:#f4f7f9; --top:#ffffff; --hero:#eef2f5; --card:#f9fbfc; --card2:#fcfdfe;
+  --line:#dfe5ea; --line-soft:#e8edf1; --rule-grey:#ccd5dd;
+  --ink:#142029; --ink2:#2f3c47; --lead:#586773; --muted:#576672; --muted2:#62707c; --kicker:#62707c;
+  --green:#284866; --green-mid:#8ea6bd; --check-bg:#e5edf3; --check-ink:#284866; --dot:#6f8ca8; --avatar-soft:#e5edf3; --avatar-soft-ink:#284866; --focus:#284866;
+  --panel-a:#26394a; --panel-b:#182633; --cream:#eef3f7; --cream-ink:#142029; --cream-rgb:238 243 247;
+  --panel-title:#f6f9fb; --panel-num:#f6f9fb; --panel-code:#f6f9fb;
+  --peach:#f6ead8; --peach-ink:#7a5418; --dr:#7a5418;
+  --hv:rgb(20 40 60 / .05); --shade:18 30 44; --shade-soft:18 30 44; --shade-card:18 30 44;
+}
+:root[data-theme="light"][data-palette="plum"]{
+  --seed:#7a3355;
+  --page:#f9f4f4; --top:#fffdfd; --hero:#f5eeee; --card:#fcf8f8; --card2:#fefbfb;
+  --line:#eadfe0; --line-soft:#f0e7e8; --rule-grey:#dccdcf;
+  --ink:#26161d; --ink2:#45323b; --lead:#6e5a63; --muted:#6d5962; --muted2:#76626b; --kicker:#76626b;
+  --green:#6a2a49; --green-mid:#c08ea6; --check-bg:#f3e5eb; --check-ink:#6a2a49; --dot:#a8698a; --avatar-soft:#f3e5eb; --avatar-soft-ink:#6a2a49; --focus:#6a2a49;
+  --panel-a:#4a2338; --panel-b:#301625; --cream:#f8eef2; --cream-ink:#26161d; --cream-rgb:248 238 242;
+  --panel-title:#fdf7f9; --panel-num:#fdf7f9; --panel-code:#fdf7f9;
+  --peach:#f6e7d6; --peach-ink:#7a4f1a; --dr:#7a4f1a;
+  --hv:rgb(60 20 40 / .05); --shade:40 18 30; --shade-soft:40 18 30; --shade-card:40 18 30;
+}
+:root[data-theme="light"][data-palette="midnight"]{
+  --seed:#3b3f8f;
+  --page:#f5f5f8; --top:#ffffff; --hero:#efeff5; --card:#fafafc; --card2:#fdfdfe;
+  --line:#e2e2ea; --line-soft:#eaeaf0; --rule-grey:#d0d0dc;
+  --ink:#15162a; --ink2:#33354d; --lead:#5c5e76; --muted:#5b5d73; --muted2:#65677e; --kicker:#65677e;
+  --green:#30347a; --green-mid:#9a9dd0; --check-bg:#e9e9f5; --check-ink:#30347a; --dot:#7275b8; --avatar-soft:#e9e9f5; --avatar-soft-ink:#30347a; --focus:#30347a;
+  --panel-a:#24275a; --panel-b:#15173b; --cream:#eff0f8; --cream-ink:#15162a; --cream-rgb:239 240 248;
+  --panel-title:#f8f8fd; --panel-num:#f8f8fd; --panel-code:#f8f8fd;
+  --peach:#f6ead8; --peach-ink:#7a5418; --dr:#7a5418;
+  --hv:rgb(30 30 70 / .05); --shade:20 20 46; --shade-soft:20 20 46; --shade-card:20 20 46;
+}

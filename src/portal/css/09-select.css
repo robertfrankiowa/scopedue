@@ -1,0 +1,50 @@
+/* CONTRACT 112: the portal's two selects ("In which part?" on a payment report, "Which part of the Scope?" on a question).
+   Closed, a select looks like the text fields beside it (.fld input): the card colour, a hairline drawn inside, 12 px corners,
+   44 px high, and a thin chevron in a mid grey that reads on every theme and palette. Opened, where the browser
+   knows the customizable select (Chrome, Edge, Opera, Brave from 135) and the pointer is a mouse, the list is a card in the
+   theme's own colours and face, like the app's (CONTRACT 111); elsewhere, and on a phone, the system list stays. */
+.fld select {
+  display: block; width: 100%; height: 44px; padding: 0 42px 0 15px; border: 0; border-radius: 12px;
+  background-color: var(--card); color: var(--ink); box-shadow: 0 0 0 1px var(--line) inset;
+  font: inherit; font-size: 14.5px; line-height: 1.45; text-overflow: ellipsis; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23878d89' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right 15px center; background-size: 16px 16px; background-repeat: no-repeat;
+  transition: box-shadow .3s var(--ease);
+}
+.fld select:hover { box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 22%, var(--line)) inset; }
+.fld select:focus { outline: 0; box-shadow: 0 0 0 1.5px var(--green) inset, 0 0 0 5px color-mix(in srgb, var(--green) 14%, transparent); }
+
+@supports (appearance: base-select) {
+  @media (hover: hover) and (pointer: fine) {
+    .fld select, .fld select::picker(select) { appearance: base-select; }
+    .fld select::picker-icon { display: none; }
+    .fld select { align-items: center; align-content: center; white-space: nowrap; overflow: clip; overflow-clip-margin: content-box; }
+    .fld select::picker(select) {
+      box-sizing: border-box; min-inline-size: anchor-size(self-inline); max-inline-size: min(480px, calc(100vw - 24px)); max-block-size: min(340px, 60vh);
+      margin-block: 6px; padding: 5px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+      border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink);
+      box-shadow: 0 1px 2px rgb(var(--shade) / .06), 0 20px 44px -16px rgb(var(--shade) / .3);
+      opacity: 0; transform: translateY(-4px) scale(.985); transform-origin: top center;
+      transition: opacity .14s var(--ease), transform .16s var(--ease), overlay .16s allow-discrete, display .16s allow-discrete;
+    }
+    .fld select:open::picker(select) { opacity: 1; transform: none; }
+    @starting-style { .fld select:open::picker(select) { opacity: 0; transform: translateY(-4px) scale(.985); } }
+    .fld select option {
+      display: flex; align-items: center; gap: 10px; min-block-size: 38px; padding: 0 12px; border-radius: 9px;
+      font: 400 14px/1.35 var(--sans); color: var(--ink2); background: transparent; cursor: pointer;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; outline: 0; transition: background-color .1s var(--ease);
+    }
+    .fld select option:hover, .fld select option:focus-visible { background: var(--hv); color: var(--ink); }
+    .fld select option:focus-visible { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--green) 32%, transparent); }
+    .fld select option:checked { color: var(--ink); font-weight: 500; }
+    .fld select option:checked:not(:hover) { background: color-mix(in srgb, var(--green) 7%, var(--card)); }
+    .fld select option::checkmark {
+      order: 1; content: ""; flex: none; width: 14px; height: 14px; margin-inline-start: auto; background: var(--green);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    .fld select option:disabled { color: var(--muted2); opacity: .6; cursor: default; background: transparent; }
+  }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) { .fld select::picker(select) { transition: none; transform: none; } }
+}

@@ -1,0 +1,15 @@
+/* theme: dark
+   name: Dark
+   name-vi: Tối
+   icon: moon
+   system: dark
+   "System" uses it when the computer is in dark mode. What is not set here comes from light.css. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1523; --surface: #151f31; --surface-2: #121b2b; --line: #26324a; --line-soft: #1f2a40;
+  --ink: #eef1f7; --ink-2: #b0b9ca; --ink-3: #8a95ab;
+  --accent: #a9bce8; --accent-soft: #1c2a47; --btn: #2c4270; --btn-ink: #ffffff; --hl: rgba(255,255,255,.045); --shadow: 0 1px 2px rgba(0,0,0,.35), 0 16px 32px -22px rgba(0,0,0,.6);
+  --warn: #efb45f; --warn-bg: #2d2413; --crit: #ff958c; --crit-bg: #3a1c1d; --on-crit: #2a0f10; --ok: #6fd0a2;
+  --nav-bg-1: #0d1626; --nav-bg-2: #080f1b; --nav-active: #1a2538; --nav-line: #232f45;
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a9b4cc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}

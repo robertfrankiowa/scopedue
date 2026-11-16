@@ -1,0 +1,38 @@
+<main class="content" id="view-inbox" hidden aria-labelledby="ib-title">
+      <div class="head has-act">
+        <div>
+          <div class="eyebrow">ScopeDue</div>
+          <h1 id="ib-title" tabindex="-1">Help</h1>
+        </div>
+        <div class="head-r">
+          <p>What changed, how to reach us, and the shortcuts.</p>
+        </div>
+      </div>
+
+      <div class="xb" id="xb"></div>
+
+      <section class="card ib" id="ib" data-pane="list" aria-label="Inbox">
+        <div class="ib-lp">
+          <div class="ib-lh">
+            <div><h2>Inbox</h2><small id="ib-sub">0 unread</small></div>
+            <button type="button" class="link" id="ib-readall">Mark all read</button>
+          </div>
+          <div class="ib-tools">
+            <div class="seg" id="ib-seg" role="group" aria-label="Filter messages">
+              <button type="button" data-f="all" aria-pressed="true">All</button>
+              <button type="button" data-f="support" aria-pressed="false">Support</button>
+              <button type="button" data-f="feedback" aria-pressed="false">Feedback</button>
+              <button type="button" data-f="team" aria-pressed="false">Team</button>
+              <button type="button" data-f="update" aria-pressed="false">Updates</button>
+            </div>
+            <label class="dr-search"><svg class="i"><use href="#i-search"/></svg><input id="ib-q" type="search" placeholder="Search messages" autocomplete="off" aria-label="Search messages"></label>
+          </div>
+          <div class="ib-scroll" id="ib-scroll">
+            <ul class="ib-list" id="ib-list"></ul>
+            <div class="dr-empty" id="ib-empty" hidden><b>No messages here</b>Try another filter or search term.</div>
+          </div>
+        </div>
+        <div class="ib-conv" id="ib-conv"></div>
+      </section>
+
+    </main>

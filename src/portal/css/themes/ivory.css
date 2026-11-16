@@ -1,0 +1,310 @@
+/* theme: ivory
+   name: Ivory
+   name-vi: Ngà
+   note: Ivory paper, serif type, six palettes.
+   note-vi: Nền ngà, chữ có chân, sáu tông màu.
+   palette: forest | Forest | Xanh rừng
+   palette: terracotta | Terracotta | Đất nung
+   palette: navy | Navy | Xanh navy
+   palette: olive | Olive | Ô liu
+   palette: bordeaux | Bordeaux | Rượu vang
+   palette: graphite | Graphite | Than chì
+   Ivory: the stationery of a bespoke studio. Everything is set in one serif (Source Serif 4, with optical sizes, so headings and
+   small text are each drawn for their size); only the small labels are a sans, in tracked capitals. Accents are the studio's
+   colour taken down to a forest-dark ink. The decision panel is a pale sage sheet, not a dark slab, and its main button is the
+   ink. Its font is in src/portal/fonts and is read only when this theme is used.
+   Palettes (studio.theme "ivory.<palette>", <html data-palette>): without one, everything is mixed from the studio's own colour
+   (--seed is --tone); a palette sets the seed and the paper, the ink and the sheets itself (blocks at the end of this file). */
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:200 900;font-display:swap;src:url(fonts/source-serif-4-latin-opsz-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:200 900;font-display:swap;src:url(fonts/source-serif-4-latin-ext-opsz-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:200 900;font-display:swap;src:url(fonts/source-serif-4-vietnamese-opsz-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+:root[data-theme="ivory"]{
+  color-scheme:light;
+  --sans:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --display:var(--sans);
+  --label:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --dw:400; --dw-strong:400; --dtrack:-.006em;
+  --caps:uppercase; --caps-k:2;                  /* labels in capitals, set wide */
+
+  --seed:var(--tone);                            /* every accent is mixed from it: the studio's colour, or a palette's */
+  --page:#f7f5f0; --top:#fbfaf7; --hero:#f7f5f0; --card:#fdfcf9; --card2:#fdfcf9;
+  --sheet:color-mix(in srgb,var(--seed) 7%,#f5f4ee);   /* the decision panel */
+  --band:color-mix(in srgb,var(--seed) 5%,#faf9f5);    /* Home: what needs the client */
+  --line:#e5e0d5; --line-soft:#ece8df; --rule-grey:#d6d0c4;
+  --ink:#191e1a; --ink2:#363c37; --lead:#565c57; --muted:#5f655f; --muted2:#6c716a; --kicker:#262b27;
+  --hv:rgba(46,40,28,.045);
+
+  --green:color-mix(in srgb,var(--seed) 60%,#0d1712);           /* the studio's colour, taken down to forest ink */
+  --green-mid:color-mix(in srgb,var(--seed) 45%,#9aa39c);
+  --check-bg:color-mix(in srgb,var(--seed) 11%,#f4f2ec); --check-ink:var(--green);
+  --avatar-soft:color-mix(in srgb,var(--seed) 12%,#f7f5f0); --avatar-soft-ink:var(--green);
+  --dot:color-mix(in srgb,var(--seed) 60%,#f7f5f0); --focus:var(--green);
+  --peach:#f4e8d5; --peach-ink:#7f5317; --dr:#7f5317;
+  --alert:#b42318; --danger:#a3271b;
+
+  /* the decision panel: a pale sage sheet with dark text; its main button is the ink */
+  --panel-bg:linear-gradient(170deg,color-mix(in srgb,var(--seed) 6%,#f8f7f2),color-mix(in srgb,var(--seed) 10%,#f1f0ea));
+  --panel-edge:inset 0 0 0 1px color-mix(in srgb,var(--seed) 14%,#e5e0d5);
+  --panel-a:color-mix(in srgb,var(--seed) 60%,#0d1712); --panel-b:color-mix(in srgb,var(--seed) 50%,#08100b);
+  --cream:color-mix(in srgb,var(--seed) 62%,#0c1611); --cream-ink:#ffffff; --cream-hover:color-mix(in srgb,var(--seed) 74%,#0c1611);
+  --cream-rgb:25 30 26;
+  --on-ink:#ffffff;
+  --panel-title:#191e1a; --panel-num:#191e1a; --panel-code:#191e1a; --panel-err:#b42318;
+  --panel-late-bg:rgba(180,35,24,.07); --panel-late-ink:#93271a;
+  --panel-ok-line:#2e6a49; --panel-ok-bg:rgba(46,106,73,.08); --panel-ok-ink:#2e6a49;
+  --panel-err-line:#c2412a; --panel-err-bg:rgba(194,65,42,.06);
+  --glint:255 255 255;
+  --spin-track:rgba(255,255,255,.3);
+
+  --shade:46 40 28; --shade-soft:46 40 28; --shade-card:46 40 28;
+  --backdrop:rgba(30,27,20,.26);
+}
+/* details the variables do not reach */
+:root[data-theme="ivory"] .logo,:root[data-theme="ivory"] .av{background-color:var(--seed)}
+:root[data-theme="ivory"] body{font-size:15px;font-optical-sizing:auto}
+:root[data-theme="ivory"] .kicker{font-size:11px;font-weight:500}
+:root[data-theme="ivory"] .hero-art,:root[data-theme="ivory"] .hero::after{display:none}
+:root[data-theme="ivory"] .top{background:var(--top)}
+:root[data-theme="ivory"] .decision,:root[data-theme="ivory"] .nl,:root[data-theme="ivory"] .pcard,:root[data-theme="ivory"] .bx,:root[data-theme="ivory"] .also{border-radius:10px}
+:root[data-theme="ivory"] .dec-r{border-radius:8px}
+:root[data-theme="ivory"] .btn,:root[data-theme="ivory"] .nrow .gob,:root[data-theme="ivory"] .pbtn,:root[data-theme="ivory"] .solid,:root[data-theme="ivory"] .sbtn,:root[data-theme="ivory"] .ghost,:root[data-theme="ivory"] .ghostb{border-radius:5px}
+:root[data-theme="ivory"] .btn.p{box-shadow:0 1px 2px rgb(46 40 28 / .18)}
+:root[data-theme="ivory"] .btn.s:hover:not(:disabled){background:rgb(255 255 255 / .55)}
+:root[data-theme="ivory"] .cell{background:rgb(255 255 255 / .7)}
+:root[data-theme="ivory"] .cell.on,:root[data-theme="ivory"] .cell.f{background:#fff}
+:root[data-theme="ivory"] .pnote,:root[data-theme="ivory"] .idn{background:rgb(255 255 255 / .6)}
+:root[data-theme="ivory"] .toast .tk{background:rgb(255 255 255 / .16)}
+:root[data-theme="ivory"] .chip,:root[data-theme="ivory"] .tag,:root[data-theme="ivory"] .en-ty{font-family:var(--label);font-size:11px}
+:root[data-theme="ivory"] .dr-body{background:var(--page)}
+
+/* ---- Ivory's layout: the same content, set out as a studio's statement. Only this theme; the others keep theirs. ---- */
+:root[data-theme="ivory"] .brand-txt b{font:400 19px/22px var(--display);letter-spacing:-.005em;text-transform:none}
+:root[data-theme="ivory"] .brand-txt small{margin-top:1px}
+/* labels: one style for every small label (tracked capitals) */
+:root[data-theme="ivory"] .sg-b .s2,:root[data-theme="ivory"] .rec-i b,:root[data-theme="ivory"] .dec-top .dr{font:500 11px/16px var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+/* the hero's status: separate figures. A pill for the stage, the reply state under it, the date as a figure of its own */
+:root[data-theme="ivory"] .status{display:grid;grid-template-columns:auto auto;justify-content:start;align-items:center;gap:10px 0;margin-top:22px}
+:root[data-theme="ivory"] .status .sep{display:none}
+:root[data-theme="ivory"] .sg{display:flex;align-items:center}
+:root[data-theme="ivory"] .sg-a{grid-column:1;grid-row:1;justify-self:start;height:30px;padding:0 14px 0 12px;border-radius:999px;background:var(--check-bg);color:var(--green);font:500 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+:root[data-theme="ivory"] .sg-a .sdot{width:7px;height:7px;margin:0 9px 0 0}
+:root[data-theme="ivory"] .sg-a:has(.st2) .sdot{display:none}
+:root[data-theme="ivory"] .sg-a .st2{gap:9px}
+:root[data-theme="ivory"] .sg-a:has(.st2.need){background:var(--peach);color:var(--peach-ink)}
+:root[data-theme="ivory"] .sg-c{grid-column:1;grid-row:2;font-size:14px;color:var(--muted)}
+:root[data-theme="ivory"] .status:not(:has(.sg-c)) .sg-a{grid-row:1/3;align-self:center}
+:root[data-theme="ivory"] .sg-c .st2{gap:8px}
+:root[data-theme="ivory"] .sg-b{grid-column:2;grid-row:1/3;flex-direction:column;align-items:flex-start;justify-content:center;margin-left:34px;padding-left:34px;border-left:1px solid var(--line);min-height:62px}
+:root[data-theme="ivory"] .sg-b .cl{display:none}
+:root[data-theme="ivory"] .sg-b b{margin:6px 0 0;font:400 30px/1.05 var(--display);letter-spacing:-.01em;color:var(--ink)}
+@media (min-width:1101px){
+  :root[data-theme="ivory"] .hero-in{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:56px;padding:34px 46px 32px}
+  :root[data-theme="ivory"] .hero-in>.kicker,:root[data-theme="ivory"] .hero-in>h1,:root[data-theme="ivory"] .hero-in>.for{grid-column:1}
+  :root[data-theme="ivory"] .hero .status{grid-column:2;grid-row:1/4;align-self:center;margin:0;padding-left:40px;border-left:1px solid var(--line)}
+}
+/* the stepper: on a sheet of its own */
+:root[data-theme="ivory"] .steps{height:auto;margin:6px 23px 14px;padding:24px 0 18px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+:root[data-theme="ivory"] .steps-in{height:76px}
+/* the request: an icon beside it, the state as a label above the title (as on a letterhead) */
+@media (min-width:1101px){
+  :root[data-theme="ivory"] .dec-l{display:grid;grid-template-columns:48px minmax(0,1fr) auto;column-gap:22px;align-content:start;padding:28px 42px 26px 30px}
+  :root[data-theme="ivory"] .dec-top{display:contents}
+  :root[data-theme="ivory"] .dec-top .bellc{grid-column:1;grid-row:1/3;align-self:start;width:48px;height:48px}
+  :root[data-theme="ivory"] .dec-top .dr{grid-column:2;grid-row:1;align-self:end}
+  :root[data-theme="ivory"] .dec-top .reply{grid-column:3;grid-row:1;align-self:end}
+  :root[data-theme="ivory"] .dec-l>:not(.dec-top){grid-column:2/4}
+  :root[data-theme="ivory"] .decision h2{margin-top:2px}
+}
+/* the record strip: a sheet of figures, each with its label above */
+:root[data-theme="ivory"] .rec{margin:12px 23px 0;padding:20px 6px;gap:16px 0;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:10px}
+:root[data-theme="ivory"] .rec-i{display:block;padding:0 28px;border-left:1px solid var(--line-soft);font:400 19px/28px var(--display);color:var(--ink)}
+:root[data-theme="ivory"] .rec-i:first-child{border-left:0}
+:root[data-theme="ivory"] .rec-i b{display:block;margin-bottom:5px}
+:root[data-theme="ivory"] .rec-i svg{display:inline-block;vertical-align:-2px;margin-left:4px}
+:root[data-theme="ivory"] .rec-i .lk{margin-left:12px;font:400 14px/1 var(--sans)}
+:root[data-theme="ivory"] .rec-i .fpc{display:block;margin-top:2px;font-size:11.5px;line-height:16px}
+:root[data-theme="ivory"] .rec-i .rec-n{display:block;margin-top:2px;font:400 12px/16px var(--sans);color:var(--muted)}
+:root[data-theme="ivory"] .rec-i .pips{margin-left:10px;vertical-align:middle}
+:root[data-theme="ivory"] .rec-r{margin-left:auto;align-self:center;border-left:0;font:400 14px/24px var(--sans)}
+/* figures in the cards: one per line, ruled */
+:root[data-theme="ivory"] .bx .kv{gap:0}
+:root[data-theme="ivory"] .bx .kv div{padding:8px 0;border-top:1px solid var(--line-soft)}
+:root[data-theme="ivory"] .bx .kv div:first-child{border-top:0}
+/* home: what needs the client, on the sage of the decision panel */
+:root[data-theme="ivory"] .nl{background:var(--band);border-color:color-mix(in srgb,var(--seed) 14%,var(--line))}
+:root[data-theme="ivory"] .nl li+li{border-top-color:color-mix(in srgb,var(--seed) 12%,var(--line))}
+:root[data-theme="ivory"] .nrow:hover{background:rgb(255 255 255 / .45)}
+:root[data-theme="ivory"] .nrow .bellc{background:var(--card)}
+@media (max-width:760px){
+  :root[data-theme="ivory"] .sg-b{margin-left:22px;padding-left:22px}
+  :root[data-theme="ivory"] .status:not(:has(.sg-c)){grid-template-columns:minmax(0,1fr)}
+  :root[data-theme="ivory"] .status:not(:has(.sg-c)) .sg-a{grid-row:1}
+  :root[data-theme="ivory"] .status:not(:has(.sg-c)) .sg-b{grid-column:1;grid-row:2;margin:4px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--line);min-height:0}
+  :root[data-theme="ivory"] .sg-b b{font-size:24px}
+  :root[data-theme="ivory"] .steps{margin:4px 12px 12px;padding:18px 0 14px}
+  :root[data-theme="ivory"] .rec{margin-left:12px;margin-right:12px;padding:16px 4px}
+  :root[data-theme="ivory"] .rec-i{padding:0 16px;border-left:0;flex:1 1 100%}
+  :root[data-theme="ivory"] .rec-r{margin-left:16px}
+}
+
+/* ---- Ivory, refined: a studio's statement. One document per request, figures that read like a ledger. ---- */
+:root[data-theme="ivory"] ::selection{background:color-mix(in srgb,var(--seed) 20%,#fff)}
+:root[data-theme="ivory"] .rec-i,:root[data-theme="ivory"] .row dd,:root[data-theme="ivory"] .kv dd,:root[data-theme="ivory"] .total strong,:root[data-theme="ivory"] .sg-b b{font-variant-numeric:lining-nums tabular-nums}
+:root[data-theme="ivory"] h1,:root[data-theme="ivory"] .decision h2,:root[data-theme="ivory"] .nrow .nn,:root[data-theme="ivory"] .pcard h3{text-wrap:balance}
+:root[data-theme="ivory"] .lk,:root[data-theme="ivory"] .fabout{text-underline-offset:4px;text-decoration-thickness:1px}
+
+/* the stepper: fine lines and small marks; the stage in the serif, its state as a label */
+:root[data-theme="ivory"] .steps .c{width:22px;height:22px;border-width:1px}
+:root[data-theme="ivory"] .steps .c svg{width:11px;height:11px}
+:root[data-theme="ivory"] .now .c{border-width:1px;box-shadow:0 0 0 4px var(--card)}
+:root[data-theme="ivory"] .now .c::after{width:8px;height:8px}
+:root[data-theme="ivory"] .now .c::before{inset:-6px}
+:root[data-theme="ivory"] .ln{top:10.5px;height:1px}
+:root[data-theme="ivory"] .steps .t{margin-top:12px;font:400 16px/22px var(--display);letter-spacing:-.005em}
+:root[data-theme="ivory"] .steps .s{margin-top:3px;font:500 10px/14px var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+:root[data-theme="ivory"] .steps .now .s{color:var(--green)}
+:root[data-theme="ivory"] .steps-in{height:84px}
+
+/* the request and its panel: one sheet, the panel its right-hand column, framed like a certificate */
+:root[data-theme="ivory"] .decision{padding:0;column-gap:0;border-radius:12px;grid-template-columns:minmax(0,1fr) minmax(420px,38%)}
+:root[data-theme="ivory"] .dec-r{background:var(--sheet);border-radius:0 11px 11px 0;border-left:1px solid color-mix(in srgb,var(--seed) 14%,var(--line));box-shadow:none;padding:38px 46px 30px}
+:root[data-theme="ivory"] .dec-r::before{content:"";position:absolute;inset:12px;border:1px solid color-mix(in srgb,var(--seed) 20%,var(--line));border-radius:2px;pointer-events:none}
+:root[data-theme="ivory"] .pv-b{padding:38px 46px 30px}
+:root[data-theme="ivory"] .dec-r h3,:root[data-theme="ivory"] .vt{font-size:27px;line-height:34px;letter-spacing:-.012em}
+:root[data-theme="ivory"] .rows{margin-top:18px}
+:root[data-theme="ivory"] .row{gap:0;align-items:baseline;line-height:27px}
+:root[data-theme="ivory"] .row dt{display:flex;align-items:baseline;flex:1;min-width:0;white-space:nowrap}
+:root[data-theme="ivory"] .row dt::after{content:"";flex:1;min-width:18px;margin:0 12px;border-bottom:1px dotted rgb(var(--cream-rgb) / .3);transform:translateY(-5px)}
+:root[data-theme="ivory"] .rule{margin:12px 0 0;background:rgb(var(--cream-rgb) / .14)}
+:root[data-theme="ivory"] .total{flex-direction:column;align-items:flex-start;justify-content:center;height:auto;gap:4px;padding:16px 0 12px}
+:root[data-theme="ivory"] .total>span{font:500 11px/16px var(--label);letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--cream-rgb) / .62)}
+:root[data-theme="ivory"] .total strong{--lh:56px;font-size:50px;line-height:56px;letter-spacing:-.02em}
+:root[data-theme="ivory"] .btn{height:48px;border-radius:4px;font-size:15px;letter-spacing:.005em}
+:root[data-theme="ivory"] .btn.p{margin-top:18px}
+:root[data-theme="ivory"] .btn.s{height:46px;margin-top:10px}
+:root[data-theme="ivory"] .fine,:root[data-theme="ivory"] .vf{margin-top:14px;font-size:12.5px}
+@media (min-width:1101px){
+  :root[data-theme="ivory"] .dec-l{padding:40px 52px 34px 36px;column-gap:24px}
+  :root[data-theme="ivory"] .decision h2{font-size:52px;line-height:58px;letter-spacing:-.02em}
+  :root[data-theme="ivory"] .lead{max-width:34em;font-size:21px;line-height:30px}
+}
+/* what the Scope holds: a two-column spec sheet with rules, the marks drawn, not filled */
+:root[data-theme="ivory"] .incl{row-gap:0;column-gap:36px;margin-top:20px}
+:root[data-theme="ivory"] .incl li{padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:15px}
+:root[data-theme="ivory"] .ck{width:20px;height:20px;margin-right:14px;background:transparent;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--green) 40%,transparent)}
+:root[data-theme="ivory"] .dec-l hr{display:none}
+:root[data-theme="ivory"] .acts{padding-top:26px;gap:10px 30px}
+
+/* the page's measure: wider margins, more air between sheets */
+@media (min-width:1101px){
+  :root[data-theme="ivory"] .top{padding:0 24px 0 40px}
+  :root[data-theme="ivory"] .hero-in,:root[data-theme="ivory"] .hero.s .hero-in{padding:48px 58px 44px}
+  :root[data-theme="ivory"] h1{font-size:60px;line-height:64px;letter-spacing:-.022em}
+  :root[data-theme="ivory"] .for{margin-top:4px;font-size:24px;line-height:30px;color:var(--ink2)}
+  :root[data-theme="ivory"] .steps,:root[data-theme="ivory"] .decision,:root[data-theme="ivory"] .trio,:root[data-theme="ivory"] .also,:root[data-theme="ivory"] .rec,:root[data-theme="ivory"] .sec,:root[data-theme="ivory"] .msx{margin-left:32px;margin-right:32px}
+  :root[data-theme="ivory"] .steps{margin-top:4px;margin-bottom:18px}
+  :root[data-theme="ivory"] .also,:root[data-theme="ivory"] .rec{margin-top:16px}
+  :root[data-theme="ivory"] .trio{margin-top:16px;gap:16px}
+}
+:root[data-theme="ivory"] .also{padding:12px 14px 12px 26px;border-radius:10px}
+:root[data-theme="ivory"] .rec-i{font-size:21px;line-height:30px}
+:root[data-theme="ivory"] .rec .rec-r{font:400 14px/24px var(--sans)}
+
+/* the cards: titles alone (no icons), figures ruled */
+:root[data-theme="ivory"] .bx{padding:24px 28px 22px}
+:root[data-theme="ivory"] .bx-h>svg{display:none}
+:root[data-theme="ivory"] .bx-h h4{font-size:23px;line-height:30px;letter-spacing:-.01em}
+:root[data-theme="ivory"] .lk2{font-size:13.5px}
+:root[data-theme="ivory"] .bx-b{margin-top:14px}
+
+/* home */
+:root[data-theme="ivory"] .sec-h h2{font-size:32px;line-height:38px;letter-spacing:-.015em}
+:root[data-theme="ivory"] .nrow{padding:24px 30px 24px 24px}
+:root[data-theme="ivory"] .nrow .nn{font-size:28px;line-height:34px;letter-spacing:-.012em}
+:root[data-theme="ivory"] .pcard{padding:24px 26px 20px;border-radius:10px}
+:root[data-theme="ivory"] .pcard h3{font-size:26px;line-height:32px;letter-spacing:-.012em}
+:root[data-theme="ivory"] .ph{gap:4px}
+:root[data-theme="ivory"] .ph i{height:2px;border-radius:1px}
+
+@media (max-width:1100px){
+  :root[data-theme="ivory"] .decision{grid-template-columns:minmax(0,1fr)}
+  :root[data-theme="ivory"] .dec-r{margin-top:0;border-radius:0 0 11px 11px;border-left:0;border-top:1px solid color-mix(in srgb,var(--seed) 14%,var(--line))}
+}
+@media (max-width:760px){
+  :root[data-theme="ivory"] .dec-r,:root[data-theme="ivory"] .pv-b{padding:30px 26px 24px}
+  :root[data-theme="ivory"] .dec-r::before{inset:8px}
+  :root[data-theme="ivory"] .total strong{--lh:48px;font-size:42px;line-height:48px}
+  :root[data-theme="ivory"] .incl{column-gap:0}
+  :root[data-theme="ivory"] .steps .t{font-size:13px;line-height:17px;margin-top:9px}
+  :root[data-theme="ivory"] .steps .s{font-size:9px;letter-spacing:.06em}
+  :root[data-theme="ivory"] .rec-i{font-size:19px}
+}
+
+/* ---- the palettes: curated paper, ink and accent. Each sets the seed (accents, tints and frames are mixed from it) and the
+   values a seed cannot give: the paper, the ink, the sheets, the button. ---- */
+:root[data-theme="ivory"][data-palette="forest"]{
+  --seed:#2c5340;
+  --page:#f6f5f1; --top:#fbfaf8; --hero:#f6f5f1; --card:#fdfcfa; --card2:#fdfcfa; --sheet:#eef1ec; --band:#f2f4ef;
+  --line:#e2e0d9; --line-soft:#eae8e2; --rule-grey:#d3d1c9;
+  --ink:#17201b; --ink2:#333c36; --lead:#556058; --muted:#5d665f; --muted2:#687069; --kicker:#17201b;
+  --green:#1f3b2d; --green-mid:#7d9486; --check-bg:#e3eae3; --dot:#6f8f7c; --avatar-soft:#e3eae3;
+  --panel-a:#1f3b2d; --panel-b:#152a20; --cream:#1f3b2d; --cream-hover:#2a4d3b;
+  --cream-rgb:23 32 27; --panel-title:#17201b; --panel-num:#17201b; --panel-code:#17201b;
+  --peach:#f5e8d4; --peach-ink:#7c5216; --dr:#7c5216; --alert:#b42318; --panel-err:#b42318;
+  --hv:rgb(30 40 34 / .05); --shade:30 40 34; --shade-soft:30 40 34; --shade-card:30 40 34;
+}
+:root[data-theme="ivory"][data-palette="terracotta"]{
+  --seed:#a5482b;
+  --page:#f8efe9; --top:#fcf6f2; --hero:#f8efe9; --card:#fdf9f6; --card2:#fdf9f6; --sheet:#f5e7df; --band:#f8ece5;
+  --line:#ead9cf; --line-soft:#f0e3db; --rule-grey:#ddc6b8;
+  --ink:#3a1d14; --ink2:#57362b; --lead:#71534a; --muted:#765a50; --muted2:#7d6056; --kicker:#3a1d14;
+  --green:#a3442a; --green-mid:#d29a83; --check-bg:#f2e2d9; --dot:#c97b5f; --avatar-soft:#f2e2d9;
+  --panel-a:#a3442a; --panel-b:#8a3820; --cream:#a3442a; --cream-hover:#8f3a22;
+  --cream-rgb:58 29 20; --panel-title:#3a1d14; --panel-num:#3a1d14; --panel-code:#3a1d14;
+  --peach:#f6e2cc; --peach-ink:#8a4a14; --dr:#8a4a14; --alert:#b5301c; --panel-err:#b5301c;
+  --hv:rgb(80 40 25 / .05); --shade:80 40 25; --shade-soft:80 40 25; --shade-card:80 40 25;
+}
+:root[data-theme="ivory"][data-palette="navy"]{
+  --seed:#1f3b6e;
+  --page:#f5f7fa; --top:#fbfcfd; --hero:#f5f7fa; --card:#ffffff; --card2:#ffffff; --sheet:#edf2f8; --band:#f1f5fa;
+  --line:#dde3ec; --line-soft:#e7ecf2; --rule-grey:#ccd4df;
+  --ink:#121c33; --ink2:#2f3b54; --lead:#4f5b73; --muted:#56627a; --muted2:#636e86; --kicker:#121c33;
+  --green:#1c376a; --green-mid:#8a9dbf; --check-bg:#e4ebf5; --dot:#6d86b3; --avatar-soft:#e4ebf5;
+  --panel-a:#1c376a; --panel-b:#142a52; --cream:#1c376a; --cream-hover:#26467f;
+  --cream-rgb:18 28 51; --panel-title:#121c33; --panel-num:#121c33; --panel-code:#121c33;
+  --peach:#f6ead6; --peach-ink:#7a5418; --dr:#7a5418; --alert:#b42318; --panel-err:#b42318;
+  --hv:rgb(20 32 60 / .05); --shade:20 32 60; --shade-soft:20 32 60; --shade-card:20 32 60;
+}
+:root[data-theme="ivory"][data-palette="olive"]{
+  --seed:#55552f;
+  --page:#f6f3ec; --top:#fbf9f4; --hero:#f6f3ec; --card:#fdfbf7; --card2:#fdfbf7; --sheet:#efede3; --band:#f3f1e8;
+  --line:#e3ddd0; --line-soft:#ebe6db; --rule-grey:#d5cebf;
+  --ink:#1d1c15; --ink2:#3a392f; --lead:#5a594c; --muted:#625f52; --muted2:#6c695b; --kicker:#1d1c15;
+  --green:#47472a; --green-mid:#9a9a78; --check-bg:#e9e8da; --dot:#8a8a5e; --avatar-soft:#e9e8da;
+  --panel-a:#4a4a2b; --panel-b:#393921; --cream:#4a4a2b; --cream-hover:#5a5a35;
+  --cream-rgb:29 28 21; --panel-title:#1d1c15; --panel-num:#1d1c15; --panel-code:#1d1c15;
+  --peach:#f6e5cf; --peach-ink:#8a4f1a; --dr:#8a4f1a; --alert:#b23a1e; --panel-err:#b23a1e;
+  --hv:rgb(40 38 24 / .05); --shade:40 38 24; --shade-soft:40 38 24; --shade-card:40 38 24;
+}
+:root[data-theme="ivory"][data-palette="bordeaux"]{
+  --seed:#6e2337;
+  --page:#f8f4f2; --top:#fcfaf9; --hero:#f8f4f2; --card:#fefcfb; --card2:#fefcfb; --sheet:#f4eaea; --band:#f7efee;
+  --line:#e8dddb; --line-soft:#efe6e4; --rule-grey:#dacbc8;
+  --ink:#23151a; --ink2:#45333a; --lead:#66545a; --muted:#6c5a60; --muted2:#74626a; --kicker:#23151a;
+  --green:#6a2134; --green-mid:#b88893; --check-bg:#f1e3e5; --dot:#a8606f; --avatar-soft:#f1e3e5;
+  --panel-a:#6a2134; --panel-b:#531a29; --cream:#6a2134; --cream-hover:#7d2a3f;
+  --cream-rgb:35 21 26; --panel-title:#23151a; --panel-num:#23151a; --panel-code:#23151a;
+  --peach:#f5e7d3; --peach-ink:#7a5016; --dr:#7a5016; --alert:#b42318; --panel-err:#b42318;
+  --hv:rgb(50 25 32 / .05); --shade:50 25 32; --shade-soft:50 25 32; --shade-card:50 25 32;
+}
+:root[data-theme="ivory"][data-palette="graphite"]{
+  --seed:#3a3d41;
+  --page:#f5f5f3; --top:#fbfbfa; --hero:#f5f5f3; --card:#ffffff; --card2:#ffffff; --sheet:#efefed; --band:#f2f2f0;
+  --line:#e1e1de; --line-soft:#eaeae7; --rule-grey:#d2d2ce;
+  --ink:#151617; --ink2:#343638; --lead:#55575a; --muted:#5c5e61; --muted2:#67696c; --kicker:#151617;
+  --green:#232528; --green-mid:#9a9c9f; --check-bg:#e9e9e6; --dot:#7d8084; --avatar-soft:#e9e9e6;
+  --panel-a:#1f2124; --panel-b:#141517; --cream:#1f2124; --cream-hover:#34373b;
+  --cream-rgb:21 22 23; --panel-title:#151617; --panel-num:#151617; --panel-code:#151617;
+  --peach:#f4e9d6; --peach-ink:#7a5418; --dr:#7a5418; --alert:#b42318; --panel-err:#b42318;
+  --hv:rgb(20 20 22 / .05); --shade:20 20 22; --shade-soft:20 20 22; --shade-card:20 20 22;
+}

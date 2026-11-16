@@ -1,0 +1,20 @@
+<aside class="drawer" id="drawer-member" role="dialog" aria-modal="true" aria-labelledby="dtm-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dtm-title">Add to your team</h2>
+      <p id="tm-sub">Once they are here, any project can add them.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="tm-form" novalidate autocomplete="off">
+      <div class="cf-prev empty st" aria-hidden="true"><span class="pj-av" id="tm-av">?</span><div><b id="tm-pn">Teammate</b><small id="tm-ps">Appears here as you type</small></div></div>
+      <div class="fld st" id="f-tm-name"><label for="tm-name">Name <span class="opt">Required</span></label><input id="tm-name" type="text" placeholder="Lan Anh" aria-describedby="e-tm-name" maxlength="60"><span class="err" id="e-tm-name"></span></div>
+      <div class="fld st" id="f-tm-email"><label for="tm-email">Email <span class="opt">Required</span></label><input id="tm-email" type="email" inputmode="email" placeholder="name@company.com" aria-describedby="e-tm-email tm-email-d" maxlength="90"><span class="hint" id="tm-email-d">Projects and shared work know this person by their email.</span><span class="err" id="e-tm-email"></span></div>
+      <div class="fld st"><label id="tm-role-l">Starting role</label>
+        <div class="seg" id="tm-role" role="group" aria-labelledby="tm-role-l"><button type="button" data-f="Editor" aria-pressed="true">Editor</button><button type="button" data-f="Viewer" aria-pressed="false">Viewer</button></div>
+        <span class="hint" id="tm-role-d">Editors draft and respond. Only the Owner issues Scope.</span></div>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to save</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="tm-form" class="btn-primary btn-sm" id="tm-go">Add to team</button></div></footer>
+</aside>

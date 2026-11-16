@@ -1,0 +1,27 @@
+<aside class="drawer" id="drawer-photo" role="dialog" aria-modal="true" aria-labelledby="dph-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dph-title">Profile photo</h2>
+      <p>Shown next to your name for clients and teammates.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close profile photo"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <div class="pfp">
+      <div class="pfp-drop st" id="pfp-drop" role="button" tabindex="0" aria-label="Choose a photo from your device"><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-image"/></svg></span><b>Drop a photo here</b><small>or <span class="lk">browse your files</span></small><small>JPG, PNG or WebP, up to 5 MB</small></div>
+      <p class="pfp-err" id="pfp-err" role="alert" hidden></p>
+      <div class="pfp-cur st" id="pfp-cur" hidden>
+        <span class="pfp-circle" id="pfp-circle" aria-hidden="true"></span>
+        <div class="pfp-cur-b"><button type="button" class="btn-ghost btn-sm" id="pfp-again">Choose another photo</button><button type="button" class="pf-link" id="pfp-rm">Remove photo</button></div>
+      </div>
+      <div class="pfp-edit" id="pfp-edit" hidden>
+        <div class="pfp-stage" id="pfp-stage" tabindex="0" role="group" aria-label="Photo position. Drag to move. Arrow keys move, plus and minus zoom."><img id="pfp-img" alt=""><span class="pfp-mask" id="pfp-mask"></span></div>
+        <div class="pfp-zoom"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg><input type="range" id="pfp-z" min="100" max="300" value="100" step="1" aria-label="Zoom"><svg class="i lg" aria-hidden="true"><use href="#i-image"/></svg></div>
+        <div class="pfp-edit-b"><span class="pfp-note" id="pfp-note">Drag to reposition. Scroll or use the slider to zoom.</span><button type="button" class="btn-ghost btn-sm" id="pfp-again2">Choose another</button></div>
+      </div>
+      <div class="pfp-sec st"><div class="pfp-lab"><b id="pfp-tone-l">Initials color</b><small>Used when there is no photo, and in project teams.</small></div><div class="pfp-tones" id="pfp-tones" role="radiogroup" aria-labelledby="pfp-tone-l"></div></div>
+    </div>
+  </div>
+  <input type="file" id="pfp-file" accept="image/jpeg,image/png,image/webp" hidden>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to apply</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="button" class="btn-primary btn-sm" id="pfp-go">Done</button></div></footer>
+</aside>

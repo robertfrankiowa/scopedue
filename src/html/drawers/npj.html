@@ -1,0 +1,33 @@
+<aside class="drawer" id="drawer-npj" role="dialog" aria-modal="true" aria-labelledby="npj-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="npj-title">New project</h2>
+      <p>Start with a name and what it is. Everything else can wait.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close new project"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="npj" novalidate autocomplete="off">
+      <div class="cf-prev empty st" id="npj-prev" aria-hidden="true"><span class="pj-av" id="npj-av">?</span><div><b id="npj-pn">Project name</b><small id="npj-ps">Appears here as you type</small></div></div>
+      <div class="fld st" id="f-npj-n"><label for="npj-n">Name <span class="opt">Required</span></label><input id="npj-n" type="text" maxlength="80" placeholder="For example, Website redesign" aria-describedby="e-npj-n"><span class="err" id="e-npj-n"></span></div>
+      <div class="fld st"><span class="npj-lb" id="npj-kl">Kind</span>
+        <div class="npj-kinds" id="npj-kinds" role="radiogroup" aria-labelledby="npj-kl">
+          <button type="button" class="npj-kind" role="radio" aria-checked="false" tabindex="-1" data-k="client"><span class="npj-ic" aria-hidden="true"><svg class="i"><use href="#i-share"/></svg></span><b>Client</b><small>Work for a client. Scope and changes kept in check; delivery and payment protected.</small></button>
+          <button type="button" class="npj-kind" role="radio" aria-checked="false" tabindex="-1" data-k="private"><span class="npj-ic" aria-hidden="true"><svg class="i"><use href="#i-lock"/></svg></span><b>Product</b><small>Your own product, to sell. Validate it before you build it.</small></button>
+          <button type="button" class="npj-kind" role="radio" aria-checked="false" tabindex="-1" data-k="internal"><span class="npj-ic" aria-hidden="true"><svg class="i"><use href="#i-folder"/></svg></span><b>Internal</b><small>In-house work for you, your company or a team. No validation step.</small></button>
+        </div>
+      </div>
+      <div class="inv-gate st" id="npj-gate" hidden></div>
+      <div class="fld st cf-lang" id="f-npj-l"><label id="npj-ll">Project language</label><div class="seg" id="npj-l" role="group" aria-labelledby="npj-ll" translate="no"><button type="button" data-f="en" aria-pressed="true" lang="en">English</button><button type="button" data-f="vi" aria-pressed="false" lang="vi">Tiếng Việt</button></div><span class="hint">AI research writes its answers for this project in it, and the Viewer portal and its emails speak it. It starts on the language ScopeDue is in.</span></div>
+      <div class="fld st" id="f-npj-c"><label for="npj-c">Client <span class="opt">Required</span></label><select id="npj-c" aria-describedby="e-npj-c"></select><span class="err" id="e-npj-c"></span></div>
+      <div class="fld st" id="f-npj-cur"><label for="npj-cur">Currency</label><select id="npj-cur" translate="no" aria-describedby="h-npj-cur"></select><span class="hint" id="h-npj-cur">The contract value, quotes and the change rate are in it. You can change it until you issue the first Scope.</span></div>
+      <div class="fld st" id="f-npj-pt"><span class="npj-lb" id="npj-ptl">Portal theme</span><div id="npj-pt"></div><span class="hint">Change it any time on the project page. Clients can also pick their own look in the portal.</span></div>
+      <div class="fld st" id="f-npj-t"><label for="npj-t">Thesis <span class="opt">Optional</span></label><textarea id="npj-t" rows="3" maxlength="160" placeholder="Why does this project exist, in one sentence?"></textarea><span class="hint">The Scope Gate asks whether each item serves it.</span></div>
+      <div class="fld st" id="f-npj-d"><label for="npj-d">Target date <span class="opt">Optional</span></label><input id="npj-d" type="date"></div>
+      <div class="fld st" id="f-npj-x"><label for="npj-x">First next step <span class="opt">Optional</span></label><input id="npj-x" type="text" maxlength="200" placeholder="The one thing that moves this forward"></div>
+      <p class="npj-note st" id="npj-note"></p>
+      <p class="npj-note npj-qt st" id="npj-qt" role="status" hidden></p>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to create</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="npj" class="btn-primary btn-sm" id="npj-go">Create project</button></div></footer>
+</aside>

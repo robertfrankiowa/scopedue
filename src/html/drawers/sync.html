@@ -1,0 +1,50 @@
+<aside class="drawer" id="drawer-sync" role="dialog" aria-modal="true" aria-labelledby="sy-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="sy-title">Sign in</h2>
+      <p id="sy-dsub">Clients open a private link on scopedue.com and approve there. Nothing else leaves this device.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close sign in"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="sy-form" novalidate autocomplete="off">
+      <div id="sy-s1">
+        <div class="fld st" id="f-sy-url" hidden><label for="sy-url">Server address <span class="opt">Required</span></label><input id="sy-url" type="url" inputmode="url" placeholder="https://example.com/api/api.php" aria-describedby="e-sy-url" maxlength="200" spellcheck="false"><span class="err" id="e-sy-url"></span><span class="hint">Where you uploaded api.php. A folder address works too.</span></div>
+        <div class="st sy-way">
+          <button type="button" class="btn-primary sy-gbtn" id="sy-google" aria-describedby="sy-gnote">Continue with Google</button>
+          <p class="sy-gnote" id="sy-gnote"></p>
+        </div>
+        <details class="sy-email-option st" id="sy-email-option">
+          <summary id="sy-email-toggle">Continue with email<span class="sy-email-chevron" aria-hidden="true"></span></summary>
+          <div class="sy-email-panel" id="sy-email-panel">
+        <div class="fld-row st sy-account-row">
+          <div class="fld" id="f-sy-name"><label for="sy-name">Your name</label><input id="sy-name" autocomplete="name" placeholder="Full name" aria-describedby="e-sy-name" maxlength="80"><span class="err" id="e-sy-name"></span></div>
+          <div class="fld" id="f-sy-email"><label for="sy-email">Your email</label><input id="sy-email" type="email" inputmode="email" autocomplete="email" placeholder="name@company.com" aria-describedby="e-sy-email" maxlength="120"><span class="err" id="e-sy-email"></span></div>
+        </div>
+        <div class="fld-row st sy-account-row">
+          <div class="fld" id="f-sy-password"><label for="sy-password">Password</label><input id="sy-password" type="password" autocomplete="current-password" minlength="8" maxlength="64" aria-describedby="e-sy-password sy-password-hint" required><span class="err" id="e-sy-password"></span></div>
+          <div class="fld" id="f-sy-confirm"><label for="sy-confirm">Confirm password</label><input id="sy-confirm" type="password" autocomplete="off" minlength="8" maxlength="64" aria-describedby="e-sy-confirm" required><span class="err" id="e-sy-confirm"></span></div>
+        </div>
+        <p class="pd-note st" id="sy-password-hint" hidden>Use 8–64 characters for your password.</p>
+        <div class="st sy-way"><button type="submit" class="btn-ghost sy-gbtn" id="sy-send">Sign in</button></div>
+        <p class="pd-note st" id="sy-signup-note" hidden>We email you a 6-digit code to verify your email and create your account. Temporary email addresses are not accepted.</p>
+        <p class="pd-note st sy-switch"><span id="sy-switch-note">Don't have an account?</span> <button type="button" class="pf-link" id="sy-mode">Sign up</button></p>
+          </div>
+        </details>
+        <details class="sy-setup st" hidden>
+          <summary>Setting up Google sign-in on your server?</summary>
+          <div class="sy-setup-b">
+            <p>In Google Cloud, create an OAuth client of type <b>Web application</b> and add this authorised redirect URI:</p>
+            <div class="sy-uri"><code id="sy-redirect"></code><button type="button" class="btn-ghost btn-sm" id="sy-redirect-copy">Copy</button></div>
+            <p>Then put its client ID in your server’s <code>config.php</code>: <code>'google_client_id' =&gt; '…apps.googleusercontent.com'</code>. No secret is needed.</p>
+          </div>
+        </details>
+      </div>
+      <div id="sy-s2" hidden>
+        <div class="fld sy-code st" id="f-sy-code"><label for="sy-code">6-digit code</label><input id="sy-code" inputmode="numeric" autocomplete="one-time-code" placeholder="000000" aria-describedby="e-sy-code" maxlength="8"><span class="err" id="e-sy-code"></span></div>
+      </div>
+      <p class="sy-err" id="sy-gerr" role="alert" hidden></p>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint" id="sy-hint"></span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="sy-form" class="btn-primary btn-sm" id="sy-go" hidden>Sign in</button></div></footer>
+</aside>

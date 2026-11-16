@@ -1,0 +1,97 @@
+/* ───────── v60: milestones, reviews, what you provide, the record ───────── */
+.ms-steps li.bad .c{border-color:var(--alert)}
+.ms-steps li.bad.now .c::after{background:var(--alert)}
+.ms-steps li.bad .s{color:var(--alert)}
+.incl.ms-ok li{align-items:flex-start}
+.incl.ms-ok li>span:last-child{display:flex;flex-direction:column;gap:2px}
+.incl.ms-ok b{font-weight:500;color:var(--ink)}
+.incl.ms-ok small{font-size:12.5px;line-height:17px;color:var(--muted)}
+.ms-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px}
+.ms-two .btn.s{width:100%}
+.msx{margin:11px 23px 0}
+.msx .info{margin:0 0 11px}
+.msx-g{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px;align-items:start}
+.msx-g.one{grid-template-columns:minmax(0,1fr)}
+.msx-c{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ms-l{list-style:none;margin:8px 0 0;padding:0}
+/* CONTRACT 122: the words keep at least 180px; a chip and a button that leave less go under them (a warranty row in the narrow
+   column, Vietnamese "Tôi cho rằng việc này thuộc bảo hành", had squeezed them to one word a line) */
+.ms-r{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:11px 0;border-top:1px solid var(--line-soft)}
+.ms-r:first-child{border-top:0}
+.ms-t{flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.ms-t b{font-weight:500;font-size:14px;color:var(--ink)}
+.ms-t span{font-size:12.5px;line-height:17px;color:var(--muted)}
+.ms-t .ms-m{display:flex;flex-wrap:wrap;gap:0 7px}
+.ms-m i{font-style:normal;color:var(--muted2)}
+.ms-gh{padding:14px 0 2px;font-size:12.5px;line-height:17px;color:var(--muted2)}
+.ms-gh:first-child{padding-top:2px}
+.ms-gh+.ms-r{border-top:0}
+.wa-f{padding-top:12px}
+.ms-t .ms-n{color:var(--ink2)}
+.ms-r .ghostb{height:30px;padding:0 11px;font-size:12.5px}
+.ms-terms{display:grid;grid-template-columns:130px minmax(0,1fr);gap:9px 14px;margin:6px 0 0}
+.ms-terms dt{font-size:13px;font-weight:500;color:var(--ink)}
+.ms-terms dd{margin:0;font-size:13px;line-height:19px;color:var(--ink2)}
+.sc-l .tx small{display:block;font-size:12.5px;line-height:17px;color:var(--muted);margin-top:2px}
+.sc-l .tx small.okl{color:var(--ink2)}
+.en-x{margin:6px 0 0;font-size:12.5px;color:var(--muted)}
+.ms-pick{border:0;padding:0;margin:18px 0 0}
+.ms-pick>span{display:block;font-size:13px;color:var(--ink2);margin-bottom:8px}
+.ms-opt{display:flex;gap:12px;align-items:flex-start;padding:11px 13px;border-radius:12px;box-shadow:0 0 0 1px var(--line) inset;margin-top:8px;cursor:pointer}
+.ms-opt:has(input:checked){box-shadow:0 0 0 1.5px var(--green) inset;background:var(--check-bg)}
+.ms-opt input{display:inline-block;flex:none;width:auto;height:auto;padding:0;margin:3px 0 0;border-radius:0;background:none;box-shadow:none;accent-color:var(--green)}
+.ms-opt input:focus{box-shadow:none}
+.ms-opt input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.ms-opt b{display:block;font-weight:500;font-size:13.5px;color:var(--ink)}
+.ms-opt small{display:block;font-size:12.5px;color:var(--muted);line-height:17px}
+.solid.danger{background:var(--alert)}
+@media (max-width:1100px){.msx-g{grid-template-columns:minmax(0,1fr)}.msx-c{display:contents}.ms-bx{order:1}.ci-bx{order:2}.ho-bx{order:3}.wa-bx{order:4}.pay-bx{order:5}}
+@media (max-width:760px){.msx{margin-left:12px;margin-right:12px}.ms-terms{grid-template-columns:minmax(0,1fr)}.ms-r{flex-wrap:wrap}.ms-steps .t{font-size:12.5px}}
+@media print{
+  #receipt .rq{font:400 11pt/1.45 var(--sans);color:#111}
+  #receipt .rq-k{font-size:9pt;letter-spacing:.1em;text-transform:uppercase;color:#555;margin:0 0 6pt}
+  #receipt .rq h1{font:500 24pt/1.15 var(--serif);margin:0 0 4pt}
+  #receipt .rq-h p{margin:0;color:#333}
+  #receipt .rq-m{font-size:9pt;color:#555!important;margin-top:4pt!important}
+  #receipt .rq section{padding:10pt 0;border-top:.5pt solid #ccc;break-inside:avoid-page}
+  #receipt .rq h2{font:500 15pt/1.2 var(--serif);margin:0 0 6pt}
+  #receipt .rq h3{font-size:11pt;margin:8pt 0 4pt}
+  #receipt .rq table{width:100%;border-collapse:collapse;margin:4pt 0}
+  #receipt .rq th,#receipt .rq td{width:auto;text-align:left;padding:4pt 6pt 4pt 0;border-top:.5pt solid #ddd;font-size:10pt;vertical-align:top}
+  #receipt .rq td small,#receipt .rq li small{display:block;color:#555;font-size:9pt}
+  #receipt .rq ul,#receipt .rq ol{margin:0;padding-left:14pt}
+  #receipt .rq dl{display:grid;grid-template-columns:110pt 1fr;gap:3pt 10pt;margin:0}
+  #receipt .rq dt{font-weight:600;font-size:10pt}
+  #receipt .rq dd{margin:0;font-size:10pt}
+  #receipt .rq code{font-family:var(--mono);font-size:9pt}
+  #receipt .rq-n{padding:6pt 8pt;border:.5pt solid #c90;border-radius:3pt}
+  #receipt .rq-f{font-size:9pt;color:#555;padding-top:10pt}
+}
+/* v96 (CONTRACT 42): a project the studio removed, with its record */
+.nempty.rmv{padding:20px 22px;gap:16px}
+.nempty.rmv b{font-size:19px;line-height:25px}
+.nempty.rmv .ghostb{margin-left:auto;flex:none}
+@media (max-width:640px){.nempty.rmv{flex-wrap:wrap}.nempty.rmv .ghostb{margin-left:0}}
+/* v103 (61): the Review Capsule on the Review card */
+.cap{margin:18px 0 6px;padding:14px 16px;border-radius:14px;box-shadow:0 0 0 1px var(--line) inset;background:var(--top)}
+.cap-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.cap-h h3{margin:0;font-size:15px;font-weight:600;color:var(--ink)}
+.cap-b{font-size:12px;color:var(--muted)}
+.cap-n{margin-left:auto;font-size:12.5px;color:var(--muted2)}
+.cap-l{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.cap-t{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:20px;color:var(--ink2)}
+.cap-t>span:nth-child(2){flex:1}
+.cap-i{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--hv);font-size:12px;font-weight:600;color:var(--muted)}
+.cap-tx{margin:6px 0 0 32px;font-size:13.5px;color:var(--ink2);white-space:pre-wrap;overflow-wrap:anywhere}
+.cap .en-pics,.cap .pic-note{margin-left:32px}
+.cap-a{display:flex;gap:8px;margin:8px 0 0 32px}
+.cap-a .sbtn{padding:6px 12px;font-size:13px}
+.cap-a .sbtn[aria-pressed="true"]{box-shadow:0 0 0 1.5px var(--check-ink) inset;color:var(--check-ink)}
+/* v108 (CONTRACT 65): Disputed */
+.ds-card{margin:0 0 14px;padding:14px 16px;border:1px solid color-mix(in srgb,var(--alert) 45%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--alert) 6%,var(--page))}
+.ds-h{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink2);text-wrap:pretty}
+.ds-bug{margin:10px 0 0;font-size:13px;color:var(--ink2)}
+.ds-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:12px}
+.ds-s{display:grid;gap:4px;align-content:start;padding:10px 12px;border-radius:10px;border:1px solid var(--line);font-size:13px}
+.ds-s span{font-weight:600}.ds-s small{color:var(--muted)}.ds-s p{margin:2px 0 0;color:var(--ink2);overflow-wrap:anywhere}.ds-s .mute{font-weight:400;color:var(--muted)}
+.en-pos{margin:4px 0 0;font-size:13px;color:var(--ink2)}.en-ref{color:var(--muted)}

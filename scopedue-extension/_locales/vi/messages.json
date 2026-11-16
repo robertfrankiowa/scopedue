@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "ScopeDue – Cổng khách hàng, phạm vi & yêu cầu thay đổi",
+    "description": "Extension name in the Chrome Web Store and chrome://extensions (max 75 characters; short_name stays ScopeDue). CONTRACT 150"
+  },
+  "extDesc": {
+    "message": "Cổng khách hàng, phạm vi và yêu cầu thay đổi cho freelancer. Tab mới cho thấy việc hôm nay, việc sắp đến hạn và khách còn nợ gì.",
+    "description": "Extension description in the Chrome Web Store and chrome://extensions (max 132 characters)"
+  },
+  "actionTitle": {
+    "message": "Lưu vào ScopeDue",
+    "description": "Tooltip of the toolbar button"
+  },
+  "cmdSave": {
+    "message": "Lưu trang này vào ScopeDue",
+    "description": "Keyboard shortcut description (Alt+Shift+S)"
+  }
+}

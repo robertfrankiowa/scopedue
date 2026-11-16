@@ -1,0 +1,80 @@
+<main class="content" id="view-dashboard">
+      <div class="head">
+        <div>
+          <div class="eyebrow" id="dash-today"></div>
+          <h1>Dashboard</h1>
+        </div>
+        <p id="dash-lead">2 deadlines land in the next 48 hours. <a href="#" class="inline">Start with Minh Phát <svg class="i" style="width:14px;height:14px;vertical-align:-2px"><use href="#i-arrow"/></svg></a></p>
+      </div>
+
+      <div class="xa-ban" id="xa-ban" hidden></div>
+      <div class="dv-jn" id="dv-jn" hidden></div>
+      <section class="card td" aria-labelledby="h-today" id="dash-td">
+        <div class="card-h ruled">
+          <div><h2 id="h-today">Today</h2><p id="td-sub">Up to three things that matter most.</p></div>
+          <div class="h-actions"><button type="button" class="link td-wr" id="td-review" data-x6="review">Weekly review<i class="td-dot" aria-label="due" hidden></i></button><button type="button" class="btn-ghost btn-sm" id="td-plan" data-x6="plan">Plan today</button></div>
+        </div>
+        <div id="td-body"></div>
+      </section>
+
+      <section class="card kpis" aria-label="Summary">
+        <a href="#" class="kpi" data-open-drawer="projects"><span class="n">8</span><span><b>Projects in motion</b><small>4 Private · 4 Client</small></span><svg class="i"><use href="#i-chev"/></svg></a>
+        <a href="#" class="kpi" id="kpi-due" data-open-drawer="prio" data-filter="due"><span class="n hot">2</span><span><b id="kpi-due-l">Due within 48 hours</b><small>Minh Phát today · GreenHome tomorrow</small></span><svg class="i"><use href="#i-chev"/></svg></a>
+        <a href="#" class="kpi" id="kpi-wait" data-view="actions"><span class="n">0</span><span><b>Waiting on clients</b><small>Nothing to chase</small></span><svg class="i"><use href="#i-chev"/></svg></a>
+      </section>
+
+      <div class="grid db-grid">
+        <section class="card db-prio" aria-labelledby="h-prio">
+          <div class="card-h ruled">
+            <div><h2 id="h-prio">Priority attention</h2></div>
+            <div class="h-actions"><span class="count" id="prio-count" hidden>5 of 11</span><button type="button" class="link" id="prio-all" data-open-drawer="prio" hidden>View all <svg class="i"><use href="#i-arrow"/></svg></button></div>
+          </div>
+
+          <div id="dash-prio"></div>
+          <button type="button" class="prio-foot" id="prio-more" data-open-drawer="prio" hidden><span id="prio-more-t"></span><svg class="i"><use href="#i-arrow"/></svg></button>
+        </section>
+
+        <section class="card db-cont" aria-labelledby="h-cont">
+          <div class="card-h ruled">
+            <div><h2 id="h-cont">Continue your work</h2></div>
+            <div class="h-actions"><button type="button" class="link" data-view="projects">All projects <svg class="i"><use href="#i-arrow"/></svg></button></div>
+          </div>
+          <div class="proj-list" id="dash-recent"></div>
+        </section>
+
+        <section class="card db-notes" aria-labelledby="h-notes">
+          <div class="card-h ruled">
+            <div><h2 id="h-notes">Quick notes</h2></div>
+            <div class="h-actions">
+              <span class="count" id="notes-count" hidden>3 of 4</span>
+              <button type="button" class="link" id="notes-all" data-open-drawer="notes"><span id="notes-all-t">View all</span> <svg class="i"><use href="#i-arrow"/></svg></button>
+              <button type="button" class="icon-sm" data-open-drawer="notes" data-focus="composer" aria-label="New note"><svg class="i"><use href="#i-plus"/></svg></button>
+            </div>
+          </div>
+          <div class="notes" id="dash-notes"></div>
+        </section>
+      </div>
+
+      <div class="grid b" hidden>
+        <section class="card cp" aria-labelledby="h-cp">
+          <div class="card-h ruled">
+            <div><h2 id="h-cp">Client protection</h2></div>
+          </div>
+          <div class="cp-body">
+            <div class="cp-ok" id="cp-wait">Nothing waiting on clients</div>
+            <div class="cp-owe" id="cp-owe" hidden><h3 class="cp-oh" id="cp-oh">Waiting on you</h3><ul class="cp-ow-l" id="cp-ow-l" aria-labelledby="cp-oh"></ul><button type="button" class="link cp-ow-more" id="cp-ow-more" data-open-drawer="protect" hidden></button></div>
+            <p class="cp-note">Counted live from your projects: what clients owe you, what you owe them, and milestones past their date.</p>
+          </div>
+          <details>
+            <summary>Breakdown <svg class="i"><use href="#i-chev"/></svg></summary>
+            <dl>
+              <dt>Waiting on clients</dt><dd id="cp-wait-n">0</dd>
+              <dt>Your response needed</dt><dd id="cp-owed-n">0</dd>
+              <dt>Late milestones</dt><dd id="cp-late-n">0</dd>
+            </dl>
+          </details>
+          <div class="cp-foot"><button type="button" class="link" data-open-drawer="protect">Open center <svg class="i"><use href="#i-arrow"/></svg></button></div>
+        </section>
+      </div>
+
+    </main>

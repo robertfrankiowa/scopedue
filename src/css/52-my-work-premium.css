@@ -1,0 +1,69 @@
+/* ---------- v131 (109): My work with a full list in it ----------
+   One column of circles to finish work, quiet repeats, and each project's head says how far your part of it is.
+   Colours come from the theme variables only. */
+
+/* a reading width: a title and its status are not a screen apart */
+#view-mywork.content { max-width: 1040px; }
+
+/* a project's head: your part done, and a hairline under it that fills as you go */
+.mw-gh { position: relative; }
+.mw-gh .wk-gs { align-items: center; }
+.mw-pn { font-size: 12px; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; margin-right: 4px; }
+.mw-pg { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; z-index: 1; pointer-events: none; }
+.mw-pg > i { display: block; height: 100%; border-radius: 0 2px 2px 0; background: var(--ok); transition: width .5s var(--ease-out); }
+
+/* your own rows: the circle, the title, then what else the row holds. Every first line shares one centre line */
+.mw-g .wk-r.ck { grid-template-columns: 20px minmax(0, 1fr) auto; column-gap: 14px; align-items: start; }
+.mw-g .wk-r.ck > .mw-ck { grid-column: 1; grid-row: 1; margin-top: 7px; }
+.mw-g .wk-r.ck > .tx { grid-column: 2; grid-row: 1; margin-top: 7px; }
+.mw-g .wk-r.ck > .wk-sd { grid-column: 3; grid-row: 1; margin-top: 3px; }
+.mw-g .wk-r.ck.mine { grid-template-columns: 20px minmax(0, 1fr) auto auto; }
+.mw-g .wk-r.ck.mine > .wk-as { grid-column: 3; grid-row: 1; margin-top: 4px; }
+.mw-g .wk-r.ck.mine > .wk-sd { grid-column: 4; }
+.mw-g .wk-r.ck + .wk-r::before, .mw-g .wk-r + .wk-r.ck::before { left: calc(var(--gx) + 34px); }
+.mw-g .wk-dn, .mw-g .wk-sf { padding-left: calc(var(--gx) + 34px); }
+
+/* chips and Next up sit on the title's line, so every row is as tall as its title */
+.wk-mt.in { display: inline-flex; flex-wrap: wrap; gap: 4px 6px; margin: 0 0 0 10px; vertical-align: 1px; }
+.mw-nx { display: inline-flex; align-items: center; height: 18px; padding: 0 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font: 600 10.5px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+
+/* the circle: the state at a glance, one click to finish */
+.mw-ck { position: relative; display: grid; place-items: center; width: 20px; height: 20px; padding: 0; border: 0; border-radius: 50%; background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink-3) 70%, transparent); color: transparent; cursor: pointer; transition: box-shadow .15s var(--ease-out), background-color .15s var(--ease-out), color .15s var(--ease-out), transform .15s var(--ease-out); }
+.mw-ck::after { content: ""; position: absolute; inset: -10px; border-radius: 50%; }
+.mw-ck .i { width: 12px; height: 12px; stroke-width: 2.6; }
+.mw-ck.doing { box-shadow: inset 0 0 0 1.5px var(--accent); background: linear-gradient(90deg, var(--accent) 50%, transparent 50%); }
+.mw-ck.review { box-shadow: inset 0 0 0 1.5px var(--accent); background: radial-gradient(circle, var(--accent) 30%, transparent 34%); }
+.mw-ck.stuck { box-shadow: inset 0 0 0 1.5px var(--warn); background: var(--warn-bg); }
+.mw-ck.done { background: var(--ok); box-shadow: none; color: var(--on-crit); }
+.mw-ck:not([disabled]):not(.done):hover { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ok); color: color-mix(in srgb, var(--ok) 75%, transparent); }
+.mw-ck.done:not([disabled]):hover { background: color-mix(in srgb, var(--ok) 72%, var(--surface)); }
+.mw-ck:not([disabled]):active { transform: scale(.9); }
+.mw-ck:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.mw-ck[disabled] { cursor: default; }
+.mw-ck.go { background: var(--ok); box-shadow: none; color: var(--on-crit); animation: bump .3s var(--ease-out); }
+.wk-r.ck:has(.mw-ck.go) .t { color: var(--ink-3); transition: color .15s var(--ease-out); }
+@media (prefers-reduced-motion: reduce) { .mw-ck, .mw-pg > i { transition: none; } .mw-ck.go { animation: none; } }
+
+/* the status beside it: what is moving keeps its colour; To do and Done are said by the circle, so their pill waits for the pointer */
+.mw-g .wk-r.ck .wk-st { min-width: 104px; }
+.mw-g .wk-r.ck .wk-st:is(.todo, .done) { background: transparent; box-shadow: none; color: var(--ink-3); font-weight: 500; opacity: 0; transition: opacity .15s var(--ease-out), box-shadow .15s var(--ease-out); }
+.mw-g .wk-r.ck:hover .wk-st:is(.todo, .done), .mw-g .wk-r.ck .wk-st:is(.todo, .done):focus-within { opacity: 1; box-shadow: inset 0 0 0 1px var(--line); }
+@media (hover: none) { .mw-g .wk-r.ck .wk-st:is(.todo, .done) { opacity: 1; } }
+
+/* a phone: one line per row. To do and Done keep only the status menu's arrow; the row's other tools come out on a second
+   line once the status menu is in use */
+@media (max-width: 700px) {
+  #view-mywork.content { max-width: none; }
+  .mw-g .wk-r.ck { grid-template-columns: 20px minmax(0, 1fr) auto; row-gap: 8px; }
+  .mw-g .wk-r.ck > .tx { grid-column: 2; }
+  .mw-g .wk-r.ck > .wk-sd { grid-column: 3; grid-row: 1; justify-content: flex-end; flex-wrap: nowrap; }
+  .mw-g .wk-r.ck.mine { grid-template-columns: 20px minmax(0, 1fr) auto auto; }
+  .mw-g .wk-r.ck.mine > .wk-as { grid-column: 3; align-self: start; }
+  .mw-g .wk-r.ck.mine > .wk-sd { grid-column: 4; grid-row: 1; }
+  .mw-g .wk-r.ck:not(:has(> .wk-sd:focus-within)) > .wk-sd > :not(.wk-st) { display: none; }
+  .mw-g .wk-r.ck:has(> .wk-sd:focus-within) > .wk-sd { grid-column: 2 / -1; grid-row: 2; margin-top: 0; justify-content: flex-start; flex-wrap: wrap; }
+  .mw-g .wk-r.ck .wk-st { min-width: 0; }
+  .mw-g .wk-r.ck .wk-st:is(.todo, .done) { width: 36px; padding: 0; justify-content: center; opacity: 1; }
+  .mw-g .wk-r.ck .wk-st:is(.todo, .done) .wk-sl { display: none; }
+  .mw-g .wk-r.ck .wk-st:is(.todo, .done) .i { position: static; }
+}

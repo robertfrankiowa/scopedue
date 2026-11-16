@@ -1,0 +1,24 @@
+<aside class="drawer" id="drawer-compose" role="dialog" aria-modal="true" aria-labelledby="dcm-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dcm-title">New message</h2>
+      <p>Reach the ScopeDue team or a teammate.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close new message"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="cm" novalidate autocomplete="off">
+      <div class="st"><div class="seg" id="cm-seg" role="group" aria-label="Message type">
+        <button type="button" data-f="support" aria-pressed="true">Support</button>
+        <button type="button" data-f="feedback" aria-pressed="false">Feedback</button>
+        <button type="button" data-f="team" aria-pressed="false">Team</button>
+      </div></div>
+      <p class="cm-note st" id="cm-hint"></p>
+      <div class="fld cm-sec st" id="f-to" hidden><label for="cm-to">To</label><select id="cm-to"></select></div>
+      <div class="fld cm-sec st" id="f-cmt"><label for="cm-title" id="cm-title-l">Subject <span class="opt">Required</span></label><input id="cm-title" maxlength="90" placeholder="What do you need help with?" aria-describedby="e-cmt"><span class="err" id="e-cmt"></span></div>
+      <div class="fld st" id="f-cmb"><label for="cm-body" id="cm-body-l">Message <span class="opt">Required</span></label><textarea id="cm-body" maxlength="1500" placeholder="Describe what happened and what you expected" aria-describedby="e-cmb"></textarea><span class="err" id="e-cmb"></span></div>
+      <div class="cf-sw cm-sec st" id="cm-diag"><div><b id="dg-l">Include diagnostics</b><small id="dg-d">Adds your browser and ScopeDue version. No project or client data is sent.</small></div><button type="button" class="sw" id="cm-sw" role="switch" aria-checked="true" aria-labelledby="dg-l" aria-describedby="dg-d"></button></div>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to send</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="cm" class="btn-primary btn-sm" id="cm-go">Send message</button></div></footer>
+</aside>

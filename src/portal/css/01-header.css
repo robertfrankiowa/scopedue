@@ -1,0 +1,65 @@
+/* ───────── Header ───────── */
+.top{position:relative;height:60px;background:var(--top);border-bottom:1px solid var(--line-soft);display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 32px;z-index:5}
+.brand{display:flex;align-items:center;min-width:0;border-radius:10px;padding:4px 8px 4px 0}
+.logo{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--seed) center/cover no-repeat;color:#fff;font:500 13px/1 var(--sans);letter-spacing:.02em}
+.brand-txt{display:flex;flex-direction:column;margin-left:12px;min-width:0}
+.brand-txt b{font:600 11.5px/14px var(--label);letter-spacing:calc(.2em * var(--caps-k));color:var(--ink);text-transform:var(--caps);white-space:nowrap}
+.brand-txt small{font:400 11.5px/16px var(--sans);color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-r{display:flex;align-items:center}
+.about{font-size:14px;color:var(--ink2);padding:6px 10px;border-radius:10px}
+.lang-b{font-size:13px;color:var(--ink3,var(--ink2))}
+.lang-b .ls{display:none}
+.about,.nrow .gob{white-space:nowrap}
+.lang-b[hidden]{display:none}
+.bell{position:relative;margin-left:30px;width:34px;height:34px;display:grid;place-items:center;color:var(--ink2);border-radius:50%}
+.bdg{position:absolute;top:1px;right:0;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--alert);color:#fff;font:600 10.5px/17px var(--sans);text-align:center;box-shadow:0 0 0 2px var(--top);transform:scale(1);transition:transform .5s var(--spring)}
+.bdg[data-n="0"]{transform:scale(0)}
+.who{display:flex;align-items:center;margin-left:22px;padding:3px 10px 3px 3px;border-radius:999px}
+.av{display:grid;place-items:center;border-radius:50%;background:var(--seed) center/cover no-repeat;color:#fff;font:500 14px/1 var(--sans);flex:none}
+.who .av{width:36px;height:36px}
+.who-t{display:flex;flex-direction:column;margin-left:10px;line-height:15px}
+.who-t b{font-weight:500;font-size:13px;color:var(--ink)}
+.who-t small{font-size:11.5px;color:var(--muted)}
+.who>svg{margin-left:10px;color:var(--ink2)}
+.about,.bell,.who,.brand{transition:background-color .35s var(--ease),box-shadow .35s var(--ease)}
+.about:hover,.bell:hover,.who:hover,.brand:hover{background:var(--hv)}
+.amenu{position:absolute;right:16px;top:56px;width:292px;background:var(--top);border-radius:14px;box-shadow:0 0 0 1px var(--line),0 24px 48px -20px rgb(var(--shade-soft) / .35);padding:8px;z-index:20;transform-origin:90% 0;animation:pop .35s var(--ease)}
+.am-h{padding:10px 12px 8px;display:flex;flex-direction:column}
+.am-h b{font-weight:550;font-size:14px;color:var(--ink)}
+.am-h span{font-size:12.5px;color:var(--muted)}
+.am-k{font-family:var(--label);margin:8px 12px 4px;font-size:11px;letter-spacing:calc(.08em * var(--caps-k));text-transform:var(--caps);color:var(--muted2)}
+.am-l{list-style:none;margin:0;padding:0}
+.am-i{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:9px 12px;border-radius:10px;font-size:14px;color:var(--ink2)}
+.am-i:hover{background:var(--hv)}
+.am-i small{font-size:12px;color:var(--muted2)}
+.am-i[aria-current="true"]{color:var(--ink);font-weight:500}
+.am-i svg{color:var(--green)}
+.am-s{height:1px;background:var(--line-soft);margin:6px 4px}
+
+/* notifications */
+.notif{position:absolute;right:56px;top:56px;width:380px;max-width:calc(100vw - 24px);background:var(--top);border-radius:16px;box-shadow:0 0 0 1px var(--line),0 28px 56px -22px rgb(var(--shade-soft) / .4);z-index:20;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:80% 0;transition:opacity .25s var(--ease),transform .45s var(--ease),visibility 0s .45s}
+.notif.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .45s var(--ease)}
+.n-h{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 10px}
+.n-h h3{margin:0;font:var(--dw) 22px/1.15 var(--display);letter-spacing:var(--dtrack);color:var(--ink)}
+.n-mark{font-size:12.5px;color:var(--green);padding:5px 9px;border-radius:8px}
+.n-mark:hover:not(:disabled){background:var(--hv)}
+.n-mark:disabled{color:var(--muted2)}
+.n-list{list-style:none;margin:0;padding:0 8px 6px;max-height:min(60vh,420px);overflow:auto}
+.n-i{display:flex;gap:12px;width:100%;padding:11px 10px;border-radius:12px;align-items:flex-start}
+.n-i:hover{background:var(--hv)}
+.n-dot{flex:none;width:8px;height:8px;border-radius:50%;margin-top:6px;background:transparent}
+.n-i[data-u="1"] .n-dot{background:var(--alert)}
+.n-i b{display:block;font-weight:500;font-size:13.5px;line-height:18px;color:var(--ink)}
+.n-i span{display:block;font-size:13px;line-height:18px;color:var(--muted)}
+.n-i time{display:block;margin-top:2px;font-size:12px;color:var(--muted2)}
+.n-e{padding:28px 24px 30px;text-align:center;color:var(--muted);font-size:13.5px}
+.n-e b{display:block;font:var(--dw) 19px/1.2 var(--display);letter-spacing:var(--dtrack);color:var(--ink);margin-bottom:4px}
+.n-f{border-top:1px solid var(--line-soft);padding:8px}
+.n-f button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:9px 10px;border-radius:10px;font-size:13.5px;color:var(--ink2)}
+.n-f button:hover{background:var(--hv)}
+
+/* v120 (88): the sample's demo says it is to look at; its action buttons do nothing but say so */
+.demo-ro-bar{margin:0;padding:9px 32px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;background:var(--peach);color:var(--peach-ink);font-size:13px;line-height:19px;border-bottom:1px solid var(--line-soft)}
+.demo-ro-bar b{font-weight:600;font-family:var(--label);text-transform:var(--caps);letter-spacing:calc(.08em * var(--caps-k));font-size:11.5px}
+.demo-ro-bar[hidden]{display:none}
+@media (max-width:640px){.demo-ro-bar{padding:9px 16px}}

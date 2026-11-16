@@ -1,0 +1,22 @@
+<aside class="drawer" id="drawer-projects" role="dialog" aria-modal="true" aria-labelledby="dj-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dj-title">Projects in motion</h2>
+      <p id="proj-sub">8 projects, most recently updated first.</p>
+    </div>
+    <div class="dr-close"><button type="button" class="dr-x" data-close aria-label="Close projects"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-tools">
+    <div class="seg" role="group" aria-label="Filter projects" id="proj-seg">
+      <button type="button" data-f="all" aria-pressed="true">All <span class="n">8</span></button>
+      <button type="button" data-f="client" aria-pressed="false">Client <span class="n">4</span></button>
+      <button type="button" data-f="product" aria-pressed="false">Product <span class="n">2</span></button>
+      <button type="button" data-f="internal" aria-pressed="false">Internal <span class="n">2</span></button>
+    </div>
+    <label class="dr-search" for="proj-q"><svg class="i"><use href="#i-search"/></svg><input id="proj-q" type="search" placeholder="Search projects" autocomplete="off"></label>
+  </div>
+  <div class="dr-body" id="proj-body">
+    <div class="dr-empty" id="proj-empty" hidden><b>No projects found</b>Try another name or filter.</div>
+  </div>
+  <footer class="dr-foot" id="proj-foot" hidden><span id="proj-count"></span></footer>
+</aside>

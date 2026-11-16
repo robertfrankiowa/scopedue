@@ -1,0 +1,10 @@
+/* v99 (50): since your last visit, on the Overview */
+.sv-l .sv-ln { display: block; margin-bottom: 4px; font-size: 11px; line-height: 15px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); }
+/* the first line of a group carries the label above its words: its dot and time sit with the words, not the label */
+.sv-l li.sv-h .tdot { margin-top: 24px; }
+.sv-l li.sv-h time { padding-top: 21px; }
+.sv-l li.sv-h::before { top: 47px; }
+.sv-l li.sv-h:not(:first-child) { margin-top: 6px; }
+.sv-card .pd-recent-f { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+/* an empty list that is waiting for its first item, not a done one: no tick, quieter words */
+.cd-empty.is-quiet { display: block; padding: 20px var(--gx) 22px; font-size: 13px; line-height: 1.55; color: var(--ink-3); text-wrap: pretty; }

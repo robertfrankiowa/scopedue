@@ -1,0 +1,22 @@
+/* ───────── Stepper ───────── */
+.steps{position:relative;height:103px;margin:0;padding:13px 0 0}
+.steps ol{list-style:none;margin:0;padding:0}
+.steps-in{position:relative;margin:0 8.4%}
+.steps li{position:absolute;top:0;left:calc(var(--i) * 25%);transform:translateX(-50%);width:150px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.c{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--rule-grey);background:var(--page);position:relative;z-index:1}
+.t{margin-top:7px;font:400 14px/20px var(--sans);color:var(--ink);letter-spacing:-.003em}
+.s{margin-top:1px;font:400 13px/18px var(--sans);color:var(--muted2)}
+.ms-steps{height:112px}
+/* CONTRACT 122: at most 20% of the line, so the first and last labels (centred on their dot) stay inside the 8.4% margins: at 27vw
+   the last one ran past the page's right edge below about 1300px (a sideways scroll) */
+.ms-steps li{width:min(220px,20%)}
+.ms-steps .t{text-wrap:balance}
+.done .c{background:var(--green);border-color:var(--green);color:#fff}
+.now .c{border-color:var(--green)}
+.now .c::after{content:"";width:18px;height:18px;border-radius:50%;background:var(--green)}
+.ln{position:absolute;top:13.25px;height:1.5px;background:var(--rule-grey);left:calc(var(--i) * 25% + 14px);width:calc(25% - 28px);overflow:hidden}
+.ln.on{background:var(--rule-grey)}
+.ln i{position:absolute;inset:0;background:var(--green-mid)}
+.ln:not(.on) i{display:none}
+.now .c::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--green-mid);opacity:0}
+

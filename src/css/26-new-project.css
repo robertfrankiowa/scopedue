@@ -1,0 +1,26 @@
+/* ---------- new project ---------- */
+.npj-lb { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.npj-kinds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.npj-kind { display: grid; grid-template-columns: 32px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 10px; row-gap: 3px; align-items: start; align-content: start; text-align: left; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; cursor: pointer; transition: border-color .2s var(--ease-out), background .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+.npj-kind:hover { border-color: color-mix(in srgb, var(--ink) 22%, var(--line)); }
+.npj-kind:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.npj-ic { grid-row: 1 / span 2; align-self: start; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); transition: background .2s var(--ease-out), color .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+.npj-ic .i { width: 16px; height: 16px; }
+.npj-kind b { font-size: 14px; font-weight: 600; line-height: 1.25; padding-top: 2px; }
+.npj-kind small { grid-column: 2; font-size: 12px; line-height: 1.4; color: var(--ink-2); text-wrap: pretty; }
+.npj-kind[aria-checked="true"] { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); background: var(--accent-soft); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent); }
+.npj-kind[aria-checked="true"] .npj-ic { background: var(--surface); color: var(--accent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.npj-kind[aria-checked="true"] b { color: var(--accent); }
+.npj-note { margin: 0; font-size: 12px; line-height: 1.45; color: var(--ink-3); }
+.proj.npj-new, .pj-d.npj-new { animation: st-in .5s var(--ease-out) backwards; }
+@media (max-width: 440px) { .npj-kinds { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .seg[data-seg="hf"] .n, .seg[data-seg="clf"] .n, .seg[data-seg="dtf"] .n { display: none; } .seg[data-seg="dtf"] button { padding: 6px 9px; } }
+@media (max-width: 700px) { .pde-copy { padding: 12px; } .pde-fprow .pd-fp { font-size: 12px; padding: 4px 8px; letter-spacing: 0; } }
+a.cd-pj { color: inherit; cursor: pointer; }
+a.cd-pj:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 12px; }
+a.cd-pj:hover h3 { color: var(--accent); }
+.proj-link[data-pj] { cursor: pointer; }
+/* api.php 1.28.0 (CONTRACT 96): the month's client projects, above Create; Upgrade when there is no place left */
+.npj-qt { display: grid; gap: 8px; color: var(--ink-2); }
+.npj-qt.bad { color: var(--crit); }
+.npj-qt-a { display: flex; flex-wrap: wrap; gap: 8px; }

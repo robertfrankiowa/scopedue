@@ -1,0 +1,17 @@
+/* theme: dark
+   name: Dark
+   name-vi: Tối
+   note: Deep and quiet, for evening reading.
+   note-vi: Trầm và dịu, dễ đọc buổi tối.
+   system: dark
+   "System" (the default for every client) uses it when the computer is in dark mode. What is not set here comes from light.css. */
+:root[data-theme="dark"]{
+    color-scheme:dark;
+    --page:#0f1310; --top:#141915; --hero:#131813; --card:#171c18; --card2:#161b17;
+    --line:#252c27; --line-soft:#202722; --ink:#eef1ea; --ink2:#d6dbd2; --lead:#a2aaa4; --muted:#9ba29c; --muted2:#8c948d; --kicker:#8c948d;
+    --green:color-mix(in srgb,var(--seed) 55%,#fff); --green-mid:color-mix(in srgb,var(--seed) 60%,#fff);
+    --rule-grey:#3a423c; --check-bg:color-mix(in srgb,var(--seed) 30%,#0f1310); --check-ink:color-mix(in srgb,var(--seed) 35%,#fff);
+    --peach:#3b2f27; --peach-ink:#e0c3ad; --dr:#b49f8d; --alert:#f08a74;
+    --avatar-soft:color-mix(in srgb,var(--seed) 30%,#0f1310); --avatar-soft-ink:color-mix(in srgb,var(--seed) 30%,#fff);
+    --dot:color-mix(in srgb,var(--seed) 50%,#fff); --focus:color-mix(in srgb,var(--seed) 40%,#fff); --hv:rgba(255,255,255,.07);
+}

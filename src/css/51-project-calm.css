@@ -1,0 +1,93 @@
+/* v122 (CONTRACT.md 93): a project's tabs, calmer. What was said twice is said once, labels read as words, and the small edit and
+   remove buttons wait for the pointer. One file, last, so the rules it changes stay where they were written */
+
+/* the tab's name and what it is for are for screen readers only (pdHeadHTML); the tab's action stays, at the right */
+.pd-ph { justify-content: flex-end; align-items: center; }
+.pd-ph.bare { display: none; }
+
+/* labels inside a project read as words, not small spaced capitals */
+#pd-panel :is(.pd-k, .pd-eb, .pd-psec-h h4, .prv-pick legend, .prv-ship span, .gt-k, .gt-vd-k, .wk-facts dt, .ag-plain dt, .rq-k, .vx-k, .vx-eb, .vx-q span, .vx-tk, .cf-dl dt, .prv-take span, .sv-l .sv-ln, .x6-pn h4, .x6-fdh, .x6-aup legend, .td-g h3, .jn-eyebrow) {
+  text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; color: var(--ink-2);
+}
+#pd-panel .pd-k { font-size: 13px; }
+
+/* an empty field says so in one quiet line, not in the size of the words it waits for */
+#pd-panel .pd-now-s .pd-big.mute { font-size: 17px; }
+
+/* the pencil and the ×: seen on pointing at their row or on focus, always on a touch screen */
+@media (hover: hover) {
+  #pd-panel :is(li, .pd-now-s, .card-h, .vx-row, tr):not(:hover):not(:focus-within) .icon-sm.xs { opacity: 0; }
+  #pd-panel .icon-sm.xs { transition: opacity .18s var(--ease-out), background-color .2s; }
+}
+
+/* Google Drive on Overview: one line, the rest under Details (dvCard) */
+.dv-c .card-h { padding-bottom: 6px; }
+.dv-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; margin: 0; padding: 0 var(--gx) 14px; font-size: 13px; color: var(--ink-2); }
+.dv-line .link { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.dv-line .link .i { width: 13px; height: 13px; }
+.dv-more { border-top: 1px solid var(--line-soft); }
+.dv-more > summary { cursor: pointer; padding: 12px var(--gx); font-size: 13px; font-weight: 600; color: var(--ink-2); list-style: none; display: flex; align-items: center; gap: 6px; }
+.dv-more > summary::-webkit-details-marker { display: none; }
+.dv-more > summary::after { content: ""; width: 7px; height: 7px; margin-left: 2px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor; transform: rotate(-45deg); transition: transform .2s var(--ease-out); }
+.dv-more[open] > summary::after { transform: rotate(45deg); }
+.dv-more > summary:hover { color: var(--ink); }
+.dv-more .dv-devs { padding-left: var(--gx); padding-right: var(--gx); }
+
+/* What Editors see: a long title stays inside the card */
+.dv-see-l li, .dv-see-l label { min-width: 0; }
+.dv-see-l label { display: flex; align-items: baseline; gap: 8px; overflow: hidden; }
+.dv-see-l label > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* the edit form's error and its count (v122 (93): the thesis, focus and next step say when they are too long) */
+.pd-edit .err { display: none; margin-top: 6px; font-size: 12.5px; color: var(--crit); }
+.pd-edit[data-err] .err:not(:empty) { display: block; }
+.pd-edit .prv-asn { margin-right: auto; }
+
+/* ---- v122 (CONTRACT.md 94): each tab's own rework ---- */
+
+/* Feedback: the detail stays beside the list while it scrolls (below the topbar and the tabs) */
+@media (min-width: 1041px) {
+  .fb-dcol > .pd-card { position: sticky; top: calc(var(--tbh, 69px) + 64px); max-height: calc(100vh - var(--tbh, 69px) - 80px); overflow: auto; overscroll-behavior: contain; }
+}
+/* Closed folds; its heading is the switch */
+.fb-gc > summary { cursor: pointer; list-style: none; }
+.fb-gc > summary::-webkit-details-marker { display: none; }
+.fb-gc > summary::after { content: ""; width: 7px; height: 7px; margin-left: 2px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor; transform: rotate(-45deg); transition: transform .2s var(--ease-out); }
+.fb-gc[open] > summary::after { transform: rotate(45deg); }
+.fb-gc > summary:hover { color: var(--ink); }
+.fb-gc:not([open]) { padding-bottom: 10px; }
+/* what sits under an entry, on its row */
+.fb-more { display: inline-flex; align-items: center; gap: 4px; color: var(--ink-3); font-size: 12px; }
+.fb-more .i { width: 13px; height: 13px; }
+.fb-tie li, .fb-rds li { align-items: center; }
+
+/* the Viewer portal's What Viewers see: switches that say Shown or Hidden */
+.vp-sh { border: 0; margin: 0 0 6px; padding: 0; display: grid; gap: 2px; min-width: 0; }
+.vp-sh legend { padding: 0; margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.vp-sw { position: relative; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--line-soft); cursor: pointer; font-size: 13.5px; }
+.vp-sw:last-of-type { border-bottom: 0; }
+.vp-sw input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.vp-swt { flex: 1 1 auto; min-width: 0; color: var(--ink); }
+.vp-sws { flex: none; font-size: 12px; font-weight: 600; }
+.vp-sws .on { color: var(--ok); display: none; }
+.vp-sws .off { color: var(--ink-3); }
+.vp-sw input:checked ~ .vp-sws .on { display: inline; }
+.vp-sw input:checked ~ .vp-sws .off { display: none; }
+.vp-swk { flex: none; position: relative; width: 34px; height: 20px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 18%, var(--surface)); transition: background-color .2s var(--ease-out); }
+.vp-swk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,.2); transition: transform .2s var(--ease-out); }
+.vp-sw input:checked ~ .vp-swk { background: var(--accent); }
+.vp-sw input:checked ~ .vp-swk::after { transform: translateX(14px); }
+.vp-sw input:focus-visible ~ .vp-swk { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Team: What Editors see is one line; its ticks open under Change what they see */
+.dv-see .card-h { padding-bottom: 8px; }
+.dv-see-d > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; margin: 0 var(--gx) 16px; font-size: 13px; font-weight: 600; color: var(--accent); }
+.dv-see-d > summary::-webkit-details-marker { display: none; }
+.dv-see-d > summary::after { content: ""; width: 6px; height: 6px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .2s var(--ease-out); }
+.dv-see-d[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.dv-see-d > .sy-p { padding: 0 var(--gx); margin: 0 0 4px; }
+
+/* Scope: what the baseline still needs, under the release's days */
+.prv-bmiss { margin-top: 8px; }
+/* Feedback's filters wrap on a phone rather than run past the card's edge */
+@media (max-width: 640px) { .fb-lc .seg { flex-wrap: wrap; height: auto; } }

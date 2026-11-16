@@ -1,0 +1,151 @@
+<main class="content" id="view-settings" hidden aria-labelledby="st-title">
+      <div class="head has-act">
+        <div>
+          <div class="eyebrow">Preferences</div>
+          <h1 id="st-title" tabindex="-1">Settings</h1>
+        </div>
+        <div class="head-r">
+          <p>Changes apply as you make them.</p>
+        </div>
+      </div>
+
+      <div class="st-shell">
+        <div class="st-tabs" id="st-tabs" role="tablist" aria-orientation="vertical" aria-label="Settings sections">
+          <span class="st-ng" aria-hidden="true">Studio</span>
+          <button type="button" role="tab" class="st-tab" id="st-t-general" data-tab="general" aria-controls="st-p-general" aria-selected="true"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg><span class="st-tl">General</span></button>
+          <button type="button" role="tab" class="st-tab" id="st-t-team" data-tab="team" aria-controls="st-p-team" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span class="st-tl">Team</span><span class="st-bd" id="st-bd-team"></span></button>
+          <button type="button" role="tab" class="st-tab" id="st-t-plan" data-tab="plan" aria-controls="st-p-plan" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-tick"/></svg><span class="st-tl">Plan &amp; billing</span></button>
+          <span class="st-ng" aria-hidden="true">Connections</span>
+          <button type="button" role="tab" class="st-tab" id="st-t-portal" data-tab="portal" aria-controls="st-p-portal" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-share"/></svg><span class="st-tl">Client portal</span><i class="pd off st-pd" id="st-pd-portal" aria-hidden="true"></i></button>
+          <button type="button" role="tab" class="st-tab" id="st-t-github" data-tab="github" aria-controls="st-p-github" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-pr"/></svg><span class="st-tl">GitHub</span><i class="pd off st-pd" id="st-pd-github" aria-hidden="true"></i></button>
+          <button type="button" role="tab" class="st-tab" id="st-t-drive" data-tab="drive" aria-controls="st-p-drive" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-folder"/></svg><span class="st-tl">Google Drive</span><i class="pd off st-pd" id="st-pd-drive" aria-hidden="true"></i></button>
+          <span class="st-ng" aria-hidden="true">Data</span>
+          <button type="button" role="tab" class="st-tab" id="st-t-storage" data-tab="storage" aria-controls="st-p-storage" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span class="st-tl">Storage &amp; data</span></button>
+          <span class="st-ng" aria-hidden="true">App</span>
+          <button type="button" role="tab" class="st-tab" id="st-t-about" data-tab="about" aria-controls="st-p-about" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="#i-help"/></svg><span class="st-tl">About</span></button>
+        </div>
+
+        <div class="st-panes">
+          <div class="st-pane" role="tabpanel" id="st-p-general" aria-labelledby="st-t-general">
+            <section class="card" id="st-look" aria-labelledby="st-h-look">
+              <div class="card-h ruled"><div><h2 id="st-h-look">Appearance</h2><p>How ScopeDue looks on this device.</p></div></div>
+              <div class="st-row st-row-lang">
+                <div class="st-t"><b id="st-lg-l">Language</b><small>Menus, messages and dates. What you write stays as you wrote it.</small></div>
+                <div class="st-ctl"><div class="seg" id="st-lang" role="group" aria-labelledby="st-lg-l" translate="no">
+                  <button type="button" data-f="en" aria-pressed="true" lang="en">English</button>
+                  <button type="button" data-f="vi" aria-pressed="false" lang="vi">Tiếng Việt</button>
+                </div></div>
+              </div>
+              <div class="st-row">
+                <div class="st-t"><b id="st-th-l">Theme</b><small>System follows your computer.</small></div>
+                <div class="st-ctl"><div class="seg st-seg" id="st-theme" role="group" aria-labelledby="st-th-l">
+                  <!-- @themes:settings -->
+                </div></div>
+              </div>
+              <div class="st-row st-row-side">
+                <div class="st-t"><b id="st-sd-l">Sidebar</b><small>Collapse it to icons for more room.</small></div>
+                <div class="st-ctl"><div class="seg" id="st-side" role="group" aria-labelledby="st-sd-l">
+                  <button type="button" data-f="expanded" aria-pressed="true">Expanded</button>
+                  <button type="button" data-f="collapsed" aria-pressed="false">Collapsed</button>
+                </div></div>
+              </div>
+            </section>
+
+            <section class="card" id="st-defaults" aria-labelledby="st-h-def">
+              <div class="card-h ruled"><div><h2 id="st-h-def">Defaults</h2><p>Pre-filled for new quotes and portal links. Change them any time.</p></div></div>
+              <div class="st-row">
+                <div class="st-t"><b id="st-vf-l">Quotes are valid for</b><small>Once a quote runs out, the client can no longer accept it. You can set a different time on each quote.</small></div>
+                <div class="st-ctl"><div class="seg" id="st-vf" role="group" aria-labelledby="st-vf-l">
+                  <button type="button" data-f="7" aria-pressed="false">7 days</button>
+                  <button type="button" data-f="14" aria-pressed="true">14 days</button>
+                  <button type="button" data-f="30" aria-pressed="false">30 days</button>
+                  <button type="button" data-f="0" aria-pressed="false">No expiry</button>
+                </div></div>
+              </div>
+              <div class="st-row">
+                <div class="st-t"><b id="st-ln-l">Portal links work for</b><small>Applies to links you email or copy from now on. A client can always ask for a new one.</small></div>
+                <div class="st-ctl"><div class="seg" id="st-ln" role="group" aria-labelledby="st-ln-l">
+                  <button type="button" data-f="7" aria-pressed="false">7 days</button>
+                  <button type="button" data-f="14" aria-pressed="true">14 days</button>
+                  <button type="button" data-f="30" aria-pressed="false">30 days</button>
+                </div></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-team" aria-labelledby="st-t-team" hidden>
+            <section class="card" id="st-team" aria-labelledby="st-h-team">
+              <div class="card-h ruled">
+                <div><h2 id="st-h-team">Team</h2><p>The people you work with. A project can only add people who are on this list.</p></div>
+                <div class="h-actions"><button type="button" class="btn-primary btn-sm" id="tm-add"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>Add member</button></div>
+              </div>
+              <ul class="st-mem" id="tm-list"></ul>
+              <p class="st-foot" id="tm-note"></p>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-plan" aria-labelledby="st-t-plan" hidden>
+            <section class="card" id="st-plan" aria-labelledby="st-h-plan">
+              <div class="card-h"><div><h2 id="st-h-plan">Your plan</h2><p id="bl-sub">What your ScopeDue account includes.</p></div><div class="h-actions"><span class="pt-l" id="bl-pill"><i class="pd off"></i>Not signed in</span></div></div>
+              <div id="bl-body"></div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-portal" aria-labelledby="st-t-portal" hidden>
+            <section class="card" id="sy-card" aria-labelledby="st-h-portal">
+              <div class="card-h"><div><h2 id="st-h-portal">Client portal</h2><p id="sy-sub">Where clients approve Scope and changes.</p></div><div class="h-actions"><span class="pt-l" id="sy-pill"><i class="pd off"></i>Not signed in</span></div></div>
+              <div id="sy-body"></div>
+            </section>
+
+            <section class="card" id="st-notify" aria-labelledby="st-h-notify">
+              <div class="card-h ruled"><div><h2 id="st-h-notify">Notifications</h2><p>When your server emails you.</p></div></div>
+              <div class="st-row st-sw">
+                <div class="st-t"><b id="st-sw-n-l">Email me when a client responds</b><small id="st-n-d">Approvals, replies, questions and change requests.</small></div>
+                <button type="button" class="sw" id="st-sw-n" role="switch" aria-checked="true" aria-labelledby="st-sw-n-l" aria-describedby="st-n-d"></button>
+              </div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-drive" aria-labelledby="st-t-drive" hidden>
+            <section class="card" id="st-drive" aria-labelledby="st-h-drive">
+              <div class="card-h"><div><h2 id="st-h-drive">Google Drive</h2><p id="dr-sub">Where a project keeps its files, in your own Drive.</p></div><div class="h-actions"><span class="pt-l" id="dr-pill"><i class="pd off"></i>Not connected</span></div></div>
+              <div id="dr-body"></div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-github" aria-labelledby="st-t-github" hidden>
+            <section class="card" id="st-github" aria-labelledby="st-h-github">
+              <div class="card-h"><div><h2 id="st-h-github">GitHub</h2><p>Pull requests and issues, linked to the work they are for.</p></div><div class="h-actions"><span class="pt-l" id="gh-pill"><i class="pd off"></i>Public repositories</span></div></div>
+              <div id="gh-body"></div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-storage" aria-labelledby="st-t-storage" hidden>
+            <section class="card" id="st-store" aria-labelledby="st-h-store">
+              <div class="card-h ruled"><div><h2 id="st-h-store">Storage</h2><p>What ScopeDue keeps, and how much room is left.</p></div><div class="h-actions"><button type="button" class="btn-ghost btn-sm" id="sto-refresh">Refresh</button></div></div>
+              <div id="sto-body"></div>
+            </section>
+
+            <section class="card" id="ld-card" aria-labelledby="st-h-data">
+              <div class="card-h"><div><h2 id="st-h-data">Data on this device</h2><p id="ld-sub">Projects, clients and notes stay in this browser.</p></div><div class="h-actions"><span class="pt-l" id="ld-pill"><i class="pd off"></i>Checking</span></div></div>
+              <div id="ld-body"></div>
+              <input type="file" id="ld-file" accept="application/json,.json" hidden>
+            </section>
+
+            <section class="card" id="xa-sample" aria-labelledby="st-h-sample" hidden>
+              <div class="card-h"><div><h2 id="st-h-sample">Sample data</h2><p>What came with ScopeDue, to show how it works.</p></div></div>
+              <div id="xa-sb"></div>
+            </section>
+          </div>
+
+          <div class="st-pane" role="tabpanel" id="st-p-about" aria-labelledby="st-t-about" hidden>
+            <section class="card" id="st-about" aria-labelledby="st-h-about">
+              <div class="card-h ruled st-about-head"><div><h2 id="st-h-about">About ScopeDue</h2><p>Protect scope. Control change.</p></div><span class="st-about-logo"><img src="<!-- @brand-mark -->" alt="" width="147" height="216"><span class="st-about-wm" translate="no">ScopeDue</span></span></div>
+              <dl class="cd-dl"><div><dt>Version</dt><dd class="st-ver" id="st-ver" translate="no"><!-- @version --></dd></div></dl>
+              <p class="sy-p">Your work stays in this browser. When you sign in, your server keeps what clients need to decide, and the projects you share with your team, encrypted so it cannot read them.</p>
+              <div class="sy-acts"><button type="button" class="btn-ghost btn-sm" data-ft="updates">What’s new</button><button type="button" class="btn-ghost btn-sm" data-ft="support">Contact support</button></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>

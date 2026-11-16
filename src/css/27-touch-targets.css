@@ -1,0 +1,27 @@
+/* ---------- touch targets ----------
+   Narrow or touch screens: small controls keep their look but get a hit area of 34px or more.
+   Selects, filter buttons and outlined buttons cannot take a pseudo-element, so they grow instead. */
+@media (max-width: 700px), (pointer: coarse) {
+  :is(.icon-sm, .pd-crl, .wk-tag, .prv-szb, .link, .inline, .prv-ref, .mw-pj, .pf-link, .crumb a, .toast button) { position: relative; }
+  :is(.icon-sm, .dnote-x, .n-read, .pd-crl, .wk-tag, .prv-szb, .link, .inline, .prv-ref, .mw-pj, .pf-link, .crumb a, .toast button, .theme-sw button, .prv-mrk)::after,
+  :is(.sw, .sf-nav a)::before { content: ""; position: absolute; }
+  .icon-sm::after { inset: -5px; }
+  .icon-sm.xs::after, .dnote-x::after { inset: -6px; }
+  .n-read::after { inset: -8px; }
+  .prv-szb::after { inset: -6px -2px; }
+  .pd-crl::after, .wk-tag::after { inset: -6px 0; }
+  :is(.link, .inline)::after { inset: -8px -4px; }
+  .prv-ref::after { inset: -9px -6px; }
+  .pf-link::after { inset: -3px -4px; }
+  .mw-pj::after { inset: -9px -4px; }
+  .crumb a::after { inset: -3px -2px; }
+  .toast button::after { inset: -6px -4px; }
+  .theme-sw button::after { inset: -6px -1px; }
+  .prv-mrk::after { inset: -6px -9px; }
+  .sw::before { inset: -9px -4px; }
+  .sf-nav a::before { inset: -8px -6px; }
+  .seg button { min-height: 34px; }
+  .wk-st, .prv-sts select, .prv-js select { height: 36px; }
+  .wk-pick.wk-as select { inset: -4px; width: calc(100% + 8px); height: calc(100% + 8px); }
+  .prv-r .acts .prv-bring, .prv-r .prv-sd > .btn-ghost, .prv-ai .btn-ghost, .prv-idea-a .btn-ghost { height: 36px; }
+}

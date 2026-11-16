@@ -1,0 +1,22 @@
+/* ───────── Hero ───────── */
+.hero{position:relative;background:var(--hero);overflow:hidden;min-height:190px}
+.hero-art{position:absolute;inset:0 0 0 38%;pointer-events:none;color:var(--seed);opacity:.36;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 30%);mask-image:linear-gradient(to right,transparent 0,#000 30%)}
+.hero-art svg{width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 40%,color-mix(in srgb,var(--seed) 8%,transparent))}
+.hero-in{position:relative;z-index:1;padding:24px 46px 22px}
+.kicker{margin:0;font:400 12px/16px var(--label);letter-spacing:calc(.08em * var(--caps-k));text-transform:var(--caps);color:var(--kicker)}
+h1{margin:10px 0 0;font:var(--dw-strong) 52px/56px var(--display);letter-spacing:calc(-.012em + var(--dtrack));color:var(--ink)}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:6px;margin-bottom:-6px}
+h1 .w>span{display:inline-block}
+.for{margin:0;font:var(--dw) 26px/32px var(--display);letter-spacing:var(--dtrack);color:var(--ink)}
+.status{margin:15px 0 0;display:flex;align-items:center;flex-wrap:wrap;gap:6px 0;font-size:15px;line-height:20px;color:var(--ink)}
+.sdot{width:12px;height:12px;border-radius:50%;background:var(--green);margin-right:10px;margin-left:5px}
+.sep{width:1px;height:14px;background:var(--rule-grey);margin:0 27px;flex:none}
+.sg{display:contents}   /* a group of the status line: laid out by a theme that wants separate figures */
+.status .s2{color:var(--muted)}
+.status b{font-weight:500;margin-left:8px}
+.st2{display:inline-flex;align-items:center;gap:9px}
+.st2 i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.st2.need i{background:var(--alert)}
+.st2.wait i{background:var(--muted2)}
+

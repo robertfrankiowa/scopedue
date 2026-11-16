@@ -1,0 +1,33 @@
+/* A new theme: copy this file to themes/<id>.css (lowercase letters and -), change the values, run python3 build.py.
+   It then appears in Settings › General › Theme and in the footer switch. Files whose name starts with _ are not built.
+
+   The header (keep it first in the file):
+   theme: <id>          the same as the file name; it goes in <html data-theme="<id>">
+   name: <English name>
+   name-vi: <tên tiếng Việt>
+   icon: <icon>         one of the sprite's icons (src/html/icons.html, without "i-"); palette if you are unsure
+   system: dark         optional: "System" uses this theme when the computer is in dark mode (only one theme should say it)
+
+   Anything not set here comes from light.css. */
+/* theme: example
+   name: Example
+   name-vi: Ví dụ
+   icon: palette */
+:root[data-theme="example"] {
+  color-scheme: light;     /* light or dark: form controls and scrollbars follow it */
+  --bg: #f4efe6;           /* the page */
+  --surface: #fffdf8;      /* cards, drawers */
+  --surface-2: #f8f3ea;    /* inputs, quiet panels */
+  --line: #e2d8c6; --line-soft: #ebe3d4;
+  --ink: #2b2118; --ink-2: #5a4a3a; --ink-3: #7a6a58;   /* text: main, second, third */
+  --accent: #8a4b1f; --accent-soft: #f1e3d3;            /* links, focus, the active thing */
+  --btn: #5b3415; --btn-ink: #ffffff;                   /* the primary button */
+  --hl: rgba(255,255,255,.8);
+  --shadow: 0 1px 2px rgb(var(--shade) / .05), 0 14px 30px -20px rgb(var(--shade) / .25);
+  --warn: #9a5b06; --warn-bg: #f9ecd2; --crit: #a8321f; --crit-bg: #f8e2dc; --on-crit: #ffffff; --ok: #2f6b3f;
+  --nav-bg-1: #3b2a1c; --nav-bg-2: #2c1f14; --nav-ink: #f1e6d8; --nav-ink-2: #c4b19b; --nav-active: #4a3726; --nav-line: #4d3a29;
+  --nav-tile: #5b4430; --nav-chip: #5b4430; --nav-accent: #ffd9a8; --nav-dot: #ffc27a;
+  --tip-bg: #24180f; --tip-line: #4d3a29; --scrim: #1c130b; --toast-bg: #2c1f14; --toast-line: #4d3a29;
+  --shade: 43 33 24; --shade-deep: 28 19 11;
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a6a58' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}

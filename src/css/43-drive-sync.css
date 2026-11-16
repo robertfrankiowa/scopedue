@@ -1,0 +1,48 @@
+/* v69: a project kept in Google Drive (CONTRACT.md 29.16): this person's devices on the project card, and Settings' In your Drive */
+.dv-devs { list-style: none; margin: 0; padding: 4px var(--gx) 12px; display: grid; gap: 6px; }
+.dv-devs li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-2); }
+.dv-devs li span { min-width: 104px; }
+.dv-devs code { font: 500 12px/1 var(--font-mono, ui-monospace, monospace); color: var(--ink); background: var(--surface-2); border-radius: 6px; padding: 4px 6px; }
+/* where each person stands with the project in Drive, on their row in Members */
+.pd-m-dv { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px; font-size: 12px; color: var(--ink-3); }
+.pd-m-dv .ok { color: var(--ok); }
+.pd-m-dv code { font: 500 11px/1 var(--font-mono, ui-monospace, monospace); color: var(--ink); background: var(--surface-2); border-radius: 6px; padding: 3px 5px; }
+.pd-m-dv .link { font-size: 12px; }
+.dv-found { margin: 4px 0 12px; padding: 0 var(--gx); }   /* the card pads each part itself (.sy-p, .cd-dl, .sy-acts); this one too */
+.dv-found:empty { display: none; }
+.dv-found h4 { margin: 8px 0 2px; font-size: 13px; }
+.dv-found .sy-p { padding: 0 0 4px; }
+.dv-found ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 6px; }
+.dv-found li { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; }
+.dv-found li small { color: var(--ink-3); }
+
+/* v72: joining a shared project (29.17): a card on the Dashboard, step by step, then a welcome on the project */
+.dv-jn { display: grid; gap: 14px; margin: 0 0 18px; }
+.dv-jn-s { list-style: none; margin: 0; padding: 16px var(--gx) 20px; display: grid; gap: 14px; }
+.dv-jn-s li { display: flex; gap: 12px; align-items: flex-start; }
+.dv-jn-n { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--line); }
+.dv-jn-n .i { width: 14px; height: 14px; }
+.dv-jn-s li.done .dv-jn-n { color: var(--ok); box-shadow: inset 0 0 0 1px var(--ok); }
+.dv-jn-s li.now .dv-jn-n { color: var(--btn-ink); background: var(--btn); box-shadow: none; }
+.dv-jn-s li > div { flex: 1; min-width: 0; }
+.dv-jn-s b { display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
+.dv-jn-s li.todo b { color: var(--ink-3); font-weight: 500; }
+.dv-jn-s p { margin: 3px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.dv-jn-s .sy-acts { padding: 8px 0 0; }
+.dv-jn-s .sy-p { padding: 4px 0 0; }
+.dv-hi .card-h + .sy-p { padding-top: 16px; padding-bottom: 4px; }
+.dv-hi ul { margin: 0; padding: 0 var(--gx) 12px calc(var(--gx) + 18px); font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+
+/* v72: what Editors see, the Owner's card on Team */
+.dv-see-b { padding: 4px var(--gx) 8px; }
+.dv-see-b h4 { margin: 12px 0 6px; font-size: 13px; font-weight: 600; color: var(--ink); }
+.dv-see-l { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.dv-see-l li { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 30px; font-size: 13px; color: var(--ink-2); }
+.dv-see-l label { display: flex; align-items: center; gap: 8px; min-width: 0; cursor: pointer; }
+.dv-see-l label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dv-see-l small { color: var(--ink-3); white-space: nowrap; }
+.dv-see-g { border-top: 1px solid var(--line-soft); padding: 8px 0; }
+.dv-see-g summary { cursor: pointer; font-size: 13px; font-weight: 500; color: var(--ink); }
+.dv-see-g summary small { margin-left: 6px; font-weight: 400; color: var(--ink-3); }
+.dv-see-g .dv-see-l { margin-top: 6px; }
+.dv-see .sy-p.dv-see-n { padding: 6px 0 4px; }

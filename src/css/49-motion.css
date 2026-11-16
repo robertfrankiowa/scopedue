@@ -1,0 +1,45 @@
+/* ───────── v110: motion, refined ─────────
+   A few moments that carry the feel: a page title that comes into focus, a theme that spreads from the button you pressed,
+   a toast that lands, arrows that lean toward where they go. Everything here gives way to prefers-reduced-motion (bottom). */
+
+/* a page title comes into focus when its page is shown (a hidden page runs it again each time it is opened) */
+@keyframes title-in { from { opacity: 0; filter: blur(6px); transform: translateY(5px); } to { opacity: 1; filter: none; transform: none; } }
+.head h1, #pd-title, #cd-title { animation: title-in .62s var(--ease-out) backwards .03s; }
+.head .eyebrow { animation: fade-in .5s var(--ease-out) backwards; }
+
+/* Dashboard: the two columns follow the rows above them, one beat apart */
+#view-dashboard .grid > .card, #view-dashboard .db-side > .card { animation: rise .55s cubic-bezier(.2, .7, .2, 1) backwards; }
+#view-dashboard .grid > .card { animation-delay: .22s; }
+#view-dashboard .db-side > .card:nth-child(1) { animation-delay: .27s; }
+#view-dashboard .db-side > .card:nth-child(2) { animation-delay: .33s; }
+
+/* arrows lean toward where they lead */
+:is(.link, .inline, .resume, .btn-ghost, .btn-primary) .i:has(use[href="#i-arrow"]) { transition: transform .22s var(--ease-out); }
+:is(.link, .inline, .resume, .btn-ghost, .btn-primary):is(:hover, :focus-visible) .i:has(use[href="#i-arrow"]) { transform: translateX(3px); }
+
+/* the primary button lifts a little under the pointer and settles when pressed */
+.btn-primary:not(:disabled):hover { box-shadow: 0 1px 2px rgb(var(--shade) / .18), 0 10px 20px -12px rgb(var(--shade) / .55); }
+.btn-primary:not(:disabled):active { box-shadow: 0 1px 1px rgb(var(--shade) / .2); transition-duration: .06s; }
+.btn-ghost:not(:disabled):active { transform: scale(.98); }
+
+/* the toast lands: a short spring in, a quicker fade out */
+.toast { transform: translate(-50%, 18px) scale(.96); filter: blur(2px); transition: opacity .2s var(--ease-out), transform .22s var(--ease-out), filter .2s var(--ease-out), visibility 0s linear .22s; }
+.toast[data-open] { transform: translate(-50%, 0) scale(1); filter: none; transition: opacity .28s var(--ease-out), transform .5s var(--ease-spring), filter .3s var(--ease-out), visibility 0s; }
+
+/* a quick note on the Dashboard rises a touch further, with its shadow */
+.note { transition: border-color .15s var(--ease-out), transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+.note:hover { box-shadow: 0 8px 18px -14px rgb(var(--shade) / .45); }
+
+/* the theme spreads from the button that changed it (48-footer-theme-start.js: thSwitch) */
+html.th-vt::view-transition-old(root), html.th-vt::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+html.th-vt::view-transition-old(root) { z-index: 1; }
+html.th-vt::view-transition-new(root) { z-index: 2; }
+
+/* less motion, when asked: no movement, no blur, only what a state change needs to be seen */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
+  /* a sidebar line cut short still slides when the pointer asks for it (62-side-marquee.js) */
+  #side .sm-on { transition-duration: var(--sm-d, .35s) !important; }
+  /* a spinner still says that something is working, slowly */
+  .x6-spin { animation-duration: 2.4s !important; animation-iteration-count: infinite !important; }
+}

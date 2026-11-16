@@ -1,0 +1,29 @@
+<aside class="drawer" id="drawer-protect" role="dialog" aria-modal="true" aria-labelledby="dc-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dc-title">Client protection</h2>
+      <p>Client responses, timelines, changes and deliverables.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close client protection"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <div class="dr-pad">
+      <div class="pcard">
+        <span class="pdot" aria-hidden="true"></span>
+        <div>
+          <b>Counted live from your projects</b>
+          <p>Approvals and changes your clients owe, replies you owe them, and milestones past their date.</p>
+        </div>
+      </div>
+      <h3 class="sec">Where things stand</h3>
+      <div class="metrics">
+        <div class="metric" id="dm-wait"><span class="mn">0</span><span class="ml">Waiting on clients</span><span class="ms">Nothing to chase</span></div>
+        <div class="metric" id="dm-owed"><span class="mn">0</span><span class="ml">Your response needed</span><span class="ms">Nothing owed</span></div>
+        <div class="metric" id="dm-late"><span class="mn">0</span><span class="ml">Late milestones</span><span class="ms">Nothing late</span></div>
+      </div>
+      <div class="dr-owe" id="dr-owe" hidden><h3 class="sec" id="dr-oh">Waiting on you</h3><ul class="cp-ow-l" id="dr-ow-l" aria-labelledby="dr-oh"></ul></div>
+      <p class="pexplain">Waiting on clients counts every Scope approval, Change and piece of work a client has yet to answer, the same list as Waiting on clients. Your response needed counts the Changes whose next move is yours, the same count each project shows in Change. Late milestones counts the milestones of approved agreements that are past their date and not delivered.</p>
+    </div>
+  </div>
+  <footer class="dr-foot"><span class="ok-dot">Local workspace available</span><a href="#" class="link" data-view="actions">See who to chase <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</aside>

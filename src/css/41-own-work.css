@@ -1,0 +1,14 @@
+/* v69: someone who works on their own projects and has no client yet does not see the client pages (CONTRACT.md, section 30).
+   The first client brings them back. data-noclients is set by sdFocusPaint, and by boot.js before the first frame */
+:root[data-noclients] .nav-i[data-view="clients"],
+:root[data-noclients] .nav-i[data-view="actions"],
+:root[data-noclients] #kpi-wait { display: none; }
+:root[data-noclients] .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+:root[data-noclients] #kpi-due { border-radius: 0 16px 16px 0; }
+@media (max-width: 700px) {
+  :root[data-noclients] .kpis { grid-template-columns: minmax(0, 1fr); }
+  :root[data-noclients] #kpi-due { border-radius: 0; }
+}
+/* v126 (100): the sample's line says what the sample holds, not what the person works on: each is shown by its hidden attribute */
+.xa-ch small[hidden] { display: none; }
+.npj-add { margin-top: 6px; }

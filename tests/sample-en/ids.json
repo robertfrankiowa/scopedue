@@ -1,0 +1,49 @@
+{
+ "ids": {
+  "website-dat-lich-kham-nha-khoa-minh-tam": "website-booking-maple-ridge-dental",
+  "nha-khoa-minh-tam": "maple-ridge-dental",
+  "han@nhakhoaminhtam.example": "sarah@mapleridgedental.example",
+  "quan-ly-doi-xe-giao-hang-sao-bac-logistics": "fleet-delivery-northstar-logistics",
+  "sao-bac-logistics": "northstar-logistics",
+  "phuong@saobaclogistics.example": "laura@northstarlogistics.example",
+  "bao@studiobacnam.example": "ben@fieldworkstudio.example",
+  "nam@studiobacnam.example": "nick@fieldworkstudio.example",
+  "maianh@studiobacnam.example": "emily@fieldworkstudio.example",
+  "VND": "USD",
+  "ban@studiobacnam.example": "you@fieldworkstudio.example",
+  "anh@venli.example": "annie@venli.example",
+  "bao@venli.example": "brandon@venli.example",
+  "truc@venli.example": "tara@venli.example",
+  "ban@venli.example": "you@venli.example",
+  "app-cham-cong-hr": "hr-time-clock-app",
+  "ha@hatsuong.example": "heather@dewdropcoffee.example",
+  "tuan@hatsuong.example": "tony@dewdropcoffee.example",
+  "ban@hatsuong.example": "you@dewdropcoffee.example"
+ },
+ "money": {
+  "dental": 3,
+  "fleet": 0.00013333333333333334
+ },
+ "url": [
+  [
+   "van-hanh-saobac",
+   "operations-northstar"
+  ],
+  [
+   "quan-sat-long-bien",
+   "groveport-ride-along"
+  ],
+  [
+   "saobac",
+   "northstar"
+  ],
+  [
+   "cham-cong",
+   "time-clock"
+  ],
+  [
+   "nhap-nhan-vien",
+   "import-employees"
+  ]
+ ]
+}

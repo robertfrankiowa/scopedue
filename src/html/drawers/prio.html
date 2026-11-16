@@ -1,0 +1,21 @@
+<aside class="drawer" id="drawer-prio" role="dialog" aria-modal="true" aria-labelledby="dp-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dp-title">Priority attention</h2>
+      <p id="prio-sub">11 items across 5 projects, most urgent first.</p>
+    </div>
+    <div class="dr-close"><button type="button" class="dr-x" data-close aria-label="Close priority attention"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-tools">
+    <div class="seg" role="group" aria-label="Filter items" id="prio-seg">
+      <button type="button" data-f="all" aria-pressed="true">All <span class="n" id="prio-n-all">11</span></button>
+      <button type="button" data-f="due" aria-pressed="false">Deadlines <span class="n" id="prio-n-due">2</span></button>
+      <button type="button" data-f="action" aria-pressed="false">Action needed <span class="n" id="prio-n-action">9</span></button>
+    </div>
+  </div>
+  <div class="dr-body" id="prio-body">
+          <div id="prio-groups"></div>
+    <div class="dr-empty" id="prio-empty" hidden><b>All clear</b>Nothing matches this filter.</div>
+  </div>
+  <footer class="dr-foot" id="prio-foot" hidden><span id="prio-count"></span></footer>
+</aside>

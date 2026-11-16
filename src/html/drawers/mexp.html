@@ -1,0 +1,16 @@
+<aside class="drawer" id="drawer-mexp" role="dialog" aria-modal="true" aria-labelledby="mexp-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="mexp-title">Export market data</h2>
+      <p id="mexp-sub">The jobs, competitors, ratings and sources of this project, as JSON in the scopedue.market.v1 format.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close export"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <div class="cf">
+      <p class="pd-note st">Keep it as a backup, or paste it into an AI model when you ask for an update. Nothing leaves this device unless you copy it.</p>
+      <div class="fld st"><label for="mexp-json">JSON <span class="opt cnt" id="mexp-cnt"></span></label><textarea id="mexp-json" readonly rows="16" spellcheck="false"></textarea></div>
+    </div>
+  </div>
+  <footer class="dr-foot"><span class="c-hint">Click the text to select all</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Close</button><button type="button" class="btn-primary btn-sm" id="mexp-copy">Copy JSON</button></div></footer>
+</aside>

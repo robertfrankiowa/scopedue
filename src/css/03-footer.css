@@ -1,0 +1,75 @@
+/* ---------- Footer (one shared bar) ---------- */
+.site-foot { margin-top: auto; }
+.sf { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 32px 24px; }
+.sf-in { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 28px; padding-top: 16px; border-top: 1px solid var(--line-soft); font-size: 13px; color: var(--ink-3); }
+.sf-id { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.sf-name { font-family: var(--font-display); font-weight: 500; font-size: 17px; line-height: 1; color: var(--ink); }
+.sf-copy { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.sf-nav { margin-left: auto; display: flex; align-items: center; gap: 22px; }
+.sf-nav a { position: relative; color: var(--ink-2); padding: 4px 0; transition: color .15s var(--ease-out); }
+.sf-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 1px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .28s var(--ease-out); }
+.sf-nav a:hover { color: var(--ink); }
+.sf-nav a:hover::after, .sf-nav a:focus-visible::after { transform: scaleX(1); }
+.theme-sw { position: relative; display: inline-grid; grid-auto-flow: column; grid-auto-columns: 28px; padding: 2px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.theme-sw button { position: relative; z-index: 1; width: 28px; height: 28px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--ink-3); cursor: pointer; transition: color .2s var(--ease-out), transform .18s var(--ease-spring); }
+.theme-sw button:hover { color: var(--ink); }
+.theme-sw button:active { transform: scale(.92); }
+.theme-sw button[aria-pressed="true"] { color: var(--ink); }
+.theme-sw button .i { width: 15px; height: 15px; }
+.theme-sw button:focus-visible { outline-offset: 1px; }
+.ts-thumb { position: absolute; z-index: 0; top: 2px; left: 2px; width: 28px; height: 28px; border-radius: 8px; background: var(--bg); box-shadow: 0 0 0 1px var(--line-soft) inset; transform: translateX(calc(var(--ti, 0) * 28px)); transition: transform .38s var(--ease-spring); }
+.theme-sw.no-anim .ts-thumb { transition: none; }
+
+@media (max-width: 1240px) {
+  .kpi { padding: 14px 16px; gap: 12px; }
+  .kpi .i { display: none; }
+  .kpi .n { font-size: 36px; }
+}
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .side { position: fixed; top: 0; bottom: 0; left: 0; height: auto; width: min(300px, 86vw); z-index: 45; transform: translateX(-102%); visibility: hidden; transition: transform .34s var(--ease-io), visibility 0s linear .34s; box-shadow: 30px 0 70px -30px rgba(0,0,0,.6); }
+  .side[data-open] { transform: none; visibility: visible; transition: transform .52s var(--ease-out), visibility 0s; }
+  .side-edge { display: none; }
+  .side-top { padding-top: calc(20px + env(safe-area-inset-top, 0px)); }
+  .side-foot { padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .icon-btn.menu-btn { display: grid; margin-left: -8px; }
+  .brand-m { display: flex; }
+  .topbar { padding: 12px 16px; }
+  .content { padding: 20px 16px 24px; }
+  .sf { padding: 0 16px 20px; }
+}
+@media (max-width: 700px) {
+  .card-h { flex-wrap: wrap; }
+  .g-h { flex-wrap: wrap; row-gap: 2px; }
+  .search-w { display: none; }
+  .icon-btn.qs-btn { display: grid; }
+  .sf-id { flex: 1 0 100%; }
+  .sf-nav { margin-left: 0; }
+  .theme-sw { margin-left: auto; }
+  .kpis { grid-template-columns: minmax(0, 1fr); }
+  .kpi + .kpi { border-left: 0; border-top: 1px solid var(--line-soft); }
+  .kpi:first-child, .kpi:last-child { border-radius: 0; }
+  .notes { grid-template-columns: minmax(0, 1fr); }
+  :root { --gx: 16px; }
+  .row { grid-template-columns: 8px minmax(0, 1fr) 14px; }
+  .row .meta { grid-column: 2; justify-content: flex-start; }
+  .row > .i { grid-row: 1; grid-column: 3; }
+  .proj { grid-template-columns: 38px minmax(0, 1fr); }
+  .proj .resume { grid-column: 2; justify-self: start; }
+  .btn-primary span { display: none; }
+  .head h1 { font-size: 28px; }
+  /* v69: the top bar fits a 375px phone: New project, its label gone, is a 40px square like the icons beside it */
+  .topbar { gap: 10px; }
+  .top-actions { gap: 4px; }
+  .top-actions .btn-primary { width: 40px; padding: 0; justify-content: center; margin-left: 4px; }
+  /* a card's buttons wrap instead of pushing the page sideways (Working context: Copy for AI, Edit, Add link) */
+  .card-h .h-actions { flex: 0 1 auto; min-width: 0; flex-wrap: wrap; row-gap: 8px; }
+}
+/* the narrowest phones keep the mark and drop the name, so nothing scrolls sideways */
+@media (max-width: 360px) {
+  .brand-m { font-size: 0; gap: 0; }
+}
+

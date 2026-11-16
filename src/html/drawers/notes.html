@@ -1,0 +1,23 @@
+<aside class="drawer" id="drawer-notes" role="dialog" aria-modal="true" aria-labelledby="dn-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dn-title">Quick notes</h2>
+      <p id="dn-sub">4 notes, newest first.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close quick notes"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body" id="notes-body">
+    <form class="composer" id="composer" autocomplete="off">
+      <label for="note-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">New note</label>
+      <textarea id="note-input" placeholder="Capture a thought…"></textarea>
+      <div class="x6-cmp"><label><span>Project</span><span class="pd-sel"><select id="note-proj" aria-label="Project"></select><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></span></label><span id="note-remw"></span></div>
+      <div class="c-bar">
+        <span class="c-hint">Add <b>#tag</b> to file it · <kbd>⌘</kbd> <kbd>↵</kbd> to save</span>
+        <button type="submit" class="btn-primary btn-sm" id="note-save" disabled>Save note</button>
+      </div>
+    </form>
+    <div style="padding:16px var(--gx) 0"><div class="seg" role="group" aria-label="Filter notes" id="notes-seg"></div></div>
+    <div class="dnotes" id="dnotes" aria-live="polite"></div>
+  </div>
+  <footer class="dr-foot"><span id="notes-foot">Showing 4 notes</span><span>Newest first</span></footer>
+</aside>

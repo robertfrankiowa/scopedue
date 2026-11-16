@@ -1,0 +1,43 @@
+/* ───────── v66: polish ───────── */
+/* Dashboard: cards as tall as what they hold; the right column carries Continue and Quick notes */
+#view-dashboard .grid { align-items: start; }
+#view-dashboard .proj-list .proj { flex: none; }
+.db-side { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.db-side > .card { display: flex; flex-direction: column; }
+.db-side .notes { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 16px var(--gx) 20px; }
+.db-side .notes .note { min-height: 0; }
+.kpi small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kpi > span:nth-child(2) { min-width: 0; }
+.td-dot { background: var(--accent); }
+/* the sidebar counts only what needs you */
+.nav-i[data-view="projects"] .badge { display: none; }
+/* work rows: the size beside the title */
+.wk-sz { display: inline-grid; place-items: center; min-width: 20px; height: 18px; margin-left: 8px; padding: 0 5px; border-radius: 5px; font: 600 10.5px/1 var(--font-body); letter-spacing: .02em; color: var(--ink-3); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-soft); vertical-align: 1px; }
+/* My work, your own rows: one left edge for every title; the owner picker waits on the right */
+.wk-r.mine { grid-template-columns: minmax(0, 1fr) auto auto; }
+.wk-r.mine > .tx { grid-column: 1; grid-row: 1; }
+.wk-r.mine > .wk-as { grid-column: 2; grid-row: 1; width: 26px; height: 26px; transition: opacity .15s var(--ease-out); }
+.wk-r.mine > .wk-as .av { width: 26px; height: 26px; font-size: 10px; }
+.wk-r.mine > .wk-sd { grid-column: 3; grid-row: 1; }
+.wk-r.mine:not(:hover):not(:focus-within) > .wk-as { opacity: 0; }
+@media (hover: none) { .wk-r.mine > .wk-as { opacity: 1; } }
+.mw-g .wk-r + .wk-r::before { left: var(--gx); }
+.mw-g .wk-dn, .mw-g .wk-sf { padding-left: var(--gx); }
+.mw-more { padding-top: 6px; }
+/* at risk: a bar on the left, the same way a changed item is marked, instead of a wash of color */
+.wk-r.stuck, .wk-r.out, .wk-r.wait.due { background: none; }
+.wk-r.stuck::after, .wk-r.wait.due::after, .wk-r.out::after { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 0 3px 3px 0; background: var(--warn); }
+.wk-r.out::after { background: var(--crit); }
+@media (max-width: 700px) {
+  .wk-r { grid-template-columns: 30px minmax(0, 1fr); }
+  .wk-r .wk-sd { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; gap: 6px; }
+  .wk-r.solo { grid-template-columns: minmax(0, 1fr); }
+  .wk-r.solo > .tx, .wk-r.solo > .wk-sd { grid-column: 1; }
+  .wk-r.mine { grid-template-columns: minmax(0, 1fr) auto; }
+  .wk-r.mine > .wk-as { grid-column: 2; grid-row: 1; align-self: start; }
+  .wk-r.mine > .wk-sd { grid-column: 1 / -1; grid-row: 2; }
+  .wk-r .wk-sd > .wk-st { order: -1; }   /* the status first; a date and a link follow it */
+  .wk-rv { flex-wrap: wrap; }
+  .db-side .notes { padding-top: 14px; }
+}
+

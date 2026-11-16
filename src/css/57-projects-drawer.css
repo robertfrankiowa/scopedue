@@ -1,0 +1,30 @@
+/* ───────── v129 (CONTRACT 129): Projects in motion, calmer ───────── */
+#drawer-projects .seg button[hidden], #drawer-projects .dr-search[hidden], #drawer-projects .dr-foot[hidden], .pl-tools .seg button[hidden] { display: none; }
+/* a row: mark, name in the body face, its kind and when it was last touched on one line, focus and next step beside their labels;
+   the whole row resumes and the arrow is all that waits on the right */
+#drawer-projects .pj-d { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 14px; padding: 16px var(--gx); }
+#drawer-projects .pj-d:not([hidden]) ~ .pj-d:not([hidden])::before { left: calc(var(--gx) + 50px); }
+#drawer-projects .pj-d .pj-av { width: 36px; height: 36px; font-size: 17px; }
+#drawer-projects .pj-d h3 { margin: 0; font-family: var(--font-body); font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: -.005em; }
+#drawer-projects .pj-d .sub { display: flex; flex-wrap: wrap; margin-top: 2px; }
+#drawer-projects .pj-d .sub .ago::before { content: "\00b7"; margin: 0 6px; }
+#drawer-projects .fn { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 5px 12px; margin-top: 10px; }
+#drawer-projects .fn > div { display: contents; }
+#drawer-projects .fn dt { padding-top: 2px; font-size: 12px; font-weight: 500; color: var(--ink-3); }
+#drawer-projects .fn dd { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--ink-2); }
+#drawer-projects .fn dd.old { color: var(--ink); }
+#drawer-projects .fn dd.old::before { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 7px 2px 0; border-radius: 50%; background: var(--warn); vertical-align: middle; }
+#drawer-projects .pj-d .resume { align-self: center; height: 32px; padding: 0 9px; gap: 0; background: transparent; border-color: transparent; color: var(--ink-3); }
+#drawer-projects .pj-d .resume::after { content: ""; position: absolute; inset: 0; }
+#drawer-projects .pj-d .resume:active { transform: none; }   /* a transform would make the button the ::after's box */
+#drawer-projects .pj-d .resume .rl { display: inline-block; max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .25s var(--ease-out), opacity .2s var(--ease-out), margin .25s var(--ease-out); }
+#drawer-projects .pj-d:hover .resume, #drawer-projects .pj-d .resume:focus-visible { background: var(--accent-soft); color: var(--accent); }
+#drawer-projects .pj-d:hover .resume .rl, #drawer-projects .pj-d .resume:focus-visible .rl { max-width: 120px; opacity: 1; margin-right: 6px; }
+#drawer-projects .pj-d:has(.resume:focus-visible) { background: var(--surface-2); }
+@media (max-width: 700px) {
+  #drawer-projects .pj-d { grid-template-columns: 36px minmax(0, 1fr) auto; }
+  #drawer-projects .pj-d .resume { grid-column: 3; justify-self: end; }
+  #drawer-projects .fn { grid-template-columns: minmax(0, 1fr); gap: 1px; }
+  #drawer-projects .fn > div + div dt { margin-top: 6px; }
+  #drawer-projects .seg button { padding-inline: 8px; gap: 5px; }   /* the four filters in sight, in both languages */
+}

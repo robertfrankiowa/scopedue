@@ -1,0 +1,24 @@
+<aside class="drawer" id="drawer-client-new" role="dialog" aria-modal="true" aria-labelledby="dcn-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dcn-title">New client</h2>
+      <p>Add someone you work with. Share projects next.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close new client"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="cf" novalidate autocomplete="off">
+      <div class="cf-prev empty st" id="cf-prev" aria-hidden="true"><span class="pj-av" id="cf-av">?</span><div><b id="cf-pn">Client name</b><small id="cf-ps">Appears here as you type</small></div></div>
+      <div class="fld st" id="f-name"><label for="cf-name">Client or company <span class="opt">Required</span></label><input id="cf-name" placeholder="e.g. Northwind Studio" aria-describedby="e-name" maxlength="80"><span class="err" id="e-name"></span></div>
+      <div class="fld-row st">
+        <div class="fld" id="f-contact"><label for="cf-contact">Main contact <span class="opt">Required</span></label><input id="cf-contact" placeholder="Full name" aria-describedby="e-contact" maxlength="60"><span class="err" id="e-contact"></span></div>
+        <div class="fld"><label for="cf-role">Role <span class="opt">Optional</span></label><input id="cf-role" placeholder="Owner, Marketing lead" maxlength="40"></div>
+      </div>
+      <div class="fld st" id="f-email"><label for="cf-email">Email <span class="opt" id="cf-email-opt">Needed for the invite</span></label><input id="cf-email" type="email" inputmode="email" placeholder="name@company.com" aria-describedby="e-email" maxlength="90"><span class="err" id="e-email"></span></div>
+      <div class="cf-sw st"><div><b id="sw-l">Invite to the client portal</b><small id="sw-d">They get a link to approve changes and follow progress. Turn off to send it later.</small></div><button type="button" class="sw" id="cf-sw" role="switch" aria-checked="true" aria-labelledby="sw-l" aria-describedby="sw-d"></button></div>
+      <div class="fld st cf-lang" id="f-lang"><label id="cf-lang-l">Portal and email language</label><div class="seg" id="cf-lang" role="group" aria-labelledby="cf-lang-l" translate="no"><button type="button" data-f="en" aria-pressed="true" lang="en">English</button><button type="button" data-f="vi" aria-pressed="false" lang="vi">Tiếng Việt</button></div><span class="hint" id="cf-lang-d">Their portal opens in this language and every email to them is written in it. They can still switch the portal themselves.</span></div>
+      <div class="fld st"><label for="cf-note">Private note <span class="opt lock-tag"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Only you can see this</span></label><textarea id="cf-note" placeholder="How you met, how they like to work, anything worth remembering" maxlength="400"></textarea></div>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to create</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="cf" class="btn-primary btn-sm" id="cf-go">Create client</button></div></footer>
+</aside>

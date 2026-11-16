@@ -1,0 +1,1015 @@
+{
+ "order": [
+  "heather",
+  "tony"
+ ],
+ "v": {
+  "heather": {
+   "studio": {
+    "slug": "sample",
+    "name": "Kim Lê",
+    "lang": "en"
+   },
+   "project": {
+    "ref": "hr-time-clock-app",
+    "name": "HR Time Clock App"
+   },
+   "viewer": {
+    "name": "Heather Morales",
+    "email": "h•••••@dewdropcoffee.example",
+    "lang": "en"
+   },
+   "show": {
+    "rel": {
+     "name": "v3",
+     "date": "2026-12-01",
+     "ship": "HR sends the holiday party sign-up form and the uniform T-shirt size survey, with a roll-up by store"
+    },
+    "items": [
+     {
+      "id": "i30",
+      "t": "Event sign-up forms, uniform T-shirt size survey",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i73",
+      "t": "Import the shift schedule from Excel, tell the right people about new shifts",
+      "sec": "next",
+      "st": "planned"
+     },
+     {
+      "id": "i94",
+      "t": "Sign-up roll-up by store, Excel export",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i96",
+      "t": "Remind people who haven't signed up 2 days before the deadline",
+      "sec": "in",
+      "st": "doing"
+     }
+    ],
+    "ships": [
+     {
+      "id": "s58",
+      "name": "v1 Pilot",
+      "date": "2026-08-31",
+      "sum": "Announcements with confirms, automatic reminders and pay stubs are live at 14 stores. Excel export moved to v2."
+     },
+     {
+      "id": "s91",
+      "name": "v2",
+      "date": "2026-10-26",
+      "sum": "Staff at 14 stores clock in and out on the app; the monthly timesheet exports to Excel, no more retyping from paper logs."
+     }
+    ],
+    "use": "internal"
+   },
+   "entries": [
+    {
+     "id": "v22",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "All 14 stores ran the time clock on the app for a week, and none had to go back to paper.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792978087913,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9redssdup",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you have all 14 stores try it for a week?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792919220506,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Staff at the 6 stores still on paper clock in and out on the app; HR exports the monthly timesheet to Excel without retyping"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "pass"
+    },
+    {
+     "id": "v21",
+     "k": "req",
+     "names": "Tony Russo",
+     "t": "A part-timer works 2 stores in one day: Silver Lake in the morning, Echo Park in the afternoon. The app needs to get both shifts right.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1791255745261,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v20",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Lindsay forgot to clock out and sent a time fix at 11 PM; the store manager approved it the next morning, and the timesheet shows who approved.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Request a time fix, store manager approves",
+     "vo": 0,
+     "ts": 1791195688677,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mj06w5m8",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the timesheet export layout: Employee ID, Name, Store, Date, Clock in, Clock out, Hours, Time fix notes.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Export the monthly timesheet to Excel by employee ID",
+     "vo": 0,
+     "ts": 1791104764706,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "yes"
+    },
+    {
+     "id": "fmwf9mfb9ojrj",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The timesheet doesn't deduct the 30-minute meal break.",
+     "st": "notbug",
+     "why": "The app records the real clock-in and clock-out times. Meal break deductions stay in Excel as they are now, since the app doesn't calculate hours or pay.",
+     "res": "",
+     "ab": "Export the monthly timesheet to Excel by employee ID",
+     "vo": 0,
+     "ts": 1791087256356,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mbtr7jp2",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "The CEO wants location on for the whole shift, to see who leaves the store mid-shift.",
+     "st": "no",
+     "why": "Already under Won't do: the app only reads location when you clock in and out. Tracking the whole shift breaks the project's principle and needs staff consent.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1791023924960,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v16",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Closing shift 10 PM–1 AM: clocking out after midnight lands on the next day, and the timesheet shows two partial shifts.",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790841850160,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9llzlwjbk",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The Westside Mall store is on the lower level: GPS is off by more than 650 ft, and 11 of 12 people got \"outside the clock-in area\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790760999437,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v15",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "The Westside Mall store is on the lower level: GPS is off by more than 650 ft, and 11 of 12 people got \"outside the clock-in area\".",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790743882600,
+     "cm": [],
+     "bid": "fmwf9llzlwjbk",
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9lf8xfhxz",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you try it at the Westside Mall store too, the one inside the mall?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790682234348,
+     "cm": [],
+     "url": "https://staging.example.com/time-clock",
+     "steps": [
+      "Stand inside the store, open the app, tap Clock in",
+      "Allow location \"While using the app\"",
+      "See \"Clocked in at …\" once the server has it",
+      "Lock the phone, work 1 hour, then tap Clock out"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "fail"
+    },
+    {
+     "id": "v14",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Echo Park store: two people share one phone, and announcement confirms get recorded for whoever signed in first.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1788431804829,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v13",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Could you try it with the 20 people at the Silver Lake store, everyone opening their own stub?",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786682634637,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9gca72v6r",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you try it with a few people at one store?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786669475001,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Dewdrop sends announcements that need a confirm and pay stubs to 182 employees; nobody can see anyone else's stub"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "pass"
+    },
+    {
+     "id": "v10",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "Let staff clock in on the app too. 6 of my stores still use paper logs, and at month-end I retype them.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 1,
+     "ts": 1786416134268,
+     "cm": [
+      {
+       "names": "Tony Russo",
+       "t": "The night shift often forgets to clock out, and the store manager fixes the paper log the next morning.",
+       "ts": 1786603817170
+      }
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v9",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Get the reminder at 9 AM the day before the deadline; once you confirm, no more reminders.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Remind people who haven't confirmed, stop as soon as they do",
+     "vo": 0,
+     "ts": 1786355438599,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9ew1ezc59",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the activation text: \"Your activation code is 123456\".",
+     "st": "nope",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786068050241,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "nope"
+    },
+    {
+     "id": "fmwf9esprj3p6",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "People who've left the company are still on the reminder list.",
+     "st": "notbug",
+     "why": "In the file you sent, these 3 people are still marked \"Active\". Fix their status in the file and import it again.",
+     "res": "",
+     "ab": "Remind people who haven't confirmed, stop as soon as they do",
+     "vo": 0,
+     "ts": 1786003832125,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9epemh00w",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "Have the app calculate tax withholding too, so we don't have to do it in Excel.",
+     "st": "no",
+     "why": "Already under Won't do: the app only sends the numbers you finalized. Taxes are still done in Excel or by the payroll provider.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785986486803,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v7",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "On the day of the storm, we had to tell the afternoon shift to stay home fast. We need urgent announcements pinned to the top, with a reminder after 2 hours if they haven't confirmed.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785899771129,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9eb26dwbw",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the pay stub layout: base pay, allowances, overtime, deductions, tax withholding, net pay.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Send pay stubs from the Excel file: check for errors, approve, then send",
+     "vo": 0,
+     "ts": 1785817698129,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "yes"
+    },
+    {
+     "id": "v3",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The Employee ID column is formatted as a number, so 0012 became 12, and 37 people got \"ID not found\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785637630345,
+     "cm": [
+      {
+       "names": "Heather Morales",
+       "t": "I texted you the original file, with the pay and bank account columns removed.",
+       "ts": 1785656294057
+      },
+      {
+       "names": "Heather Morales",
+       "t": "5-digit ID 00012 still loses its leading zeros.",
+       "ts": 1785722505935
+      }
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v2",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "A lot of people leave their phones at the bar. Opening a pay stub should ask to verify, or anyone holding the phone can see it.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785482494692,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9di2nicdg",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Step 2: a file with merged cells in the header row shows an error on row 1, without saying which cell.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785478571875,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v1",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Step 2: a file with merged cells in the header row shows an error on row 1, without saying which cell.",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785459722133,
+     "cm": [],
+     "bid": "fmwf9di2nicdg",
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9dbcorrgo",
+     "k": "chk",
+     "names": "Heather Morales",
+     "t": "I used the team's real file, with the pay and bank account columns removed.",
+     "st": "closed",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785396543361,
+     "cm": [],
+     "url": "https://staging.example.com/import-employees",
+     "steps": [
+      "Open Import employees, pick the team's staff file",
+      "Pick the \"Staff Nov\" sheet, header on row 3",
+      "Check that ID 0012 is still 0012",
+      "Look at how many rows have errors and duplicates"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "fail"
+    }
+   ],
+   "pending": [],
+   "approvals": [],
+   "keys": []
+  },
+  "tony": {
+   "studio": {
+    "slug": "sample",
+    "name": "Kim Lê",
+    "lang": "en"
+   },
+   "project": {
+    "ref": "hr-time-clock-app",
+    "name": "HR Time Clock App"
+   },
+   "viewer": {
+    "name": "Tony Russo",
+    "email": "t•••••@dewdropcoffee.example",
+    "lang": "en"
+   },
+   "show": {
+    "rel": {
+     "name": "v3",
+     "date": "2026-12-01",
+     "ship": "HR sends the holiday party sign-up form and the uniform T-shirt size survey, with a roll-up by store"
+    },
+    "items": [
+     {
+      "id": "i30",
+      "t": "Event sign-up forms, uniform T-shirt size survey",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i73",
+      "t": "Import the shift schedule from Excel, tell the right people about new shifts",
+      "sec": "next",
+      "st": "planned"
+     },
+     {
+      "id": "i94",
+      "t": "Sign-up roll-up by store, Excel export",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i96",
+      "t": "Remind people who haven't signed up 2 days before the deadline",
+      "sec": "in",
+      "st": "doing"
+     }
+    ],
+    "ships": [
+     {
+      "id": "s58",
+      "name": "v1 Pilot",
+      "date": "2026-08-31",
+      "sum": "Announcements with confirms, automatic reminders and pay stubs are live at 14 stores. Excel export moved to v2."
+     },
+     {
+      "id": "s91",
+      "name": "v2",
+      "date": "2026-10-26",
+      "sum": "Staff at 14 stores clock in and out on the app; the monthly timesheet exports to Excel, no more retyping from paper logs."
+     }
+    ],
+    "use": "internal"
+   },
+   "entries": [
+    {
+     "id": "v22",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "All 14 stores ran the time clock on the app for a week, and none had to go back to paper.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792978087913,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9redssdup",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you have all 14 stores try it for a week?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792919220506,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Staff at the 6 stores still on paper clock in and out on the app; HR exports the monthly timesheet to Excel without retyping"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v21",
+     "k": "req",
+     "names": "Tony Russo",
+     "t": "A part-timer works 2 stores in one day: Silver Lake in the morning, Echo Park in the afternoon. The app needs to get both shifts right.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1791255745261,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v20",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Lindsay forgot to clock out and sent a time fix at 11 PM; the store manager approved it the next morning, and the timesheet shows who approved.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Request a time fix, store manager approves",
+     "vo": 0,
+     "ts": 1791195688677,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mj06w5m8",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the timesheet export layout: Employee ID, Name, Store, Date, Clock in, Clock out, Hours, Time fix notes.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Export the monthly timesheet to Excel by employee ID",
+     "vo": 0,
+     "ts": 1791104764706,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mfb9ojrj",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The timesheet doesn't deduct the 30-minute meal break.",
+     "st": "notbug",
+     "why": "The app records the real clock-in and clock-out times. Meal break deductions stay in Excel as they are now, since the app doesn't calculate hours or pay.",
+     "res": "",
+     "ab": "Export the monthly timesheet to Excel by employee ID",
+     "vo": 0,
+     "ts": 1791087256356,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mbtr7jp2",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "The CEO wants location on for the whole shift, to see who leaves the store mid-shift.",
+     "st": "no",
+     "why": "Already under Won't do: the app only reads location when you clock in and out. Tracking the whole shift breaks the project's principle and needs staff consent.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1791023924960,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v16",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Closing shift 10 PM–1 AM: clocking out after midnight lands on the next day, and the timesheet shows two partial shifts.",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790841850160,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9llzlwjbk",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The Westside Mall store is on the lower level: GPS is off by more than 650 ft, and 11 of 12 people got \"outside the clock-in area\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790760999437,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v15",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "The Westside Mall store is on the lower level: GPS is off by more than 650 ft, and 11 of 12 people got \"outside the clock-in area\".",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790743882600,
+     "cm": [],
+     "bid": "fmwf9llzlwjbk",
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9lf8xfhxz",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you try it at the Westside Mall store too, the one inside the mall?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Clock in and out with GPS, and timesheets for staff",
+     "vo": 0,
+     "ts": 1790682234348,
+     "cm": [],
+     "url": "https://staging.example.com/time-clock",
+     "steps": [
+      "Stand inside the store, open the app, tap Clock in",
+      "Allow location \"While using the app\"",
+      "See \"Clocked in at …\" once the server has it",
+      "Lock the phone, work 1 hour, then tap Clock out"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v14",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Echo Park store: two people share one phone, and announcement confirms get recorded for whoever signed in first.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1788431804829,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v13",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Could you try it with the 20 people at the Silver Lake store, everyone opening their own stub?",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786682634637,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9gca72v6r",
+     "k": "chk",
+     "names": "Heather Morales and Tony Russo",
+     "t": "Could you try it with a few people at one store?",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786669475001,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Dewdrop sends announcements that need a confirm and pay stubs to 182 employees; nobody can see anyone else's stub"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v10",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "Let staff clock in on the app too. 6 of my stores still use paper logs, and at month-end I retype them.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 1,
+     "ts": 1786416134268,
+     "cm": [
+      {
+       "names": "Tony Russo",
+       "t": "The night shift often forgets to clock out, and the store manager fixes the paper log the next morning.",
+       "ts": 1786603817170
+      }
+     ],
+     "mine": false,
+     "voted": true
+    },
+    {
+     "id": "v9",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Get the reminder at 9 AM the day before the deadline; once you confirm, no more reminders.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Remind people who haven't confirmed, stop as soon as they do",
+     "vo": 0,
+     "ts": 1786355438599,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9ew1ezc59",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the activation text: \"Your activation code is 123456\".",
+     "st": "nope",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786068050241,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9esprj3p6",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "People who've left the company are still on the reminder list.",
+     "st": "notbug",
+     "why": "In the file you sent, these 3 people are still marked \"Active\". Fix their status in the file and import it again.",
+     "res": "",
+     "ab": "Remind people who haven't confirmed, stop as soon as they do",
+     "vo": 0,
+     "ts": 1786003832125,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9epemh00w",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "Have the app calculate tax withholding too, so we don't have to do it in Excel.",
+     "st": "no",
+     "why": "Already under Won't do: the app only sends the numbers you finalized. Taxes are still done in Excel or by the payroll provider.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785986486803,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v7",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "On the day of the storm, we had to tell the afternoon shift to stay home fast. We need urgent announcements pinned to the top, with a reminder after 2 hours if they haven't confirmed.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785899771129,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9eb26dwbw",
+     "k": "appr",
+     "names": "Heather Morales",
+     "t": "Approve the pay stub layout: base pay, allowances, overtime, deductions, tax withholding, net pay.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Send pay stubs from the Excel file: check for errors, approve, then send",
+     "vo": 0,
+     "ts": 1785817698129,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v3",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "The Employee ID column is formatted as a number, so 0012 became 12, and 37 people got \"ID not found\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785637630345,
+     "cm": [
+      {
+       "names": "Heather Morales",
+       "t": "I texted you the original file, with the pay and bank account columns removed.",
+       "ts": 1785656294057
+      },
+      {
+       "names": "Heather Morales",
+       "t": "5-digit ID 00012 still loses its leading zeros.",
+       "ts": 1785722505935
+      }
+     ],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v2",
+     "k": "req",
+     "names": "Heather Morales",
+     "t": "A lot of people leave their phones at the bar. Opening a pay stub should ask to verify, or anyone holding the phone can see it.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785482494692,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9di2nicdg",
+     "k": "bug",
+     "names": "Heather Morales",
+     "t": "Step 2: a file with merged cells in the header row shows an error on row 1, without saying which cell.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785478571875,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v1",
+     "k": "test",
+     "names": "Heather Morales",
+     "t": "Step 2: a file with merged cells in the header row shows an error on row 1, without saying which cell.",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785459722133,
+     "cm": [],
+     "bid": "fmwf9di2nicdg",
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9dbcorrgo",
+     "k": "chk",
+     "names": "Heather Morales",
+     "t": "I used the team's real file, with the pay and bank account columns removed.",
+     "st": "closed",
+     "why": "",
+     "res": "",
+     "ab": "Import employees from Excel: map columns, preview, show errors",
+     "vo": 0,
+     "ts": 1785396543361,
+     "cm": [],
+     "url": "https://staging.example.com/import-employees",
+     "steps": [
+      "Open Import employees, pick the team's staff file",
+      "Pick the \"Staff Nov\" sheet, header on row 3",
+      "Check that ID 0012 is still 0012",
+      "Look at how many rows have errors and duplicates"
+     ],
+     "mine": false,
+     "voted": false
+    }
+   ],
+   "pending": [],
+   "approvals": [],
+   "keys": []
+  }
+ }
+}

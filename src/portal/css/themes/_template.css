@@ -1,0 +1,33 @@
+/* A new portal theme: copy this file to themes/<id>.css (lowercase letters and -), change the values, run python3 build.py.
+   The portal uses it when the studio's profile names it (studio.theme from the server) or when the address has ?theme=<id>
+   (to preview). Files whose name starts with _ are not built.
+
+   The header (keep it first in the file):
+   theme: <id>          the same as the file name; it goes in <html data-theme="<id>">
+   name: <English name>
+   name-vi: <tên tiếng Việt>
+   note: <one line, shown under the name in the studio's Profile>
+   note-vi: <the same line in Vietnamese>
+   system: dark         optional: used when the computer is in dark mode and the studio chose no theme (only one theme says it)
+
+   A theme may bring its own fonts: put the .woff2 files in src/portal/fonts and declare them here with @font-face
+   (url(fonts/<file>)); a browser reads them only when this theme is on the page. See porcelain.css.
+
+   Anything not set here comes from light.css. --tone is the studio's colour: mix accents from it, as light.css does. */
+/* theme: example
+   name: Example
+   name-vi: Ví dụ
+   note: Sand and ink.
+   note-vi: Cát và mực. */
+:root[data-theme="example"]{
+  color-scheme:light;
+  --page:#f6f2ea; --top:#fffdf8; --hero:#f3ede2; --card:#fbf7f0; --card2:#fdfaf4;   /* the page, the header, the hero, cards */
+  --line:#e3d9c8; --line-soft:#ebe3d5;
+  --ink:#2a2016; --ink2:#4a3d2e; --lead:#6f6253; --muted:#6f6253; --muted2:#7a6c5c; --kicker:#7a6c5c;   /* text */
+  --green:color-mix(in srgb,var(--tone) 70%,#1a1208); --green-mid:color-mix(in srgb,var(--tone) 80%,#fff);  /* accents, from the studio's colour */
+  --check-bg:color-mix(in srgb,var(--tone) 14%,#fff); --dot:color-mix(in srgb,var(--tone) 85%,#fff);
+  --panel-a:color-mix(in srgb,var(--tone) 80%,#1a1208); --panel-b:color-mix(in srgb,var(--tone) 68%,#1a1208);   /* the decision panel */
+  --peach:#f3e2cf; --peach-ink:#6b5440; --alert:#c4452c;
+  --cream:#f7f1e6; --cream-ink:#2a1d10; --cream-rgb:247 241 230; --panel-title:#f7f1e6; --panel-err:#f6b9a6;
+  --shade:26 18 8;
+}

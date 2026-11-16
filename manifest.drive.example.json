@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ScopeDue",
+  "version": "0.4.0",
+  "description": "A calm new tab for client work: what is due, what changed, what waits on you. Local-first; your own server only for approvals.",
+  "minimum_chrome_version": "120",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "app.html"
+  },
+  "permissions": [
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "PUT-YOUR-CLIENT-ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  }
+}

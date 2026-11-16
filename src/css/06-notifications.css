@@ -1,0 +1,55 @@
+/* ---------- Notifications ---------- */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.icon-btn[aria-expanded="true"] { background: var(--bg); border-color: var(--line); color: var(--ink); }
+.nbadge { position: absolute; top: 2px; right: 0; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; background: var(--crit); color: var(--on-crit); font: 600 11px/16px var(--font-body); text-align: center; font-variant-numeric: tabular-nums; box-shadow: 0 0 0 2px var(--surface); pointer-events: none; transition: transform .32s var(--ease-out), opacity .2s var(--ease-out); }
+.nbadge.zero { transform: scale(.4); opacity: 0; }
+
+.notif { position: fixed; z-index: 30; top: var(--nt, 64px); right: var(--nr, 32px); width: 400px; max-width: calc(100vw - 24px); display: flex; flex-direction: column; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: inset 0 1px 0 var(--hl), 0 2px 6px rgb(var(--shade-deep) / .06), 0 28px 56px -24px rgb(var(--shade-deep) / .5); transform-origin: calc(100% - 22px) 0; opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.98); transition: opacity .16s var(--ease-io), transform .16s var(--ease-io), visibility 0s linear .16s; outline: none; }
+.notif[data-open] { opacity: 1; visibility: visible; transform: none; transition: opacity .24s var(--ease-out), transform .34s var(--ease-out), visibility 0s; }
+.n-h { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px var(--gx) 12px; }
+.n-h h2 { font-family: var(--font-display); font-weight: 500; font-size: 22px; line-height: 1.15; margin: 0; letter-spacing: -.012em; font-optical-sizing: auto; }
+.link:disabled { color: var(--ink-3); cursor: default; text-decoration: none; }
+.n-tools { padding: 0 var(--gx) 16px; border-bottom: 1px solid var(--line-soft); }
+.n-body { max-height: min(520px, calc(100dvh - 190px)); overflow-y: auto; overscroll-behavior: contain; }
+.n-gh { position: sticky; top: 0; z-index: 2; padding: 8px var(--gx); background: var(--surface-2); border-bottom: 1px solid var(--line-soft); font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.n-group + .n-group .n-gh { border-top: 1px solid var(--line-soft); }
+.n-list { list-style: none; margin: 0; padding: 0; }
+.n-item { position: relative; overflow: hidden; transition: background .15s var(--ease-out), max-height .3s var(--ease-out), opacity .2s var(--ease-out); }
+.n-item + .n-item::before { content: ""; position: absolute; top: 0; left: calc(var(--gx) + 20px); right: var(--gx); height: 1px; background: var(--line-soft); }
+.n-item[data-unread][data-tone="crit"] { background: color-mix(in srgb, var(--crit) 4%, transparent); }
+.n-item:hover { background: var(--surface-2); }
+.n-item[data-unread][data-tone="crit"]:hover { background: color-mix(in srgb, var(--crit) 7%, transparent); }
+.n-item.leaving { max-height: 0 !important; opacity: 0; }
+.n-main { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 8px minmax(0, 1fr) auto; column-gap: 12px; align-items: start; width: 100%; padding: 14px var(--gx); cursor: pointer; }
+.n-main:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 8px; }
+.n-dot { width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: var(--accent); transition: transform .3s var(--ease-out), opacity .2s var(--ease-out); }
+.n-item[data-tone="crit"] .n-dot { background: var(--crit); box-shadow: 0 0 0 3px color-mix(in srgb, var(--crit) 16%, transparent); }
+.n-item[data-tone="warn"] .n-dot { background: var(--warn); box-shadow: 0 0 0 3px color-mix(in srgb, var(--warn) 16%, transparent); }
+.n-item:not([data-unread]) .n-dot { transform: scale(0); opacity: 0; }
+.n-txt { min-width: 0; display: block; }
+.n-title { display: block; font-size: 14px; line-height: 1.35; font-weight: 500; color: var(--ink-2); transition: color .2s var(--ease-out); }
+.n-item[data-unread] .n-title { font-weight: 600; color: var(--ink); }
+.n-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 2px; font-size: 13px; line-height: 1.45; color: var(--ink-3); text-wrap: pretty; }
+.n-item[data-unread] .n-text { color: var(--ink-2); }
+.n-meta { display: block; margin-top: 6px; font-size: 12px; color: var(--ink-3); }
+.n-time { padding-top: 2px; font-size: 12px; line-height: 1.35; color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; transition: opacity .15s var(--ease-out); }
+.n-read { position: absolute; top: 10px; right: calc(var(--gx) - 6px); width: 28px; height: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--ink-3); display: grid; place-items: center; cursor: pointer; opacity: 0; transform: scale(.9); transition: opacity .15s var(--ease-out), transform .18s var(--ease-out), background .15s var(--ease-out), color .15s var(--ease-out); }
+.n-read .i { width: 15px; height: 15px; }
+.n-read:hover { background: var(--bg); color: var(--ink); }
+.n-read[hidden] { display: none; }
+@media (hover: hover) {
+  .n-item[data-unread]:hover .n-read, .n-item[data-unread]:focus-within .n-read { opacity: 1; transform: none; }
+  .n-item[data-unread]:hover .n-time, .n-item[data-unread]:focus-within .n-time { opacity: 0; }
+}
+@media (hover: none) { .n-read { display: none; } }
+@keyframes n-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.notif.play .st { animation: n-in .4s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 28ms + 60ms); }
+@media (max-width: 700px) {
+  .notif { left: 12px; right: 12px; width: auto; max-width: none; transform-origin: calc(100% - 60px) 0; }
+}
+
+/* v71: Mark all as read and Clear all side by side (and the messages popup's New message and Clear) */
+.n-acts { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* v76: an invitation answered in the bell (38): Accept and Decline under its text */
+.n-ans { display: flex; gap: 8px; margin-top: -4px; padding: 0 var(--gx) 14px calc(var(--gx) + 20px); }

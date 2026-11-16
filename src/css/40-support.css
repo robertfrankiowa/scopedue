@@ -1,0 +1,60 @@
+/* ---------- v69: Help › Contact support: the form, and the conversations with the ScopeDue team (49-support.js) ---------- */
+#xs-badge[hidden] { display: none; }
+.xs-new { display: grid; gap: 14px; padding: 2px var(--gx) 0; }
+.xs-new .sy-acts { padding-left: 0; padding-right: 0; padding-bottom: 14px; }
+.xs-new select { display: block; width: 100%; height: 42px; padding: 0 38px 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2) var(--select-arrow) no-repeat right 12px center; appearance: none; -webkit-appearance: none; cursor: pointer; color: var(--ink); font: 14px var(--font-body); outline: 0; }
+.xs-new select:focus { background-color: var(--surface); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent); }
+.xs-new textarea, .xs-rf textarea { resize: vertical; }
+.fld[data-err] textarea { border-color: var(--crit); box-shadow: 0 0 0 3px color-mix(in srgb, var(--crit) 12%, transparent); }
+.xs-note { margin: 0; padding: 4px var(--gx) 16px; font-size: 13px; line-height: 1.55; color: var(--ink-3); }
+.xs-note.sy-bad { color: var(--crit); }
+.xs-h { margin-top: 2px; }
+.xs-list { list-style: none; margin: 0; padding: 6px var(--gx) 14px; display: grid; gap: 8px; }
+.xs-th { border: 1px solid var(--line-soft); border-radius: 12px; background: var(--surface); }
+.xs-th > summary { display: flex; align-items: center; gap: 8px; padding: 11px 13px; cursor: pointer; list-style: none; min-height: 44px; }
+.xs-th > summary::-webkit-details-marker { display: none; }
+.xs-sj { flex: 1 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.xs-th .chip { flex: none; padding: 1px 8px; font-size: 11px; }
+.xs-when { flex: none; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.xs-ms { list-style: none; margin: 0; padding: 0 13px; display: grid; gap: 10px; }
+.xs-m { padding: 10px 12px; border-radius: 10px; background: var(--surface-2); }
+.xs-m.team { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); }
+.xs-mh { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--ink-3); margin-bottom: 4px; }
+.xs-mh b { font-weight: 600; color: var(--ink-2); }
+.xs-txt { font-size: 13.5px; line-height: 1.55; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.xs-rf { padding: 12px 13px 2px; }
+.xs-rf textarea { min-height: 72px; }
+.xs-rf .sy-acts { padding: 10px 0 12px; }
+.xs-rf .xs-del { margin-left: auto; }
+.xs-rf .xs-del[data-arm] { color: var(--crit); border-color: color-mix(in srgb, var(--crit) 45%, var(--line)); }
+
+/* ---------- v71: the envelope's popup (#xs-pop), built on the bell's .notif ---------- */
+.xs-pop { transform-origin: calc(100% - 66px) 0; }
+.xs-pop .n-body { border-top: 1px solid var(--line-soft); max-height: min(440px, calc(100dvh - 210px)); }
+.xs-pop .n-item + .n-item::before { left: calc(var(--gx) + 20px); }
+.xs-pop .n-title [translate] { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.xs-who { font-weight: 600; color: var(--ink-2); }
+.xs-pop-n { padding-top: 16px; }
+.xs-pop .sy-acts.xs-pop-n { padding: 0 var(--gx) 16px; }
+.xs-pop-f { display: flex; justify-content: center; padding: 10px var(--gx); border-top: 1px solid var(--line-soft); background: var(--surface-2); }
+
+/* ---------- CONTRACT 144: the letter a new install finds in the envelope (drawers/welcome.html) ---------- */
+.drawer.wl { top: 5vh; bottom: 5vh; left: 50%; right: auto; width: min(680px, calc(100vw - 32px)); border-radius: 20px; transform: translate(-50%, 18px) scale(.985); opacity: 0; transition: transform .3s var(--ease-io), opacity .22s var(--ease-io), visibility 0s linear .3s; }
+.drawer.wl[data-open] { transform: translate(-50%, 0) scale(1); opacity: 1; transition: transform .5s var(--ease-out), opacity .3s var(--ease-out), visibility 0s; }
+.drawer.wl .dr-h { padding: 30px 40px 20px; border-bottom: 1px solid var(--line-soft); }
+.drawer.wl .dr-h h2 { font-size: 30px; line-height: 1.12; margin-top: 8px; text-wrap: balance; }
+.wl-k { display: block; font: 600 11px var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.wl-b { padding: 24px 40px 30px; font-size: 15px; line-height: 1.7; color: var(--ink-2); }
+.wl-b p { margin: 0 0 14px; text-wrap: pretty; }
+.wl-q { margin: 0 0 14px; padding: 12px 18px 12px 36px; display: grid; gap: 6px; border-left: 2px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; color: var(--ink); font-weight: 500; }
+.wl-q li::marker { color: var(--ink-3); }
+.wl-kind h3 { margin: 18px 0 4px; font-size: 15px; font-weight: 600; color: var(--ink); }
+.wl-b .wl-sig { margin: 22px 0 0; font-family: var(--font-display); font-size: 20px; color: var(--ink); }
+.xb-wl { padding: 12px var(--gx) 16px; border-top: 1px solid var(--line-soft); }
+@media (max-width: 640px) {
+  .drawer.wl { top: 0; bottom: 0; left: 0; right: 0; width: auto; border-radius: 0; border: 0; transform: translateY(16px); }
+  .drawer.wl[data-open] { transform: none; }
+  .drawer.wl .dr-h { padding: 22px var(--gx) 16px; }
+  .drawer.wl .dr-h h2 { font-size: 25px; }
+  .wl-b { padding: 18px var(--gx) 24px; }
+}

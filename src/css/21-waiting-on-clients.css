@@ -1,0 +1,68 @@
+/* ---------- Waiting on clients ---------- */
+.ca { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+/* v132 (110): the head is the client and one action. A monogram, the name, then who and when they last opened the portal on one quiet line */
+.ca-gh { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto auto; align-items: center; gap: 4px 16px; padding: 18px var(--gx); }
+.ca-av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); font-family: var(--font-display); font-size: 19px; font-weight: 500; line-height: 1; font-optical-sizing: auto; }
+.ca-gt { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 12px; }
+.ca-gt h2 { flex: 1 0 100%; margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.2; letter-spacing: -.012em; overflow-wrap: anywhere; font-optical-sizing: auto; }
+.ca-gt small { margin-top: 3px; font-size: 12.5px; color: var(--ink-3); overflow-wrap: anywhere; }
+.ca-pt { display: inline-flex; align-items: center; gap: 7px; margin-top: 3px; font-size: 12.5px; color: var(--ink-3); white-space: nowrap; }
+.ca-gt small + .ca-pt::before { content: ""; width: 1px; height: 11px; margin-right: 5px; background: var(--line); }
+.ca-pt .pd { width: 6px; height: 6px; }
+.pd.warn { background: var(--warn); box-shadow: 0 0 0 3px color-mix(in srgb, var(--warn) 18%, transparent); }
+.ca-gs { padding: 2px 9px; font-size: 11.5px; white-space: nowrap; }
+.ca-gh > .btn-sm { flex: none; min-width: 112px; justify-content: center; }
+.ca-note { margin: 0; display: flex; align-items: baseline; gap: 10px; padding: 10px var(--gx); border-top: 1px solid var(--line-soft); background: var(--surface-2); font-size: 12.5px; color: var(--ink-2); text-wrap: pretty; }
+.ca-note::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--warn); transform: translateY(-1px); }
+.ca-rs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-soft); }
+.ca-note + .ca-rs { border-top: 1px solid var(--line-soft); }
+.ca-r { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 104px 14px; align-items: center; column-gap: 20px; padding: 15px var(--gx) 16px; transition: background-color .15s var(--ease-out); }
+.ca-r + .ca-r::before { content: ""; position: absolute; top: 0; left: var(--gx); right: var(--gx); height: 1px; background: var(--line-soft); }
+.ca-r:last-child { border-radius: 0 0 14px 14px; }
+.ca-r:hover { background-color: var(--surface-2); }
+.ca-r .tx { min-width: 0; }
+.ca-k { display: block; margin-bottom: 3px; font-size: 12px; font-weight: 500; color: var(--ink-3); overflow-wrap: anywhere; }
+.ca-t { display: block; font-size: 14.5px; font-weight: 500; color: var(--ink); overflow-wrap: anywhere; text-wrap: pretty; }
+.ca-t::after { content: ""; position: absolute; inset: 0; }
+.ca-t:focus-visible { outline: 0; }
+.ca-t:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 8px; }
+.ca-t .id { margin-right: 7px; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--ink-3); }
+/* a row that is due: a small dot hung in the margin, so its title stays in line with the others */
+.ca-dot { display: inline-block; width: 6px; height: 6px; margin: 0 8px 0 -14px; border-radius: 50%; background: var(--warn); vertical-align: .18em; }
+.ca-why { display: block; margin-top: 4px; font-size: 12.5px; color: var(--ink-3); text-wrap: pretty; overflow-wrap: anywhere; }
+.ca-vu { white-space: nowrap; }
+.ca-vu::before { content: "\00b7"; margin: 0 7px; }
+.ca-wc { display: flex; margin-top: 6px; }
+.ca-wc .link { position: relative; z-index: 1; font-size: 12px; padding: 2px 0; }
+.ca-st { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; font-size: 11.5px; text-align: right; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+/* how long, as one figure: the number large, what it counts small under it */
+.ca-age { display: flex; flex-direction: column; align-items: flex-end; line-height: 1; }
+.ca-age b { font-family: var(--font-display); font-size: 24px; font-weight: 500; letter-spacing: -.02em; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; font-optical-sizing: auto; }
+.ca-age b.tw { font-size: 17px; }
+.ca-age small { margin-top: 4px; font-size: 11.5px; color: var(--ink-3); }
+.ca-ch { color: var(--ink-3); }
+.ca-ch.due { color: var(--warn); font-weight: 600; }
+.ca-r > .i { width: 14px; height: 14px; color: var(--ink-3); transition: transform .15s var(--ease-out), color .15s var(--ease-out); }
+.ca-r:hover > .i { color: var(--accent); transform: translateX(2px); }
+.ca-cov { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line-soft); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.ca-cov li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 10px 14px; font-size: 13.5px; }
+.ca-cov li + li { border-top: 1px solid var(--line-soft); }
+.ca-cov li > span { min-width: 0; overflow-wrap: anywhere; }
+.ca-cov small { flex: none; font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+.ca-cov .id { margin-right: 6px; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--ink-3); }
+#rm-t { min-height: 220px; max-height: 460px; overflow-y: auto; font-size: 14px; line-height: 1.55; }
+#rm-mail[hidden] { display: none; }
+@media (max-width: 700px) {
+  .ca-gh { grid-template-columns: 40px minmax(0, 1fr) auto; }
+  .ca-gt small + .ca-pt::before { display: none; }
+  .ca-gt small, .ca-pt { flex: 1 0 100%; }
+  .ca-gs { grid-column: 3; grid-row: 1; }
+  .ca-gh > .btn-sm { grid-column: 1 / -1; grid-row: 2; width: 100%; margin-top: 10px; }
+  .ca-r { grid-template-columns: minmax(0, 1fr) 14px; }
+  .ca-r > .i { grid-column: 2; grid-row: 1 / span 2; }
+  .ca-st { grid-column: 1; grid-row: 2; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 2px 12px; margin-top: 8px; text-align: left; }
+  .ca-age { flex-direction: row; align-items: baseline; gap: 5px; }
+  .ca-age b { font-size: 17px; }
+  .ca-age small { margin-top: 0; font-size: 12px; }
+  .ca-dot { margin-left: -12px; }
+}

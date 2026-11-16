@@ -1,0 +1,40 @@
+<main class="content" id="view-clients" hidden aria-labelledby="cl-title">
+      <div class="head has-act">
+        <div>
+          <div class="eyebrow">Workspace</div>
+          <h1 id="cl-title">Clients</h1>
+        </div>
+        <div class="head-r">
+          <p>Clients approve changes and follow progress through their own portal.</p>
+          <button type="button" class="btn-primary" id="cl-new" data-open-drawer="client-new" data-focus="#cf-name"><svg class="i"><use href="#i-plus"/></svg>New client</button>
+        </div>
+      </div>
+
+      <div class="pl-tools">
+        <div class="pl-filters">
+          <div class="seg" role="group" aria-label="Client status" id="cl-status" data-key="status" data-def="all">
+            <button type="button" data-f="all" aria-pressed="true">All <span class="n">6</span></button>
+            <button type="button" data-f="current" aria-pressed="false">Current <span class="n">3</span></button>
+            <button type="button" data-f="past" aria-pressed="false">Past <span class="n">3</span></button>
+          </div>
+          <div class="seg" role="group" aria-label="Portal status" id="cl-portal" data-key="portal" data-def="any">
+            <button type="button" data-f="any" aria-pressed="true">Any portal</button>
+            <button type="button" data-f="active" aria-pressed="false">Active <span class="n">2</span></button>
+            <button type="button" data-f="invited" aria-pressed="false">Invited <span class="n">1</span></button>
+            <button type="button" data-f="closed" aria-pressed="false">Closed <span class="n">3</span></button>
+            <button type="button" data-f="draft" aria-pressed="false" hidden>Not invited <span class="n">0</span></button>
+          </div>
+        </div>
+        <label class="dr-search pl-search"><svg class="i"><use href="#i-search"/></svg><input id="cl-q" type="search" placeholder="Search clients" autocomplete="off" aria-label="Search clients"></label>
+      </div>
+
+      <section class="card pl cl" aria-label="Client list">
+        <div class="pl-head" aria-hidden="true"><span>Client</span><span class="c-proj">Projects</span><span>Portal</span><span>Needs you</span><span class="c-act">Last activity</span><span></span></div>
+        <div class="pl-wrap">
+          <span class="pl-hover" aria-hidden="true"></span>
+          <ul class="pl-list" id="cl-list"></ul>
+        </div>
+        <div class="dr-empty pl-empty" hidden><b>No clients match</b>Try a different filter or search term. <button type="button" class="link pl-clear">Clear filters</button></div>
+      </section>
+
+    </main>

@@ -1,0 +1,27 @@
+# secrets: real server config stays on this machine
+config.php
+blocklist.txt
+
+# release packages, rebuilt from scopedue-extension/
+*.zip
+subdomains/
+
+# tooling
+node_modules/
+__pycache__/
+*.pyc
+test-results/
+.DS_Store
+Thumbs.db
+
+# the extension private key keeps the extension ID: back it up, never commit it
+.keys/
+
+# screenshots from the Drive tests, kept on this machine only
+screenshots/drive-tests/
+
+# the join page's Picker API key (copied to scopedue.com by the build when present)
+join-assets/config.js
+
+# live checks and sample runs keep their browsers, checkpoints and screenshots here
+tests/.live/

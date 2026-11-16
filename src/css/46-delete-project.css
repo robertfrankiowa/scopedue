@@ -1,0 +1,12 @@
+/* v96: deleting a project (CONTRACT.md 42) */
+.pd-menu button.pd-mdel, .pd-menu button.pd-mdel .i { color: var(--crit); }
+.pdel-l { margin: 0 0 16px; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; color: var(--ink-2); }
+.pdel-dv { margin: 0 0 16px; padding: 0; border: 0; min-width: 0; }
+.pdel-dv legend { padding: 0; margin: 0 0 2px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.pdel-dv .pde-small { margin: 0 0 8px; }
+.pdel-o { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; margin-bottom: 8px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+.pdel-o:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.pdel-o input { margin-top: 3px; flex: none; }
+.pdel-o b { display: block; font-size: 14px; }
+.pdel-o small { display: block; margin-top: 2px; font-size: 13px; line-height: 1.45; color: var(--ink-3); }
+.pdel-f #pdel-err { margin-top: 8px; }

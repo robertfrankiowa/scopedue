@@ -1,0 +1,50 @@
+/* ---------- v67: Help, Settings, Profile ---------- */
+/* Help takes the Support Inbox's place; the old list stays in the page, unseen */
+#ib, #ib-badge, #ib-new { display: none !important; }
+.xb-dot { margin-left: auto; width: 7px; height: 7px; border-radius: 50%; background: var(--nav-dot); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nav-dot) 22%, transparent); flex: none; }
+.xb-dot[hidden] { display: none; }
+.app.collapsed .xb-dot { position: absolute; left: 30px; top: 8px; margin: 0; }
+
+.xb-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.xb-side { display: grid; gap: 20px; min-width: 0; }
+.xb-news:focus { outline: none; }
+.xb-news .card-h { align-items: center; }
+.xb-b { font-variant-numeric: tabular-nums; }
+.xb-rel { list-style: none; margin: 0; padding: 6px var(--gx) 6px; }
+.xb-r { padding: 16px 0 18px; border-bottom: 1px solid var(--line-soft); }
+.xb-r:last-child { border-bottom: 0; }
+.xb-rh { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
+.xb-rh b { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -.005em; }
+.xb-r.top .xb-rh b { font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: -.01em; }
+.xb-d { font-size: 12.5px; color: var(--ink-3); }
+.xb-rh .chip { align-self: center; padding: 1px 8px; font-size: 11px; }
+.xb-r ul { margin: 8px 0 0; padding: 0 0 0 18px; display: grid; gap: 5px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+.xb-r ul li::marker { color: var(--ink-3); }
+.xb-r:not(.top) ul { font-size: 13px; color: var(--ink-3); }
+.xb-eh { margin: 0; padding: 14px var(--gx) 0; border-top: 1px solid var(--line-soft); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.xb-lead { padding-top: 14px; }
+.xb-dg { padding-top: 0; padding-bottom: 6px; }
+.xb-dg > div { min-height: 38px; }
+.xb-dg dd { font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.xb-addr { margin: -10px 0 0; padding: 0 var(--gx) 18px; font-size: 12px; color: var(--ink-3); user-select: all; }
+.xb-keys .st-keys > div { min-height: 42px; }
+@media (hover: none) { .xb-keys { display: none; } }
+@media (max-width: 1000px) { .xb-grid { grid-template-columns: minmax(0, 1fr); } .xb-side { order: -1; } }
+
+/* Settings: the version line, and the storage rows that wrapped on a phone */
+.st-ver { font-variant-numeric: tabular-nums; }
+.sto-dl dd small { margin-left: 6px; }
+@media (max-width: 700px) {
+  .sto-dl > div { align-items: flex-start; padding: 11px 0; gap: 12px; }
+  .sto-dl dd { flex-direction: column; align-items: flex-end; gap: 2px; max-width: 64%; }
+  .sto-dl dd small { margin: 0; white-space: nowrap; }
+  .sto-dl dd .link { padding: 0; }
+  .sto-leg { grid-template-columns: minmax(0, 1fr); }
+}
+/* Settings on a phone: the tab row fades where there is more to scroll */
+@media (max-width: 900px) {
+  .st-tabs { scroll-padding-inline: var(--gx); }
+  .st-tabs.xb-fl { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px); mask-image: linear-gradient(90deg, transparent 0, #000 36px); }
+  .st-tabs.xb-fr { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent 100%); mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent 100%); }
+  .st-tabs.xb-fl.xb-fr { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%); }
+}

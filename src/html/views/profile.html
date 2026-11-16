@@ -1,0 +1,112 @@
+<main class="content" id="view-profile" hidden aria-labelledby="pf-title">
+      <div class="head has-act">
+        <div>
+          <div class="eyebrow">Account</div>
+          <h1 id="pf-title" tabindex="-1">Profile</h1>
+        </div>
+        <div class="head-r">
+          <p>Your photo and details, as others see them. Changes go out when you save.</p>
+        </div>
+      </div>
+
+      <form class="pf-grid" id="pf" novalidate>
+        <div class="pf-main">
+          <section class="card pf-hero" aria-label="Photo and name">
+            <div class="pf-top">
+              <button type="button" class="pf-av" id="pf-av" aria-label="Change profile photo" data-open-drawer="photo" data-focus="#pfp-drop"><span class="pf-ini" id="pf-ini">SU</span><span class="pf-cam" aria-hidden="true"><svg class="i"><use href="#i-camera"/></svg></span></button>
+              <div class="pf-id">
+                <h2 class="pf-name" id="pf-hname">ScopeDue user</h2>
+                <p class="pf-role empty" id="pf-hrole">Add your job title and business</p>
+                <div class="pf-btns">
+                  <button type="button" class="btn-ghost btn-sm" id="pf-photo-btn" data-open-drawer="photo" data-focus="#pfp-drop"><svg class="i"><use href="#i-camera"/></svg>Add photo</button>
+                  <button type="button" class="pf-link" id="pf-rm" hidden>Remove photo</button>
+                  <span class="chip neutral" title="Your profile and work are kept in this browser. Nothing here is a password or an account on a server.">On this device</span>
+                </div>
+              </div>
+            </div>
+            <div class="pf-str" id="pf-str">
+              <div class="pf-ticks" id="pf-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="pf-str-t" id="pf-str-t" aria-live="polite"></div>
+              <button type="button" class="pf-link acc" id="pf-str-go" hidden></button>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="pf-h-det">
+            <div class="card-h ruled"><div><h2 id="pf-h-det">Personal details</h2><p>Clients and teammates see your name, role and business.</p></div></div>
+            <div class="pf-form">
+              <div class="fld-row">
+                <div class="fld" id="f-pf-name"><label for="pf-name">Full name <span class="opt">Required</span></label><input id="pf-name" autocomplete="name" maxlength="60" aria-describedby="e-pf-name"><span class="err" id="e-pf-name"></span></div>
+                <div class="fld" id="f-pf-title"><label for="pf-ttl">Job title <span class="opt">Optional</span></label><input id="pf-ttl" autocomplete="organization-title" maxlength="60" placeholder="e.g. Freelance web designer"></div>
+              </div>
+              <div class="fld-row">
+                <div class="fld" id="f-pf-biz"><label for="pf-biz">Business or studio <span class="opt">Optional</span></label><input id="pf-biz" autocomplete="organization" maxlength="60" placeholder="e.g. Studio Name"></div>
+                <div class="fld" id="f-pf-email"><label for="pf-email">Contact email <span class="opt">Optional</span></label><input id="pf-email" type="email" inputmode="email" autocomplete="email" maxlength="90" placeholder="robert@example.com" aria-describedby="e-pf-email"><span class="err" id="e-pf-email"></span></div>
+              </div>
+              <div class="fld-row">
+                <div class="fld" id="f-pf-phone"><label for="pf-phone">Phone <span class="opt">Optional</span></label><input id="pf-phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="+1 213 555 0100" aria-describedby="e-pf-phone"><span class="err" id="e-pf-phone"></span></div>
+                <div class="fld" id="f-pf-city"><label for="pf-city">Location <span class="opt">Optional</span></label><input id="pf-city" autocomplete="off" maxlength="60" placeholder="Los Angeles, United States"></div>
+              </div>
+              <div class="fld" id="f-pf-tz"><label for="pf-tz">Time zone</label><select id="pf-tz"></select><span class="hint">Used for deadlines and the local time clients see.</span></div>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="pf-h-abt">
+            <div class="card-h ruled"><div><h2 id="pf-h-abt">About you</h2><p>A line or two on the welcome card of your client portal.</p></div></div>
+            <div class="pf-form">
+              <div class="fld" id="f-pf-bio"><label for="pf-bio">Short bio <span class="opt cnt" id="pf-cnt">0 / 240</span></label><textarea id="pf-bio" maxlength="240" placeholder="e.g. I design and build websites for small businesses. Message me here and I will reply within a day."></textarea></div>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="pf-h-av">
+            <div class="card-h ruled"><div><h2 id="pf-h-av">Availability</h2><p>So clients know when to expect an answer.</p></div></div>
+            <div class="pf-form">
+              <div class="fld" id="f-pf-days"><label id="pf-days-l">Working days</label>
+                <div class="pf-days" id="pf-days" role="group" aria-labelledby="pf-days-l">
+                  <button type="button" class="pf-day" data-d="0" aria-pressed="true">Mon</button><button type="button" class="pf-day" data-d="1" aria-pressed="true">Tue</button><button type="button" class="pf-day" data-d="2" aria-pressed="true">Wed</button><button type="button" class="pf-day" data-d="3" aria-pressed="true">Thu</button><button type="button" class="pf-day" data-d="4" aria-pressed="true">Fri</button><button type="button" class="pf-day" data-d="5" aria-pressed="false">Sat</button><button type="button" class="pf-day" data-d="6" aria-pressed="false">Sun</button>
+                </div>
+                <span class="err" id="e-pf-days"></span></div>
+              <div class="fld-row">
+                <div class="fld" id="f-pf-from"><label for="pf-from">From</label><select id="pf-from"></select></div>
+                <div class="fld" id="f-pf-to"><label for="pf-to">Until</label><select id="pf-to" aria-describedby="e-pf-to"></select><span class="err" id="e-pf-to"></span></div>
+              </div>
+              <div class="fld"><label id="pf-reply-l">Typical reply time</label>
+                <div class="seg" id="pf-reply" role="group" aria-labelledby="pf-reply-l">
+                  <button type="button" data-f="same" aria-pressed="false">Same day</button>
+                  <button type="button" data-f="1d" aria-pressed="true">1 business day</button>
+                  <button type="button" data-f="2d" aria-pressed="false">2 business days</button>
+                </div>
+                <span class="hint">Shown in the client portal. It is a promise to yourself too.</span></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="pf-side">
+          <section class="card pf-pv" aria-labelledby="pf-h-pv">
+            <div class="card-h"><div><h2 id="pf-h-pv">How others see you</h2><p>Updates as you type.</p></div></div>
+            <div class="pv-tabs"><div class="seg" id="pf-pvseg" role="group" aria-label="Preview as">
+              <button type="button" data-f="portal" aria-pressed="true">Client portal</button>
+              <button type="button" data-f="team" aria-pressed="false">Teammates</button>
+            </div></div>
+            <div class="pv-stage" id="pv-stage"></div>
+            <div class="pv-foot"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Preview only. Nothing is shared until you save.</div>
+          </section>
+
+          <section class="card" aria-labelledby="pf-h-vis">
+            <div class="card-h"><div><h2 id="pf-h-vis">Visible to clients</h2><p>You choose which contact details appear.</p></div></div>
+            <div class="pf-vis-row"><div><b id="pf-sw-se-l">Email address</b><small>Clients can write to you outside the portal.</small></div><button type="button" class="sw" id="pf-sw-se" role="switch" aria-checked="true" aria-labelledby="pf-sw-se-l"></button></div>
+            <div class="pf-vis-row"><div><b id="pf-sw-sp-l">Phone number</b><small>Off by default. Turn on if you take calls.</small></div><button type="button" class="sw" id="pf-sw-sp" role="switch" aria-checked="false" aria-labelledby="pf-sw-sp-l"></button></div>
+            <div class="pf-vis-row"><div><b id="pf-sw-sl-l">Location and local time</b><small>Shows your city and the time there right now.</small></div><button type="button" class="sw" id="pf-sw-sl" role="switch" aria-checked="true" aria-labelledby="pf-sw-sl-l"></button></div>
+            <div class="pf-vis-foot"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Name, photo, job title, business and bio are always shown.</div>
+          </section>
+
+        </div>
+      </form>
+
+      <div class="pf-barw">
+        <div class="pf-bar" id="pf-bar" role="region" aria-label="Unsaved changes">
+          <div class="pf-bar-t"><i aria-hidden="true"></i><b>Unsaved changes</b><small id="pf-bar-s"></small></div>
+          <div class="f-acts"><kbd title="Save with Ctrl or Command S">⌘S</kbd><button type="button" class="btn-ghost btn-sm" id="pf-discard">Discard</button><button type="submit" form="pf" class="btn-primary btn-sm" id="pf-save">Save changes</button></div>
+        </div>
+      </div>
+
+    </main>

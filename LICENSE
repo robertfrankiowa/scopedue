@@ -1,0 +1,63 @@
+ScopeDue Source-Available License, version 1.0
+
+Copyright (c) 2026 ScopeDue (scopedue.com). All rights reserved.
+
+ScopeDue is source-available. It is NOT open source, and this is not an open source license.
+The code is published for one reason: so that anyone can check for themselves how ScopeDue
+handles their data (what it keeps on the device, what it sends, and where).
+
+
+1. What you may do
+
+   a. Read the code, and review, test and audit it, alone or with tools (including AI tools).
+   b. Install the published ScopeDue extension, or run this code unchanged on your own computer,
+      to check how it behaves.
+   c. Write about what you find, and quote short parts of the code to show it.
+   d. Report security problems to the owner (see SECURITY-AUDIT.md), and suggest fixes to them.
+
+
+2. What you may not do without the owner's written permission
+
+   a. Copy, fork, clone, mirror or republish this code, in whole or in part, other than the copy
+      a hosting site makes on its own when you view it.
+   b. Change it and use or share the changed version (a derivative work), or port or rewrite it
+      into another language, framework or product.
+   c. Sell, license, sublicense, rent or give it away, or ship it inside another product.
+   d. Run it, or anything made from it, as a service for other people, or use it to build or
+      improve a product or service that competes with ScopeDue.
+   e. Publish it, or anything made from it, under another name, logo or brand ("rebranding"), or
+      present it as your own work.
+   f. Use it as material to generate a copy, clone or close imitation of ScopeDue, including by
+      asking an AI model or agent to do so.
+   g. Remove or change this license, or the notices at the top of the files.
+
+
+3. Names and marks
+
+   "ScopeDue", its mark and its icons belong to the owner. This license gives no right to use them.
+
+
+4. Other people's files
+
+   Files that carry their own license (for example the fonts, with their LICENSE-*.txt files) keep
+   that license. This license covers everything else.
+
+
+5. Contributions
+
+   Anything you send to the owner (an issue, a fix, a suggestion) may be used by the owner freely,
+   and gives you no rights in ScopeDue.
+
+
+6. No warranty
+
+   The code is provided "as is", without warranty of any kind. The owner is not liable for any
+   claim, damage or other liability arising from it or from its use.
+
+
+7. Ending
+
+   If you break this license, every permission it gives you ends at once.
+
+
+For any other use, ask the owner first: https://scopedue.com

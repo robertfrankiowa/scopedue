@@ -1,0 +1,36 @@
+<main class="content" id="view-projects" hidden aria-labelledby="pl-title">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Workspace</div>
+          <h1 id="pl-title">Projects</h1>
+        </div>
+        <p>Private projects stay internal. Client projects are shared with a client.</p>
+      </div>
+
+      <div class="pl-tools">
+        <div class="pl-filters">
+          <div class="seg" role="group" aria-label="Project type" id="pl-type" data-key="type" data-def="all">
+            <button type="button" data-f="all" aria-pressed="true">All <span class="n">8</span></button>
+            <button type="button" data-f="client" aria-pressed="false">Client <span class="n">4</span></button>
+            <button type="button" data-f="product" aria-pressed="false">Product <span class="n">2</span></button>
+            <button type="button" data-f="internal" aria-pressed="false">Internal <span class="n">2</span></button>
+          </div>
+          <div class="seg" role="group" aria-label="Team size" id="pl-size" data-key="size" data-def="any">
+            <button type="button" data-f="any" aria-pressed="true">Any size</button>
+            <button type="button" data-f="solo" aria-pressed="false">Solo <span class="n">5</span></button>
+            <button type="button" data-f="team" aria-pressed="false">Team <span class="n">3</span></button>
+          </div>
+        </div>
+        <label class="dr-search pl-search"><svg class="i"><use href="#i-search"/></svg><input id="pl-q" type="search" placeholder="Search projects" autocomplete="off" aria-label="Search projects"></label>
+      </div>
+
+      <section class="card pl" aria-label="Project list">
+        <div class="pl-head" aria-hidden="true"><span>Project</span><span>Type</span><span>People</span><span class="c-ph">Phase</span><span>Next due</span><span></span></div>
+        <div class="pl-wrap" id="pl-wrap">
+          <span class="pl-hover" aria-hidden="true"></span>
+          <ul class="pl-list" id="pl-list"></ul>
+        </div>
+        <div class="dr-empty pl-empty" id="pl-empty" hidden><b>No projects match</b>Try a different filter or search term. <button type="button" class="link pl-clear" id="pl-clear">Clear filters</button></div>
+      </section>
+
+    </main>

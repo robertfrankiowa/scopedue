@@ -1,0 +1,1015 @@
+{
+ "order": [
+  "ha",
+  "tuan"
+ ],
+ "v": {
+  "ha": {
+   "studio": {
+    "slug": "sample",
+    "name": "Kim Lê",
+    "lang": "vi"
+   },
+   "project": {
+    "ref": "app-cham-cong-hr",
+    "name": "App chấm công HR"
+   },
+   "viewer": {
+    "name": "Phạm Thu Hà",
+    "email": "h•••••@hatsuong.example",
+    "lang": "vi"
+   },
+   "show": {
+    "rel": {
+     "name": "v3",
+     "date": "2026-12-01",
+     "ship": "HR gửi biểu mẫu đăng ký tiệc cuối năm và khảo sát size đồng phục, có bảng tổng hợp theo cửa hàng"
+    },
+    "items": [
+     {
+      "id": "i30",
+      "t": "Biểu mẫu đăng ký sự kiện, khảo sát size đồng phục",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i73",
+      "t": "Nhập lịch ca từ Excel, báo ca mới cho đúng người",
+      "sec": "next",
+      "st": "planned"
+     },
+     {
+      "id": "i94",
+      "t": "Bảng tổng hợp đăng ký theo cửa hàng, xuất Excel",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i96",
+      "t": "Nhắc người chưa đăng ký 2 ngày trước hạn",
+      "sec": "in",
+      "st": "doing"
+     }
+    ],
+    "ships": [
+     {
+      "id": "s58",
+      "name": "v1 Pilot",
+      "date": "2026-08-31",
+      "sum": "Thông báo cần xác nhận, nhắc tự động và phiếu lương đã chạy ở 14 cửa hàng. Xuất Excel chuyển sang v2."
+     },
+     {
+      "id": "s91",
+      "name": "v2",
+      "date": "2026-10-26",
+      "sum": "Nhân viên 14 cửa hàng vào ca, ra ca trên app; bảng công tháng xuất ra Excel, không còn gõ lại từ sổ giấy."
+     }
+    ],
+    "use": "internal"
+   },
+   "entries": [
+    {
+     "id": "v22",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Cả 14 cửa hàng chấm công trên app một tuần, không cửa hàng nào phải dùng lại sổ.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792978087913,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9redssdup",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị cho cả 14 cửa hàng dùng thử một tuần giúp em.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792919220506,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Nhân viên 6 cửa hàng còn dùng sổ giấy vào ca, ra ca trên app; HR xuất bảng công tháng ra Excel không gõ lại"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "pass"
+    },
+    {
+     "id": "v21",
+     "k": "req",
+     "names": "Lê Minh Tuấn",
+     "t": "Bạn part-time làm 2 cửa hàng trong một ngày: sáng Phan Xích Long, chiều Lê Văn Sỹ. App cần tính đúng cả hai ca.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1791255745261,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v20",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Bạn Linh quên ra ca, gửi sửa công lúc 23 giờ; cửa hàng trưởng duyệt sáng hôm sau, bảng công ghi rõ ai duyệt.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Gửi yêu cầu sửa công, cửa hàng trưởng duyệt",
+     "vo": 0,
+     "ts": 1791195688677,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mj06w5m8",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt mẫu bảng công xuất Excel: Mã NV, Họ tên, Cửa hàng, Ngày, Giờ vào, Giờ ra, Số giờ, Ghi chú sửa công.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Xuất bảng công tháng ra Excel theo mã nhân viên",
+     "vo": 0,
+     "ts": 1791104764706,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "yes"
+    },
+    {
+     "id": "fmwf9mfb9ojrj",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Bảng công không tự trừ 30 phút nghỉ giữa ca.",
+     "st": "notbug",
+     "why": "App ghi giờ thật lúc vào, lúc ra. Trừ giờ nghỉ vẫn làm trong Excel như hiện nay, vì app không tính công, tính lương.",
+     "res": "",
+     "ab": "Xuất bảng công tháng ra Excel theo mã nhân viên",
+     "vo": 0,
+     "ts": 1791087256356,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mbtr7jp2",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Anh giám đốc muốn bật định vị suốt ca để biết bạn nào rời cửa hàng giữa giờ.",
+     "st": "no",
+     "why": "Đã có trong Không làm: app chỉ đọc vị trí lúc bấm vào ca, ra ca. Theo dõi cả ca trái nguyên tắc của dự án và cần nhân viên đồng ý.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1791023924960,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v16",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Ca đóng cửa 22:00–01:00: ra ca sau 0 giờ bị tính sang ngày mới, bảng công thành hai ca lẻ.",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790841850160,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9llzlwjbk",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Trần Duy Hưng nằm ở tầng hầm trung tâm thương mại: GPS lệch hơn 200 m, 11 trên 12 bạn bị báo \"ngoài vùng chấm công\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790760999437,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v15",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Trần Duy Hưng nằm ở tầng hầm trung tâm thương mại: GPS lệch hơn 200 m, 11 trên 12 bạn bị báo \"ngoài vùng chấm công\".",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790743882600,
+     "cm": [],
+     "bid": "fmwf9llzlwjbk",
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9lf8xfhxz",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị thử giúp em ở cả cửa hàng Trần Duy Hưng, chỗ trong trung tâm thương mại.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790682234348,
+     "cm": [],
+     "url": "https://staging.example.com/cham-cong",
+     "steps": [
+      "Đứng trong cửa hàng, mở app, bấm Vào ca",
+      "Cho phép vị trí \"Khi dùng app\"",
+      "Thấy \"Đã vào ca lúc …\" sau khi máy chủ nhận",
+      "Khoá máy, làm việc 1 giờ, rồi bấm Ra ca"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "fail"
+    },
+    {
+     "id": "v14",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Lê Văn Sỹ: hai bạn dùng chung một điện thoại, xác nhận thông báo bị ghi cho người đăng nhập trước.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1788431804829,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v13",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Chị thử với 20 bạn ở cửa hàng Phan Xích Long, mọi người tự mở được phiếu.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786682634637,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9gca72v6r",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị thử với vài bạn ở một cửa hàng giúp em.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786669475001,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Hạt Sương gửi thông báo cần xác nhận và phát phiếu lương cho 182 nhân viên; không ai xem được phiếu của người khác"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "pass"
+    },
+    {
+     "id": "v10",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Cho nhân viên chấm công trên app luôn. 6 cửa hàng của chị vẫn dùng sổ giấy, cuối tháng chị gõ lại.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 1,
+     "ts": 1786416134268,
+     "cm": [
+      {
+       "names": "Lê Minh Tuấn",
+       "t": "Ở TP.HCM ca tối hay quên ra ca, sáng hôm sau cửa hàng trưởng mới sửa sổ.",
+       "ts": 1786603817170
+      }
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v9",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Nhận nhắc lúc 9h sáng hôm trước hạn; xác nhận xong thì không nhận nhắc nữa.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Nhắc tự động người chưa xác nhận, dừng ngay khi họ xong",
+     "vo": 0,
+     "ts": 1786355438599,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9ew1ezc59",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt tin SMS kích hoạt: \"Ma kich hoat App cham cong HR cua ban la 123456\".",
+     "st": "nope",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786068050241,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "nope"
+    },
+    {
+     "id": "fmwf9esprj3p6",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Nhân viên đã nghỉ việc vẫn nằm trong danh sách nhắc.",
+     "st": "notbug",
+     "why": "Trong file chị gửi, 3 bạn này vẫn ghi \"Đang làm\". Sửa trạng thái trong file rồi nhập lại là hết.",
+     "res": "",
+     "ab": "Nhắc tự động người chưa xác nhận, dừng ngay khi họ xong",
+     "vo": 0,
+     "ts": 1786003832125,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9epemh00w",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Cho app tự tính thuế TNCN luôn, đỡ phải làm trong Excel.",
+     "st": "no",
+     "why": "Đã có trong Không làm: app chỉ gửi số chị đã chốt. Thuế vẫn tính ở Excel hoặc phần mềm kế toán.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785986486803,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v7",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Hôm có bão, chuỗi phải báo gấp cho ca chiều nghỉ. Cần thông báo khẩn ghim đầu trang và nhắc lại sau 2 giờ nếu chưa xác nhận.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785899771129,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9eb26dwbw",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt mẫu phiếu lương: lương cơ bản, phụ cấp, làm thêm giờ, khấu trừ BHXH, thuế TNCN, thực nhận.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Phát phiếu lương từ file Excel: kiểm lỗi, duyệt rồi mới phát",
+     "vo": 0,
+     "ts": 1785817698129,
+     "cm": [],
+     "mine": true,
+     "voted": false,
+     "myv": "yes"
+    },
+    {
+     "id": "v3",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cột MSNV định dạng số nên 0012 thành 12, 37 bạn báo \"mã không tồn tại\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785637630345,
+     "cm": [
+      {
+       "names": "Phạm Thu Hà",
+       "t": "Chị gửi file gốc qua Zalo rồi, đã xoá cột lương và số tài khoản.",
+       "ts": 1785656294057
+      },
+      {
+       "names": "Phạm Thu Hà",
+       "t": "Mã 00012 năm số vẫn mất số 0 ở đầu.",
+       "ts": 1785722505935
+      }
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v2",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Nhiều bạn để điện thoại ở quầy pha chế. Mở phiếu lương phải xác thực lại, không thì ai cầm máy cũng xem được.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785482494692,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9di2nicdg",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Bước 2: file có ô gộp ở dòng tiêu đề thì báo lỗi dòng 1, không chỉ ra ô nào.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785478571875,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v1",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Bước 2: file có ô gộp ở dòng tiêu đề thì báo lỗi dòng 1, không chỉ ra ô nào.",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785459722133,
+     "cm": [],
+     "bid": "fmwf9di2nicdg",
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "fmwf9dbcorrgo",
+     "k": "chk",
+     "names": "Phạm Thu Hà",
+     "t": "Chị dùng file thật của phòng, đã xoá cột lương và số tài khoản giúp em.",
+     "st": "closed",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785396543361,
+     "cm": [],
+     "url": "https://staging.example.com/nhap-nhan-vien",
+     "steps": [
+      "Mở Nhập nhân viên, chọn file danh sách của phòng",
+      "Chọn sheet \"DS NV T11\", dòng tiêu đề ở dòng 3",
+      "Kiểm tra mã 0012 vẫn là 0012",
+      "Xem số dòng lỗi và dòng trùng"
+     ],
+     "mine": true,
+     "voted": false,
+     "myv": "fail"
+    }
+   ],
+   "pending": [],
+   "approvals": [],
+   "keys": []
+  },
+  "tuan": {
+   "studio": {
+    "slug": "sample",
+    "name": "Kim Lê",
+    "lang": "vi"
+   },
+   "project": {
+    "ref": "app-cham-cong-hr",
+    "name": "App chấm công HR"
+   },
+   "viewer": {
+    "name": "Lê Minh Tuấn",
+    "email": "t•••••@hatsuong.example",
+    "lang": "vi"
+   },
+   "show": {
+    "rel": {
+     "name": "v3",
+     "date": "2026-12-01",
+     "ship": "HR gửi biểu mẫu đăng ký tiệc cuối năm và khảo sát size đồng phục, có bảng tổng hợp theo cửa hàng"
+    },
+    "items": [
+     {
+      "id": "i30",
+      "t": "Biểu mẫu đăng ký sự kiện, khảo sát size đồng phục",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i73",
+      "t": "Nhập lịch ca từ Excel, báo ca mới cho đúng người",
+      "sec": "next",
+      "st": "planned"
+     },
+     {
+      "id": "i94",
+      "t": "Bảng tổng hợp đăng ký theo cửa hàng, xuất Excel",
+      "sec": "in",
+      "st": "done"
+     },
+     {
+      "id": "i96",
+      "t": "Nhắc người chưa đăng ký 2 ngày trước hạn",
+      "sec": "in",
+      "st": "doing"
+     }
+    ],
+    "ships": [
+     {
+      "id": "s58",
+      "name": "v1 Pilot",
+      "date": "2026-08-31",
+      "sum": "Thông báo cần xác nhận, nhắc tự động và phiếu lương đã chạy ở 14 cửa hàng. Xuất Excel chuyển sang v2."
+     },
+     {
+      "id": "s91",
+      "name": "v2",
+      "date": "2026-10-26",
+      "sum": "Nhân viên 14 cửa hàng vào ca, ra ca trên app; bảng công tháng xuất ra Excel, không còn gõ lại từ sổ giấy."
+     }
+    ],
+    "use": "internal"
+   },
+   "entries": [
+    {
+     "id": "v22",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Cả 14 cửa hàng chấm công trên app một tuần, không cửa hàng nào phải dùng lại sổ.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792978087913,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9redssdup",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị cho cả 14 cửa hàng dùng thử một tuần giúp em.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1792919220506,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Nhân viên 6 cửa hàng còn dùng sổ giấy vào ca, ra ca trên app; HR xuất bảng công tháng ra Excel không gõ lại"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v21",
+     "k": "req",
+     "names": "Lê Minh Tuấn",
+     "t": "Bạn part-time làm 2 cửa hàng trong một ngày: sáng Phan Xích Long, chiều Lê Văn Sỹ. App cần tính đúng cả hai ca.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1791255745261,
+     "cm": [],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v20",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Bạn Linh quên ra ca, gửi sửa công lúc 23 giờ; cửa hàng trưởng duyệt sáng hôm sau, bảng công ghi rõ ai duyệt.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Gửi yêu cầu sửa công, cửa hàng trưởng duyệt",
+     "vo": 0,
+     "ts": 1791195688677,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mj06w5m8",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt mẫu bảng công xuất Excel: Mã NV, Họ tên, Cửa hàng, Ngày, Giờ vào, Giờ ra, Số giờ, Ghi chú sửa công.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Xuất bảng công tháng ra Excel theo mã nhân viên",
+     "vo": 0,
+     "ts": 1791104764706,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mfb9ojrj",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Bảng công không tự trừ 30 phút nghỉ giữa ca.",
+     "st": "notbug",
+     "why": "App ghi giờ thật lúc vào, lúc ra. Trừ giờ nghỉ vẫn làm trong Excel như hiện nay, vì app không tính công, tính lương.",
+     "res": "",
+     "ab": "Xuất bảng công tháng ra Excel theo mã nhân viên",
+     "vo": 0,
+     "ts": 1791087256356,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9mbtr7jp2",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Anh giám đốc muốn bật định vị suốt ca để biết bạn nào rời cửa hàng giữa giờ.",
+     "st": "no",
+     "why": "Đã có trong Không làm: app chỉ đọc vị trí lúc bấm vào ca, ra ca. Theo dõi cả ca trái nguyên tắc của dự án và cần nhân viên đồng ý.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1791023924960,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v16",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Ca đóng cửa 22:00–01:00: ra ca sau 0 giờ bị tính sang ngày mới, bảng công thành hai ca lẻ.",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790841850160,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9llzlwjbk",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Trần Duy Hưng nằm ở tầng hầm trung tâm thương mại: GPS lệch hơn 200 m, 11 trên 12 bạn bị báo \"ngoài vùng chấm công\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790760999437,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v15",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Trần Duy Hưng nằm ở tầng hầm trung tâm thương mại: GPS lệch hơn 200 m, 11 trên 12 bạn bị báo \"ngoài vùng chấm công\".",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790743882600,
+     "cm": [],
+     "bid": "fmwf9llzlwjbk",
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9lf8xfhxz",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị thử giúp em ở cả cửa hàng Trần Duy Hưng, chỗ trong trung tâm thương mại.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Vào ca, ra ca có GPS và bảng công cho nhân viên",
+     "vo": 0,
+     "ts": 1790682234348,
+     "cm": [],
+     "url": "https://staging.example.com/cham-cong",
+     "steps": [
+      "Đứng trong cửa hàng, mở app, bấm Vào ca",
+      "Cho phép vị trí \"Khi dùng app\"",
+      "Thấy \"Đã vào ca lúc …\" sau khi máy chủ nhận",
+      "Khoá máy, làm việc 1 giờ, rồi bấm Ra ca"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v14",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cửa hàng Lê Văn Sỹ: hai bạn dùng chung một điện thoại, xác nhận thông báo bị ghi cho người đăng nhập trước.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1788431804829,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v13",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Chị thử với 20 bạn ở cửa hàng Phan Xích Long, mọi người tự mở được phiếu.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786682634637,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9gca72v6r",
+     "k": "chk",
+     "names": "Phạm Thu Hà and Lê Minh Tuấn",
+     "t": "Chị thử với vài bạn ở một cửa hàng giúp em.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786669475001,
+     "cm": [],
+     "url": "https://staging.example.com",
+     "steps": [
+      "Hạt Sương gửi thông báo cần xác nhận và phát phiếu lương cho 182 nhân viên; không ai xem được phiếu của người khác"
+     ],
+     "mine": true,
+     "voted": false
+    },
+    {
+     "id": "v10",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Cho nhân viên chấm công trên app luôn. 6 cửa hàng của chị vẫn dùng sổ giấy, cuối tháng chị gõ lại.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 1,
+     "ts": 1786416134268,
+     "cm": [
+      {
+       "names": "Lê Minh Tuấn",
+       "t": "Ở TP.HCM ca tối hay quên ra ca, sáng hôm sau cửa hàng trưởng mới sửa sổ.",
+       "ts": 1786603817170
+      }
+     ],
+     "mine": false,
+     "voted": true
+    },
+    {
+     "id": "v9",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Nhận nhắc lúc 9h sáng hôm trước hạn; xác nhận xong thì không nhận nhắc nữa.",
+     "st": "pass",
+     "why": "",
+     "res": "pass",
+     "ab": "Nhắc tự động người chưa xác nhận, dừng ngay khi họ xong",
+     "vo": 0,
+     "ts": 1786355438599,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9ew1ezc59",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt tin SMS kích hoạt: \"Ma kich hoat App cham cong HR cua ban la 123456\".",
+     "st": "nope",
+     "why": "",
+     "res": "",
+     "ab": "Release v3",
+     "vo": 0,
+     "ts": 1786068050241,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9esprj3p6",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Nhân viên đã nghỉ việc vẫn nằm trong danh sách nhắc.",
+     "st": "notbug",
+     "why": "Trong file chị gửi, 3 bạn này vẫn ghi \"Đang làm\". Sửa trạng thái trong file rồi nhập lại là hết.",
+     "res": "",
+     "ab": "Nhắc tự động người chưa xác nhận, dừng ngay khi họ xong",
+     "vo": 0,
+     "ts": 1786003832125,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9epemh00w",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Cho app tự tính thuế TNCN luôn, đỡ phải làm trong Excel.",
+     "st": "no",
+     "why": "Đã có trong Không làm: app chỉ gửi số chị đã chốt. Thuế vẫn tính ở Excel hoặc phần mềm kế toán.",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785986486803,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v7",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Hôm có bão, chuỗi phải báo gấp cho ca chiều nghỉ. Cần thông báo khẩn ghim đầu trang và nhắc lại sau 2 giờ nếu chưa xác nhận.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785899771129,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9eb26dwbw",
+     "k": "appr",
+     "names": "Phạm Thu Hà",
+     "t": "Duyệt mẫu phiếu lương: lương cơ bản, phụ cấp, làm thêm giờ, khấu trừ BHXH, thuế TNCN, thực nhận.",
+     "st": "yes",
+     "why": "",
+     "res": "",
+     "ab": "Phát phiếu lương từ file Excel: kiểm lỗi, duyệt rồi mới phát",
+     "vo": 0,
+     "ts": 1785817698129,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v3",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Cột MSNV định dạng số nên 0012 thành 12, 37 bạn báo \"mã không tồn tại\".",
+     "st": "conf",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785637630345,
+     "cm": [
+      {
+       "names": "Phạm Thu Hà",
+       "t": "Chị gửi file gốc qua Zalo rồi, đã xoá cột lương và số tài khoản.",
+       "ts": 1785656294057
+      },
+      {
+       "names": "Phạm Thu Hà",
+       "t": "Mã 00012 năm số vẫn mất số 0 ở đầu.",
+       "ts": 1785722505935
+      }
+     ],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v2",
+     "k": "req",
+     "names": "Phạm Thu Hà",
+     "t": "Nhiều bạn để điện thoại ở quầy pha chế. Mở phiếu lương phải xác thực lại, không thì ai cầm máy cũng xem được.",
+     "st": "built",
+     "why": "",
+     "res": "",
+     "ab": "",
+     "vo": 0,
+     "ts": 1785482494692,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9di2nicdg",
+     "k": "bug",
+     "names": "Phạm Thu Hà",
+     "t": "Bước 2: file có ô gộp ở dòng tiêu đề thì báo lỗi dòng 1, không chỉ ra ô nào.",
+     "st": "open",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785478571875,
+     "cm": [],
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "v1",
+     "k": "test",
+     "names": "Phạm Thu Hà",
+     "t": "Bước 2: file có ô gộp ở dòng tiêu đề thì báo lỗi dòng 1, không chỉ ra ô nào.",
+     "st": "failbug",
+     "why": "",
+     "res": "fail",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785459722133,
+     "cm": [],
+     "bid": "fmwf9di2nicdg",
+     "mine": false,
+     "voted": false
+    },
+    {
+     "id": "fmwf9dbcorrgo",
+     "k": "chk",
+     "names": "Phạm Thu Hà",
+     "t": "Chị dùng file thật của phòng, đã xoá cột lương và số tài khoản giúp em.",
+     "st": "closed",
+     "why": "",
+     "res": "",
+     "ab": "Nhập nhân viên từ Excel: map cột, xem trước, báo lỗi",
+     "vo": 0,
+     "ts": 1785396543361,
+     "cm": [],
+     "url": "https://staging.example.com/nhap-nhan-vien",
+     "steps": [
+      "Mở Nhập nhân viên, chọn file danh sách của phòng",
+      "Chọn sheet \"DS NV T11\", dòng tiêu đề ở dòng 3",
+      "Kiểm tra mã 0012 vẫn là 0012",
+      "Xem số dòng lỗi và dòng trùng"
+     ],
+     "mine": false,
+     "voted": false
+    }
+   ],
+   "pending": [],
+   "approvals": [],
+   "keys": []
+  }
+ }
+}

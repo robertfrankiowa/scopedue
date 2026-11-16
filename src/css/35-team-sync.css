@@ -1,0 +1,53 @@
+/* ───────── v63: team sync ───────── */
+.x8-c .card-h p { text-wrap: pretty; }
+.x8-why { display: flex; align-items: flex-start; gap: 10px; margin: 0 var(--gx) 12px; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-soft); }
+.x8-c .card-h + .x8-why { margin-top: 14px; }
+.x8-why .i { width: 15px; height: 15px; flex: none; margin-top: 2px; color: var(--accent); }
+.x8-why p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; overflow-wrap: anywhere; }
+.x8-why.warn { background: var(--warn-bg); box-shadow: none; }
+.x8-why.warn .i, .x8-why.warn p { color: var(--warn); }
+.x8-why.crit { background: var(--crit-bg); box-shadow: none; }
+.x8-why.crit .i, .x8-why.crit p { color: var(--crit); }
+.x8-f { display: flex; gap: 8px; padding: 0 var(--gx) 16px; }
+.x8-f .i { width: 14px; height: 14px; }
+/* v125 (99): a sample's locked button, and why, under it */
+.x8-f.x8-smp { flex-direction: column; align-items: flex-start; gap: 6px; }
+.x8-f.x8-smp small { font-size: 12.5px; line-height: 1.45; color: var(--ink-3); text-wrap: pretty; }
+.x8-ml { list-style: none; margin: 0; padding: 4px var(--gx) 6px; }
+.x8-ml li { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line-soft); }
+.x8-ml li:first-child { border-top: 0; }
+.x8-ml .grow { flex: 1; min-width: 0; }
+.x8-ml b { display: block; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.x8-ml small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); overflow-wrap: anywhere; }
+.x8-fp { display: inline-flex; align-items: center; gap: 5px; margin-top: 5px; padding: 2px 8px 2px 6px; border-radius: 6px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-soft); font: 500 11.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .02em; color: var(--ink-2); cursor: help; }
+.x8-fp .i { width: 12px; height: 12px; color: var(--ok); }
+.x8-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 12px var(--gx) 14px; border-top: 1px solid var(--line-soft); }
+.x8-foot small { font-size: 12.5px; color: var(--ink-3); }
+.x8-acts { display: inline-flex; align-items: center; gap: 14px; }
+.x8-stop { font-size: 13px; color: var(--ink-3); }
+.x8-stop:hover { color: var(--crit); }
+.x8-stop[data-arm] { color: var(--crit); font-weight: 600; }
+.pd-pill.x8-hc .i { color: var(--ok); }
+.pd-pill.x8-hc.wait .i { color: var(--warn); }
+/* someone else's work, or a Viewer: the controls stay legible but quiet */
+.wk-r select:disabled, .wk-r input:disabled { cursor: default; }
+.wk-pick:has(select:disabled) > .i { display: none; }
+.wk-due:has(input:disabled) { box-shadow: none; }
+.wk-r:not(:hover):not(:focus-within) .wk-due.none:has(input:disabled), .wk-due.none:has(input:disabled) { display: none; }
+.pd-sel:has(select:disabled) > .i { display: none; }
+.pd-sel select:disabled { cursor: default; color: var(--ink-2); opacity: 1; }
+/* My work: free work to take */
+.x8-gp { margin: 0; padding: 14px var(--gx) 2px; font-size: 13px; color: var(--ink-3); }
+.x8-gl { list-style: none; margin: 0; padding: 4px var(--gx) 8px; }
+.x8-gl li { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line-soft); }
+.x8-gl li:first-child { border-top: 0; }
+.x8-gl .pj-av { width: 32px; height: 32px; border-radius: 9px; font-size: 15px; flex: none; }
+.x8-gl .grow { flex: 1; min-width: 0; }
+.x8-gl b { display: block; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.x8-gl small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .x8-gl li { flex-wrap: wrap; }
+  .x8-gl .btn-sm { margin-left: 46px; }
+  .x8-foot { flex-direction: column; align-items: flex-start; }
+}
+

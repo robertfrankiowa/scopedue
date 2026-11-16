@@ -1,0 +1,73 @@
+/* ───────── v65: the key comes back; the first run ───────── */
+.xa-ban { display: grid; gap: 10px; margin: 0 0 18px; }
+.xa-b { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line), var(--shadow); }
+.xa-b > .i { width: 18px; height: 18px; flex: none; align-self: flex-start; margin-top: 2px; color: var(--accent); }
+.xa-b .grow { flex: 1; min-width: 0; }
+.xa-b b { display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
+.xa-b p { margin: 3px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.xa-b .x8-fp { margin: 0 2px; vertical-align: 1px; }
+.xa-b.soft { box-shadow: inset 0 0 0 1px var(--line-soft); background: var(--surface-2); }
+.xa-b.soft > .i { color: var(--ink-3); }
+.xa-b.warn { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--warn) 35%, var(--line)), var(--shadow); }
+.xa-b.warn > .i { color: var(--warn); }
+.xa-acts { display: flex; gap: 8px; flex-wrap: wrap; flex: none; }
+.xa-ask { align-items: flex-start; }
+.xa-ask > div { display: grid; gap: 10px; }
+.xa-ask .xa-acts { margin-top: 2px; }
+.xa-ask .x8-fp { color: var(--ink); margin: 0 2px; }
+@media (max-width: 700px) { .xa-b { flex-wrap: wrap; } .xa-b .xa-acts, .xa-b > .btn-sm { margin-left: 32px; } }
+/* the first run */
+.xa-wl { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 16px; background: color-mix(in srgb, var(--scrim) 52%, transparent); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); animation: xa-in .32s var(--ease-out) both; overflow-y: auto; }
+.xa-wd { width: min(480px, 100%); padding: 30px 30px 26px; border-radius: 20px; background: var(--surface); box-shadow: 0 30px 80px -30px rgb(var(--shade-deep) / .55), inset 0 0 0 1px var(--line); animation: xa-up .42s var(--ease-out) both; }
+@keyframes xa-in { from { opacity: 0; } }
+@keyframes xa-up { from { opacity: 0; transform: translateY(10px) scale(.985); } }
+@media (prefers-reduced-motion: reduce) { .xa-wl, .xa-wd { animation: none; } }
+.xa-mk { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 13px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-soft); margin-bottom: 18px; }
+.xa-mk img { display: block; width: auto; height: 28px; }
+.xa-wd h2 { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 1.12; letter-spacing: -.015em; }
+.xa-wd > p { margin: 8px 0 22px; font-size: 14px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+#xa-f { display: grid; gap: 18px; }
+.xa-f small { font-size: 12px; color: var(--ink-3); }
+.xa-ch { margin: 0; padding: 0; border: 0; display: grid; gap: 8px; }
+.xa-ch legend { margin-bottom: 8px; padding: 0; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.xa-ch label { position: relative; display: flex; gap: 12px; align-items: flex-start; padding: 13px 14px; border-radius: 12px; cursor: pointer; box-shadow: inset 0 0 0 1px var(--line); transition: box-shadow .15s var(--ease-out), background .15s var(--ease-out); }
+.xa-ch label:hover { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 22%, var(--line)); }
+.xa-ch label:has(input:checked) { background: color-mix(in srgb, var(--accent) 7%, var(--surface)); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.xa-ch label:has(input:focus-visible) { box-shadow: inset 0 0 0 1.5px var(--accent), 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+.xa-ch input { margin: 3px 0 0; accent-color: var(--accent); width: 16px; height: 16px; flex: none; }
+.xa-ch b { display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
+.xa-ch small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.45; color: var(--ink-3); }
+#xa-f .err { margin: -8px 0 0; font-size: 12.5px; color: var(--crit); }
+#xa-f .err:empty { display: none; }
+.xa-st[hidden] { display: none; }
+.xa-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.xa-lg { gap: 10px; margin-bottom: 14px; }
+.xa-lg label { align-items: center; padding: 15px 16px; }
+.xa-lg input { margin: 0; }
+.xa-lg label > span:first-of-type { flex: 1; min-width: 0; }
+.xa-lg b { font-size: 15px; }
+.xa-lc { flex: none; font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; color: var(--ink-3); padding: 3px 7px; border-radius: 6px; box-shadow: inset 0 0 0 1px var(--line); }
+.xa-lg label:has(input:checked) .xa-lc { color: var(--accent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.xa-later { margin: 0 0 18px; font-size: 12.5px; color: var(--ink-3); }
+/* v72: the web app's sign-in step */
+#xa-in > p:not(.xa-later) { margin: 8px 0 22px; font-size: 14px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.xa-later.xa-inl { margin: 12px 0 0; text-align: center; }
+.xa-wl[hidden] { display: none; }
+.xa-back { display: inline-flex; align-items: center; gap: 6px; margin: -6px 0 12px -6px; padding: 5px 8px 5px 4px; border: 0; border-radius: 8px; background: none; font: inherit; font-size: 12.5px; color: var(--ink-3); cursor: pointer; }
+.xa-back:hover { background: var(--hover, color-mix(in srgb, var(--ink) 6%, transparent)); color: var(--ink-2); }
+.xa-back:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.xa-back .i { width: 15px; height: 15px; }
+.xa-back b { font-weight: 600; color: var(--ink-2); }
+.xa-back span::after { content: ":"; }
+.xa-go, .xa-lgo, .xa-ingo { width: 100%; height: 44px; justify-content: center; font-size: 14.5px; }
+@media (max-width: 520px) { .xa-wd { padding: 24px 20px 20px; border-radius: 18px; } .xa-wd h2 { font-size: 24px; } }
+/* an empty workspace */
+.xa-e { display: grid; justify-items: center; gap: 6px; padding: 34px 24px 32px; text-align: center; }
+.xa-e > .i { width: 22px; height: 22px; color: var(--ink-3); margin-bottom: 4px; }
+.xa-e b { font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: -.01em; color: var(--ink); }
+.xa-e span { max-width: 340px; font-size: 13px; line-height: 1.5; color: var(--ink-3); text-wrap: pretty; }
+.xa-e .btn-sm { margin-top: 8px; }
+.xa-e .btn-sm .i { width: 14px; height: 14px; }
+#dash-notes:has(.xa-e) { display: block; }
+.pl-empty.xa-first { max-width: 520px; margin: 0 auto; text-wrap: pretty; }
+

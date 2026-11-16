@@ -1,0 +1,24 @@
+<aside class="drawer" id="drawer-msrc" role="dialog" aria-modal="true" aria-labelledby="msrc-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="msrc-title">Add source</h2>
+      <p id="msrc-sub">Save what you rely on as a snapshot. If the page changes later, your evidence does not.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close add source"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="msrc" novalidate autocomplete="off">
+      <div class="fld st" id="f-msrc-t"><label for="msrc-t">Title <span class="opt">Required</span></label><input id="msrc-t" type="text" maxlength="80" placeholder="For example, Studio pricing survey" aria-describedby="e-msrc-t"><span class="err" id="e-msrc-t"></span></div>
+      <div class="fld st" id="f-msrc-u"><label for="msrc-u">Link <span class="opt">Optional</span></label><input id="msrc-u" type="text" inputmode="url" maxlength="300" placeholder="https://…" aria-describedby="e-msrc-u"><span class="err" id="e-msrc-u"></span></div>
+      <div class="fld st" id="f-msrc-x"><label for="msrc-x">What it says <span class="opt cnt" id="msrc-cnt">0 / 4000</span></label>
+        <textarea id="msrc-x" rows="6" maxlength="4000" placeholder="Paste the part you rely on: a price, a quote, a figure."></textarea>
+        <span class="hint">This text stays on this device. It is not fetched from the link.</span></div>
+      <div class="fld st" id="f-msrc-i"><label for="msrc-i">What you take from it <span class="opt">Optional</span></label>
+        <textarea id="msrc-i" rows="3" maxlength="600" placeholder="Your reading, and how sure you are. For example, one survey of eight people: a hint, not proof."></textarea>
+        <span class="hint">Kept apart from what the source says, and outside its fingerprint.</span></div>
+      <div class="fld st"><label for="msrc-c">Cite it in <span class="opt">Optional</span></label><select id="msrc-c"></select></div>
+      <div class="pde-fpv st" id="msrc-fpv" aria-live="polite"></div>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to add</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="msrc" class="btn-primary btn-sm" id="msrc-go" disabled>Add source</button></div></footer>
+</aside>

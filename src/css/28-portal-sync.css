@@ -1,0 +1,19 @@
+/* ---------- client portal sync (v53) ---------- */
+.sy-p { margin: 0; padding: 4px var(--gx) 14px; font-size: 13px; line-height: 1.55; color: var(--ink-3); text-wrap: pretty; }
+.sy-acts { display: flex; gap: 8px; flex-wrap: wrap; padding: 6px var(--gx) 18px; }
+.pd-s-acts.sy-acts { padding: 0; justify-content: flex-start; }
+#sy-body .cd-dl { padding-bottom: 4px; }
+#sy-body .cd-dl dd { max-width: 70%; overflow-wrap: anywhere; }
+.sy-bad { color: var(--crit) !important; }
+.sy-note { margin-top: 12px; color: var(--ink-3); }
+.sy-err { margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: var(--crit); text-wrap: pretty; }
+.sy-err[hidden] { display: none; }
+.sy-mail { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; }
+.sy-mail .fld { flex: 1 1 200px; }
+.sy-mail .fld input { height: 36px; }
+.sy-mail .btn-sm { height: 36px; }
+.ppl li.sy-mail-li { display: block; padding: 2px var(--gx) 14px calc(var(--gx) + 48px); }
+.sy-code input { letter-spacing: .32em; font-variant-numeric: tabular-nums; font-size: 18px; }
+@media (max-width: 560px) { .ppl li.sy-mail-li { padding-left: var(--gx); } }
+#sy-s1, #sy-s2 { display: flex; flex-direction: column; gap: 18px; }
+#sy-s1[hidden], #sy-s2[hidden] { display: none; }

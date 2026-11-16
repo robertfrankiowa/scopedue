@@ -1,0 +1,38 @@
+<aside class="drawer" id="drawer-mai" role="dialog" aria-modal="true" aria-labelledby="mai-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="mai-title">Research with AI</h2>
+      <p id="mai-sub">Copy a prompt into an AI model that can search the web. Bring its JSON answer back. Nothing changes until you review it.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close research with AI"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <nav class="mai-steps" id="mai-steps" aria-label="Steps">
+    <button type="button" data-s="1"><span class="n" aria-hidden="true">1</span>Prompt</button>
+    <button type="button" data-s="2"><span class="n" aria-hidden="true">2</span>Answer</button>
+    <button type="button" data-s="3" disabled><span class="n" aria-hidden="true">3</span>Review</button>
+  </nav>
+  <div class="dr-body">
+    <div class="cf" id="mai-s1">
+      <div class="fld st"><span class="npj-lb" id="mai-ml">What do you want?</span><div class="mai-modes" id="mai-modes" role="radiogroup" aria-labelledby="mai-ml"></div></div>
+      <div class="cf-sw st"><div><b id="mai-sc-l">Include my Scope</b><small id="mai-sc-d"></small></div><button type="button" class="sw" id="mai-sc" role="switch" aria-checked="true" aria-labelledby="mai-sc-l" aria-describedby="mai-sc-d"></button></div>
+      <div class="mai-two st">
+        <div class="fld"><label for="mai-lang">Write the answer in</label><select id="mai-lang"></select></div>
+        <div class="fld"><label for="mai-focus">Focus <span class="opt">Optional</span></label><input id="mai-focus" type="text" maxlength="140" placeholder="For example, small studios in the EU" autocomplete="off"></div>
+      </div>
+      <div class="fld st"><label for="mai-prompt">Prompt <span class="opt cnt" id="mai-pcnt"></span></label><textarea id="mai-prompt" readonly rows="12" spellcheck="false"></textarea>
+        <span class="hint">It holds your project name, Thesis and the market data above. Nothing leaves this device until you paste it somewhere.</span></div>
+    </div>
+    <div class="cf" id="mai-s2" hidden>
+      <div class="fld st"><label for="mai-in">The model’s answer <span class="opt">Paste it or choose a file</span></label><textarea id="mai-in" rows="12" spellcheck="false" placeholder="Paste the reply here. Code fences and extra text around the JSON are fine."></textarea></div>
+      <div class="mai-tools st"><button type="button" class="btn-ghost btn-sm" id="mai-file-b">Choose a .json file</button><input type="file" id="mai-file" accept=".json,.txt,application/json,text/plain" hidden tabindex="-1"><button type="button" class="btn-ghost btn-sm" id="mai-clear">Clear</button></div>
+      <div class="mai-chk st" id="mai-chk" role="status" aria-live="polite" data-st="idle"></div>
+    </div>
+    <div class="cf" id="mai-s3" hidden><div id="mai-rv"></div></div>
+  </div>
+  <footer class="dr-foot">
+    <span class="c-hint" id="mai-hint"></span>
+    <div class="f-acts" id="mai-f1"><button type="button" class="btn-ghost btn-sm" id="mai-next">Next: paste the answer</button><button type="button" class="btn-primary btn-sm" id="mai-copy">Copy prompt</button></div>
+    <div class="f-acts" id="mai-f2" hidden><button type="button" class="btn-ghost btn-sm" id="mai-back2">Back</button><button type="button" class="btn-ghost btn-sm" id="mai-fix" hidden>Copy fix request</button><button type="button" class="btn-primary btn-sm" id="mai-go2" disabled>Review changes</button></div>
+    <div class="f-acts" id="mai-f3" hidden><button type="button" class="btn-ghost btn-sm" id="mai-back3">Back</button><button type="button" class="btn-primary btn-sm" id="mai-apply" disabled>Apply</button></div>
+  </footer>
+</aside>

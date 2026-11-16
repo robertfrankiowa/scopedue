@@ -1,0 +1,24 @@
+<aside class="drawer" id="drawer-prep" role="dialog" aria-modal="true" aria-labelledby="prep-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="prep-title">Prepare client copy</h2>
+      <p id="prep-sub">Choose exactly what the client can see. The original stays private.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close client copy"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="prep" novalidate autocomplete="off">
+      <div class="cf-prev st"><span class="pde-ic" aria-hidden="true" id="prep-oi"></span><div><b id="prep-on">Original</b><small id="prep-os"></small></div></div>
+      <div class="fld st" id="f-prep-t"><label for="prep-t">Title the client sees <span class="opt">Required</span></label><input id="prep-t" type="text" maxlength="80" aria-describedby="e-prep-t"><span class="err" id="e-prep-t"></span></div>
+      <div class="fld st" id="f-prep-txt" hidden><label for="prep-txt">Copy text <span class="opt cnt" id="prep-cnt"></span></label>
+        <textarea id="prep-txt" rows="8" maxlength="20000"></textarea>
+        <span class="hint">Delete anything private. Lines you remove never reach the client.</span></div>
+      <div class="fld st" id="f-prep-file" hidden><label for="prep-file">Copy file <span class="opt">Up to 100 MB</span></label>
+        <div class="pde-drop" id="prep-drop"><span class="pde-ic" aria-hidden="true"><svg class="i"><use href="#i-doc"/></svg></span><div class="pde-drop-b"><b id="prep-fn">Choose the file to share</b><small id="prep-fs">Pick the version the client should receive, for example a cropped screenshot. It is read in this browser and never uploaded.</small></div><input class="pde-file" type="file" id="prep-file" aria-describedby="prep-fs"></div></div>
+      <div class="pde-fpv st" id="prep-fpv" aria-live="polite"></div>
+      <div class="st pvw-sec"><h3 class="sec" id="prep-pvh">What the client will see</h3><div class="pde-pv" id="prep-pv"></div></div>
+      <label class="pd-chk st" for="prep-ok"><input type="checkbox" id="prep-ok"><span class="box" aria-hidden="true"><svg class="i"><use href="#i-tick"/></svg></span><span id="prep-okt">I checked the copy. The client will see exactly this, and the original stays private.</span></label>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint" id="prep-hint">The client sees it in the portal.</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="prep" class="btn-primary btn-sm" id="prep-go" disabled>Share copy</button></div></footer>
+</aside>

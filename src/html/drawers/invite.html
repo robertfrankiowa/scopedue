@@ -1,0 +1,18 @@
+<aside class="drawer" id="drawer-invite" role="dialog" aria-modal="true" aria-labelledby="dinv-title" tabindex="-1">
+  <header class="dr-h">
+    <div>
+      <h2 id="dinv-title">Add to this project</h2>
+      <p id="inv-sub">Choose from your team.</p>
+    </div>
+    <div class="dr-close"><kbd>Esc</kbd><button type="button" class="dr-x" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button></div>
+  </header>
+  <div class="dr-body">
+    <form class="cf" id="inv" novalidate autocomplete="off">
+      <div class="inv-gate" id="inv-gate" hidden></div>
+      <ul class="inv-list" id="inv-list" aria-label="People on your team"></ul>
+      <div class="inv-none" id="inv-none" hidden><b id="inv-none-t"></b><p id="inv-none-d"></p></div>
+      <p class="inv-more" id="inv-more">Someone new? <button type="button" class="link" id="inv-settings">Add them to your team in Settings</button></p>
+    </form>
+  </div>
+  <footer class="dr-foot"><span class="c-hint"><kbd>⌘</kbd> <kbd>↵</kbd> to add</span><div class="f-acts"><button type="button" class="btn-ghost btn-sm" data-close>Cancel</button><button type="submit" form="inv" class="btn-primary btn-sm" id="inv-go" disabled>Add</button></div></footer>
+</aside>

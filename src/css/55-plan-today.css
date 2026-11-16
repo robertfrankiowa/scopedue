@@ -1,0 +1,55 @@
+/* ───────── v127 (CONTRACT 127): Plan today, calmer ───────── */
+/* your own, first, as one line with a + in the field */
+#drawer-today .td-add { padding: 2px var(--gx) 4px; }
+.td-in { position: relative; display: flex; min-width: 0; }
+.td-in > .i { position: absolute; left: 11px; top: 50%; width: 15px; height: 15px; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+#drawer-today .td-in input { flex: 1; width: 100%; padding-left: 33px; background: var(--surface); }   /* the same field as the project picker beside it */
+
+/* groups: a list with hairlines, not a box per row; the rows' text lines up with the group's heading */
+#drawer-today .td-g { padding: 16px var(--gx) 2px; }
+#drawer-today .td-g:last-child { padding-bottom: 20px; }
+#drawer-today .td-g h3 { margin-bottom: 4px; }
+#drawer-today .td-g ul { gap: 0; }
+#drawer-today .td-g > ul, #drawer-today .td-pj { margin: 0 -12px; }
+#drawer-today .td-p { position: relative; }
+#drawer-today .td-p + .td-p::before { content: ""; position: absolute; top: 0; left: 46px; right: 12px; height: 1px; background: var(--line-soft); }
+#drawer-today .td-p.on::before, #drawer-today .td-p.on + .td-p::before { opacity: 0; }
+#drawer-today .td-p label { grid-template-columns: 22px minmax(0, 1fr); padding: 11px 12px; border: 0; border-radius: 10px; background: transparent; }
+#drawer-today .td-p label:hover { background: var(--surface-2); }
+#drawer-today .td-p.on label { background: color-mix(in srgb, var(--accent-soft) 65%, var(--surface)); }
+/* the box of a picked row holds its place in the day */
+#drawer-today .td-pb { font: 600 11.5px/1 var(--font-body); color: transparent; }
+#drawer-today .td-p.on .td-pb { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+#drawer-today .td-pt b { font-size: 14px; }
+.td-cr { display: inline-block; margin-right: 7px; padding: 0 6px; border-radius: 5px; font: 600 11px/18px var(--font-body); letter-spacing: .02em; color: var(--ink-2); background: color-mix(in srgb, var(--ink) 6%, transparent); vertical-align: 1px; font-variant-numeric: tabular-nums; }
+/* under the title: the project, short, with its mark; then how urgent, a dot for due and late */
+#drawer-today .td-pt small { display: flex; flex-wrap: wrap; align-items: center; gap: 3px 10px; margin-top: 3px; }
+.td-pn { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.td-pn .pj-av { width: 16px; height: 16px; border-radius: 5px; font-size: 10px; flex: none; }
+.td-st { display: inline-flex; align-items: center; gap: 6px; }
+.td-st.warn, .td-st.crit { font-weight: 600; }
+.td-st.warn { color: var(--warn); }
+.td-st.crit { color: var(--crit); }
+.td-st.warn::before, .td-st.crit::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+/* Your work: the project's name once over its rows */
+.td-pj + .td-pj { margin-top: 6px; }
+.td-pjh { display: flex; align-items: center; gap: 8px; padding: 8px 12px 2px; font-size: 13px; font-weight: 600; color: var(--ink-2); min-width: 0; }
+.td-pjh > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.td-pjh .pj-av { width: 20px; height: 20px; border-radius: 6px; font-size: 12px; flex: none; }
+/* Suggested for today leads, quietly marked */
+.td-sug h3::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+#drawer-today .td-more { display: inline-flex; margin: 2px 0 0; padding: 6px 0; border: 0; background: none; font: 600 12.5px var(--font-body); color: var(--accent); cursor: pointer; }
+#drawer-today .td-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* the foot: three places for the day, a row of their own over the buttons, so a picked one is still readable */
+#drawer-today .dr-foot { flex-wrap: wrap; row-gap: 10px; }
+#drawer-today .dr-foot .f-acts { margin-left: auto; }
+.td-tray { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex: 1 0 100%; min-width: 0; }
+.td-tray li { flex: 1 1 0; min-width: 0; display: flex; align-items: center; gap: 7px; height: 32px; padding: 0 10px 0 5px; border: 1px dashed var(--line); border-radius: 9px; color: var(--ink-3); }
+.td-tray .n { flex: none; width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; font: 600 11px/1 var(--font-body); }
+.td-tray li.on { border-style: solid; border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); background: var(--surface); color: var(--ink); }
+.td-tray li.on .n { background: var(--accent); color: var(--surface); }
+.td-tray .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12.5px; font-weight: 500; }
+.td-tray[hidden] { display: none; }
+.td-hint { font-size: 12.5px; color: var(--ink-3); }
+#td-set:disabled { opacity: .45; cursor: not-allowed; filter: none; }

@@ -1,0 +1,17 @@
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--page);color:var(--ink);font:400 14.5px/1.4 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+button:disabled{cursor:not-allowed}
+svg{display:block;flex:none}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+[hidden]{display:none!important}
+.page{max-width:1384px;margin:0 auto;background:var(--page);min-height:100vh;display:flex;flex-direction:column}
+.page>main,.page>#view{flex:1}
+@media (min-width:1400px){.page{border-inline:1px solid var(--line)}}
+.lk{font-size:14.5px;line-height:24px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,currentColor 55%,transparent);transition:text-decoration-color .45s var(--ease)}
+.lk:hover{text-decoration-color:currentColor}
+.mono{font-family:var(--mono);font-size:.92em;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+

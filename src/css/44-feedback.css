@@ -1,0 +1,73 @@
+/* v70: Feedback from Viewers (CONTRACT.md 32). The list and the detail reuse Decisions' two columns; only what is new is here */
+.fb-ppl .fb-pl { list-style: none; margin: 0; padding: 4px 20px 14px; display: grid; gap: 10px; }
+.fb-pl li { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.fb-pn { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.fb-pn b { font-weight: 600; font-size: 14px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fb-pn small { font-size: 12px; color: var(--ink-3); }
+.fb-old { padding: 0 20px 16px; margin: 0; }
+
+.fb-r .l2 { flex-wrap: wrap; }
+.fb-k { color: var(--ink-2); font-weight: 500; }
+.fb-vo { display: inline-flex; align-items: center; gap: 4px; color: var(--ink-3); }
+.fb-vo .i { width: 13px; height: 13px; }
+.sd.crit { background: var(--crit); }
+
+/* the form: what shows depends on the kind */
+.fb-f { display: grid; gap: 14px; }
+.fb-f .fb-res { display: none; }
+.fb-f[data-k="test"] .fb-res { display: flex; }
+.fb-f[data-k="appr"] .fb-opt { visibility: hidden; }
+.fb-f[data-err="fr"] .prv-pick:nth-of-type(2), .fb-f[data-err="res"] .fb-res { outline: 1px solid var(--crit); outline-offset: 4px; border-radius: 10px; }
+.fb-f[data-err="ab"] #fb-ab, .fb-f[data-err="t"] #fb-t { border-color: var(--crit); }
+.fb-kinds { flex-wrap: wrap; }
+
+/* the detail */
+.fb-dt { overflow-wrap: anywhere; }
+.fb-q { margin: 0 0 14px; padding: 10px 14px; border-left: 3px solid var(--line); background: var(--surface-2); border-radius: 0 10px 10px 0; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.fb-meta { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 14px; margin: 0 0 14px; font-size: 13px; }
+.fb-meta dt { color: var(--ink-3); }
+.fb-meta dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.fb-acts { flex-wrap: wrap; }
+.fb-votes { display: flex; flex-wrap: wrap; gap: 6px; }
+.fb-cm { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 10px; }
+.fb-cm li { display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: 10px; background: var(--surface-2); }
+.fb-cm b { font-size: 13px; font-weight: 600; color: var(--ink); }
+.fb-cm span { font-size: 14px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+.fb-cm small { font-size: 12px; color: var(--ink-3); }
+.fb-ask .fb-askrow { align-items: end; }
+.fb-rm { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+.fb-d .pde-sec > .btn-ghost { align-self: flex-start; justify-self: start; width: auto; }
+.fb-via::before { content: "·"; margin: 0 6px; color: var(--ink-3); }
+.fb-when { margin: 0 0 6px; }
+.fb-cm small span { font-size: 12px; color: var(--ink-3); white-space: normal; }
+/* v70: pictures from the Viewer portal, and the portal's card (32.6) */
+.fb-pics { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.fb-pics img { width: 96px; height: 96px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); }
+.fb-pics a { display: block; border-radius: 10px; }
+.fb-pics a img { display: block; transition: border-color .15s, transform .15s; }
+.fb-pics a:hover img { border-color: var(--accent); transform: translateY(-1px); }
+.fb-pics a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.vp-card .vp-sh { flex-wrap: wrap; margin-bottom: 6px; }
+.vp-ppl { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.vp-ppl li { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.vp-card .pd-note.warn { color: var(--warn); }
+/* v95 (40.1-40.3): Ask to check, its answers, a date to answer by */
+.fb-ctas { display: flex; flex-wrap: wrap; gap: 8px; }
+.fb-f .fb-due { display: none; }
+.fb-f[data-k="appr"] .fb-due { display: grid; }
+.fb-kfr { flex-wrap: wrap; }
+.fb-chkf[data-err="fr"] .fb-kfr { outline: 1px solid var(--crit); outline-offset: 4px; border-radius: 10px; }
+.fb-chkf[data-err="url"] #fb-ku, .fb-chkf[data-err="ab"] #fb-kab { border-color: var(--crit); }
+.fb-steps { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; color: var(--ink); }
+.fb-steps li { overflow-wrap: anywhere; }
+.fb-rs { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.fb-rs li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: 10px; background: var(--surface-2); }
+.fb-rs b { font-size: 14px; font-weight: 600; color: var(--ink); }
+.fb-rs small { display: inline-flex; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--ink-3); }
+.fb-rs small .link { font-size: 12px; }
+.fb-rst { flex-basis: 100%; font-size: 14px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+/* v102 (59): a client's picture before its small copy is here: its name and where it is */
+.cp-pics { margin: 10px 0 0; }
+.cp-pic { display: flex; flex-direction: column; justify-content: center; width: 96px; height: 96px; padding: 8px; border-radius: 10px; border: 1px dashed var(--line); background: var(--surface-2); overflow: hidden; }
+.cp-pic b { font-size: 11.5px; font-weight: 500; overflow-wrap: anywhere; }
+.cp-pic small { font-size: 11px; color: var(--ink-3); margin-top: 4px; }

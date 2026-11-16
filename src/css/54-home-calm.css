@@ -1,0 +1,70 @@
+/* ───────── v126 (CONTRACT 126): Home, calmer ───────── */
+/* The grid: Priority attention and Quick notes on the left, Continue your work beside both, so neither column ends far above the other.
+   One column below 1100px, in the order of the page: Priority, Continue, Quick notes */
+#view-dashboard .db-grid { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: start; }
+#view-dashboard .db-prio { grid-column: 1; grid-row: 1; }
+#view-dashboard .db-cont { grid-column: 2; grid-row: 1 / span 2; }
+#view-dashboard .db-notes { grid-column: 1; grid-row: 2; }
+@media (max-width: 1100px) {
+  #view-dashboard .db-grid { grid-template-columns: minmax(0, 1fr); }
+  #view-dashboard .db-prio, #view-dashboard .db-cont, #view-dashboard .db-notes { grid-column: 1; grid-row: auto; }
+}
+#view-dashboard .grid > .db-cont { animation-delay: .27s; }
+#view-dashboard .grid > .db-notes { animation-delay: .33s; }
+/* a card head is its title and at most one quiet action; no line under the title that explains it */
+#view-dashboard .db-grid .card-h { align-items: center; padding: 18px var(--gx) 15px; }
+
+/* Today, nothing planned: one row, the card head hidden (it said "up to three" a second time) */
+.td.is-calm > .card-h { display: none; }
+.td.is-calm .td-empty { padding: 16px var(--gx); gap: 14px; }
+.td.is-calm .td-sun { width: 36px; height: 36px; border-radius: 10px; }
+.td.is-calm .td-sun .i { width: 17px; height: 17px; }
+.td.is-calm .td-empty b { font-size: 18px; }
+.td-empty .f-acts { align-items: center; gap: 18px; }
+.td-empty .f-acts .td-wr { margin-right: 0; }
+
+/* the figures: a zero steps back and says nothing more */
+.kpi.is-zero .n { color: color-mix(in srgb, var(--ink-3) 70%, transparent); }
+.kpi.is-zero b { color: var(--ink-2); font-weight: 500; }
+.kpi.is-zero small { display: none; }
+
+/* Priority attention: the project's mark is the one Continue and Projects use; its name in the body face, not a second serif heading */
+.g-name { font-family: var(--font-body); font-size: 14.5px; font-weight: 600; letter-spacing: -.005em; gap: 10px; }
+.g-name .pj-av.g-av { width: 26px; height: 26px; border-radius: 8px; font-size: 14px; flex: none; }
+.g-h { padding: 9px var(--gx); }
+/* one way to say a row's state: the dot carries how urgent it is, the label is quiet text; only a critical one is a pill */
+.rows .row .chip.warn { background: transparent; box-shadow: none; padding: 3px 0; color: var(--warn); }
+
+/* Continue your work: the whole row resumes; the name on one line; when you were last there beside its kind */
+#view-dashboard .proj { grid-template-columns: 36px minmax(0, 1fr) auto; align-items: start; gap: 14px; padding: 16px var(--gx); }
+#view-dashboard .proj + .proj::before { left: calc(var(--gx) + 50px); }
+#view-dashboard .proj .pj-av { width: 36px; height: 36px; font-size: 17px; }
+#view-dashboard .proj h3 { font-family: var(--font-body); font-size: 15px; font-weight: 600; line-height: 1.3; letter-spacing: -.005em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#view-dashboard .proj .sub { display: flex; flex-wrap: wrap; margin-top: 2px; }
+#view-dashboard .proj .sub .ago::before { content: "\00b7"; margin: 0 6px; }
+#view-dashboard .proj .next { margin-top: 7px; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+#view-dashboard .proj .resume { align-self: center; height: 32px; padding: 0 9px; gap: 0; background: transparent; border-color: transparent; color: var(--ink-3); }
+#view-dashboard .proj .resume::after { content: ""; position: absolute; inset: 0; }
+/* no press-shrink here: a transform would make the button the ::after's box, and a press would land outside it */
+#view-dashboard .proj .resume:active { transform: none; }
+#view-dashboard .proj .resume .rl { display: inline-block; max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width .25s var(--ease-out), opacity .2s var(--ease-out), margin .25s var(--ease-out); }
+#view-dashboard .proj:hover .resume, #view-dashboard .proj .resume:focus-visible { background: var(--accent-soft); color: var(--accent); }
+#view-dashboard .proj:hover .resume .rl, #view-dashboard .proj .resume:focus-visible .rl { max-width: 120px; opacity: 1; margin-right: 6px; }
+#view-dashboard .proj:has(.resume:focus-visible) { background: var(--surface-2); }
+@media (max-width: 700px) {
+  #view-dashboard .proj { grid-template-columns: 36px minmax(0, 1fr) auto; }
+  #view-dashboard .proj .resume { grid-column: 3; justify-self: end; }
+}
+
+/* Quick notes: a list with hairlines, not boxes inside the card; what is said about a note in grey, its date at the end */
+#view-dashboard .db-notes .notes { display: block; padding: 4px 0 8px; }
+#view-dashboard .db-notes .note { display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 14px var(--gx); border: 0; border-radius: 0; background: transparent; position: relative; box-shadow: none; }
+#view-dashboard .db-notes .note + .note::before { content: ""; position: absolute; top: 0; left: var(--gx); right: var(--gx); height: 1px; background: var(--line-soft); }
+#view-dashboard .db-notes .note:hover { background: var(--surface-2); transform: none; box-shadow: none; }
+#view-dashboard .db-notes .note:focus-visible { outline-offset: -2px; }
+#view-dashboard .db-notes .note .txt { -webkit-line-clamp: 2; }
+#view-dashboard .db-notes .nmeta { flex-wrap: nowrap; align-items: center; gap: 10px; min-width: 0; margin-top: 0; }
+#view-dashboard .db-notes .nmeta > * { white-space: nowrap; }
+#view-dashboard .db-notes .nmeta .nproj { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+#view-dashboard .db-notes .nmeta > span:last-child { margin-left: auto; flex: none; font-variant-numeric: tabular-nums; }
+.nmeta .hash { color: var(--ink-2); font-weight: 500; background: color-mix(in srgb, var(--ink) 5%, transparent); border-radius: 6px; padding: 0 6px; }

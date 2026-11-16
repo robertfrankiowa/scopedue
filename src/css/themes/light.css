@@ -1,0 +1,51 @@
+/* theme: light
+   name: Light
+   name-vi: Sáng
+   icon: sun
+   default: yes
+   The colours ScopeDue starts with. "System" uses it when the computer is in light mode. */
+:root {
+  color-scheme: light;
+  --bg: #eff2f7;
+  --surface: #ffffff;
+  --surface-2: #f6f8fb;
+  --line: #dce1ea;
+  --line-soft: #e8ebf2;
+  --ink: #111b30;
+  --ink-2: #414d66;
+  --ink-3: #59647c;
+  --accent: #27467f;
+  --accent-soft: #e4e9f3;
+  --btn: #1b2a45;
+  --hl: rgba(255,255,255,.9);
+  --shadow: 0 1px 2px rgba(17,27,48,.04), 0 14px 30px -20px rgba(17,27,48,.24);
+  --btn-ink: #ffffff;
+  --warn: #965208;
+  --warn-bg: #fcf0dc;
+  --crit: #b3261e;
+  --crit-bg: #fbe7e5;
+  --on-crit: #ffffff;
+  --ok: #23704f;
+
+  --nav-bg-1: #18212e;
+  --nav-bg-2: #18212e;
+  --nav-ink: #bcc4cf;
+  --nav-ink-2: #8a9ab0;
+  --nav-ink-strong: #e3e8ef; /* the tagline and the workspace status */
+  --nav-active: #253246;   /* the page you are on: its rounded highlight */
+  --nav-line: #2c3747;
+  --nav-box: #3f4b5c;      /* the outline of the icon boxes */
+  --nav-box-on: #5a6880;   /* the icon box of the page you are on */
+  --nav-tile: #24365a;     /* the logo tile, and an avatar with no colour of its own */
+  --nav-chip: #354153;     /* project marks and the account avatar in the sidebar */
+  --nav-accent: #aac0ff;   /* the page you are on */
+  --nav-dot: #8fb3ff;      /* "new" dots in the sidebar */
+  --tip-bg: #0b1424;       /* the sidebar's tooltips */
+  --tip-line: #2b3850;
+  --scrim: #0a111d;        /* behind a drawer or the welcome */
+  --toast-bg: #141f31;     /* toasts and the saving bar */
+  --toast-line: #2b3850;
+  --shade: 17 27 48;       /* shadows, as "r g b" */
+  --shade-deep: 10 17 29;
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2359647c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
